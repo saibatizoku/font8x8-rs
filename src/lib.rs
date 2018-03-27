@@ -61,7 +61,7 @@
 //!     ██   
 //! ```
 //!
-//! or, this: `ΐ`.
+//! and, it's meant to look like this: `ΐ`.
 //!
 //! # On the miscellanous characters included
 //! These characters are provided as-is, and some don't have a proper unicode point.
