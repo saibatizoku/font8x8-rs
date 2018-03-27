@@ -1,5 +1,5 @@
-8x8 monochrome bitmap font for rendering for Rust
-=================================================
+8x8 monochrome bitmap font for rendering. Implemented in Rust.
+==============================================================
 
 A collection of unicode characters in a 8x8 bitmap font.
 
