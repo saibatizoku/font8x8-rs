@@ -87,7 +87,10 @@ and, it's meant to look like this: `ΐ`.
 Credits
 =======
 
+Summary: 8x8 monochrome bitmap fonts for rendering. Implemented in Rust.
+
 Author: Joaquín Rosales <globojorro@gmail.com>
+
 License: Public Domain
 
 These header files are directly derived from an assembler file fetched from:
@@ -95,6 +98,7 @@ These header files are directly derived from an assembler file fetched from:
 
 Original header:
 
+```
 ; Summary: `font8_8.asm`
 ; 8x8 monochrome bitmap fonts for rendering
 ;
@@ -105,9 +109,11 @@ Original header:
 ; License:
 ;     Public Domain
 ;
+```
 
 C header:
 
+```
 ; Summary: `font8x8.h`
 ; 8x8 monochrome bitmap fonts for rendering
 ;
@@ -115,3 +121,4 @@ C header:
 ;
 ; Author: Daniel Hepper <daniel@hepper.net>
 ; License: Public Domain
+```
