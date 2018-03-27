@@ -76,3 +76,23 @@
 //! [https://github.com/dhepper/font8x8](https://github.com/dhepper/font8x8).
 //!
 //! This crate is an extension of that work.
+mod basic;
+mod block;
+#[path = "box.rs"]
+mod box_chars;
+mod control;
+mod latin;
+mod greek;
+mod hiragana;
+mod misc;
+mod sga;
+
+pub use self::basic::BASIC;
+pub use self::control::CONTROL;
+pub use self::latin::LATIN;
+pub use self::greek::GREEK;
+pub use self::block::BLOCK;
+pub use self::box_chars::BOX;
+pub use self::hiragana::HIRAGANA;
+pub use self::misc::MISC;
+pub use self::sga::SGA;
