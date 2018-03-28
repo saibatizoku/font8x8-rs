@@ -1,6 +1,9 @@
 8x8 monochrome bitmap font for rendering. Implemented in Rust.
 ==============================================================
 
+[![crates.io](https://img.shields.io/crates/v/font8x8.svg)](https://crates.io/crates/font8x8)
+[![docs](https://docs.rs/font8x8/badge.svg)](https://docs.rs/font8x8)
+
 A collection of unicode characters in a 8x8 bitmap font.
 
 # Usage
