@@ -2,5 +2,6 @@
 name = "font8x8"
 version = "0.1.0"
 authors = ["Joaquin Rosales <globojorro@gmail.com>"]
+license = "Unlicense"
 
 [dependencies]
