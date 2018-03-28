@@ -1,6 +1,6 @@
 //! Special characters with private unicode points.
 
-/// Special characters with private unicode points.
+/// Special characters with private unicode points. `U+E541 - U+E55A`
 ///
 /// * `U+E541` (SGA A)
 /// * `U+E542` (SGA B)
