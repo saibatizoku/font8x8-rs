@@ -6,7 +6,7 @@ description = "8x8 monochrome bitmap font for rendering."
 homepage = "https://github.com/saibatizoku/font8x8-rs"
 repository = "https://github.com/saibatizoku/font8x8-rs"
 readme = "README.md"
-keywords = ["font", "8bit", "8-bit", "8x8", "bitmap", "monochrome"]
+keywords = ["font", "8bit", "8-bit", "bitmap", "monochrome"]
 categories = ["rendering"]
 license = "Unlicense"
 
