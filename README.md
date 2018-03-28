@@ -16,17 +16,21 @@ Then you can use it with your crate:
 ```rust
 extern crate font8x8
 
-use font8x8::BASIC; // U+0000 - U+007F
-use font8x8::CONTROL; // U+0080 - U+009F
-use font8x8::LATIN; // U+00A0 - U+00FF
+use font8x8::BASIC;    // U+0000 - U+007F
+use font8x8::CONTROL;  // U+0080 - U+009F
+use font8x8::LATIN;    // U+00A0 - U+00FF
 
-use font8x8::BOX; // U+2500 - U+257F
-use font8x8::BLOCK; // U+2580 - U+259F
+use font8x8::BOX;      // U+2500 - U+257F
+use font8x8::BLOCK;    // U+2580 - U+259F
 use font8x8::HIRAGANA; // U+3040 - U+309F
-use font8x8::GREEK; // U+0390 - U+039C
+use font8x8::GREEK;    // U+0390 - U+039C
 
-use font8x8::MISC; // U+____ - U+____
-use font8x8::SGA; // U+____ - U+____
+use font8x8::MISC;     // U+20A7, U+0192, U+00AA, U+00BA,
+                       // U+2310, U+2264, U+2265, U+0060,
+                       // U+1EF2, U+1EF3
+
+use font8x8::SGA;      // U+E541 - U+E55A
+
 ```
 
 # Documentation
@@ -38,11 +42,11 @@ To generate the crate's documentation, you can use:
 from the terminal.
 
 It's highly recommended that you inspect the docs for each constant, as there is a listing
-of the included characters.
+of the included characters. Better yet, dive into the source, it's pretty straightforward.
 
 # Example
 
-## Working directly with constants
+## Decoding and printing to screen
 Let's say we want to print out the first character belonging to the
 greek subset. In this case, it corresponds to the unicode `U+0390` described as `iota with
 tonos and diaeresis`, and we will retrieve it from the `GREEK` constant provided by our library.
@@ -91,7 +95,7 @@ Summary: 8x8 monochrome bitmap fonts for rendering. Implemented in Rust.
 
 Author: Joaquín Rosales <globojorro@gmail.com>
 
-License: Public Domain
+License: The Unlicense. [http://unlicense.org](http://unlicense.org).
 
 These header files are directly derived from an assembler file fetched from:
 `http://dimensionalrift.homelinux.net/combuster/mos3/?p=viewsource&file=/modules/gfx/font8_8.asm`
