@@ -91,6 +91,11 @@ The generated output should mostly resemble this (it will depend on your termina
 
 and, it's meant to look like this: `ΐ`.
 
+Features
+========
+The default features include 'unicode', which provides a wrapper for the font constants, tupled with their
+corresponding unicode point.
+
 Credits
 =======
 

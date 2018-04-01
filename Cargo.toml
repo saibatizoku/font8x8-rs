@@ -11,3 +11,12 @@ categories = ["rendering"]
 license = "Unlicense"
 
 [dependencies]
+
+# To disable all features, run `cargo build` with the `--no-default-features` option.
+# Doing  This only includes the constants.
+[features]
+default = ["unicode"]
+
+# adds strong-typed unicode encoding and decoding, as well
+# as Default, Debug, Display, Clone, implementations.
+unicode = []

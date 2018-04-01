@@ -56,3 +56,33 @@ pub const SGA: [[u8; 8]; 26] = [
     [0x00, 0x00, 0x36, 0x36, 0x36, 0x36, 0x36, 0x00],
     [0x00, 0x00, 0x18, 0x3C, 0x66, 0x66, 0x66, 0x00],
 ];
+
+#[cfg(feature = "unicode")]
+pub const SGA_UNICODE: [(u16, [u8; 8]); 26] = [
+    (0xE541, SGA[0]),
+    (0xE542, SGA[1]),
+    (0xE543, SGA[2]),
+    (0xE544, SGA[3]),
+    (0xE545, SGA[4]),
+    (0xE546, SGA[5]),
+    (0xE547, SGA[6]),
+    (0xE548, SGA[7]),
+    (0xE549, SGA[8]),
+    (0xE54A, SGA[9]),
+    (0xE54B, SGA[10]),
+    (0xE54C, SGA[11]),
+    (0xE54D, SGA[12]),
+    (0xE54E, SGA[13]),
+    (0xE54F, SGA[14]),
+    (0xE550, SGA[15]),
+    (0xE551, SGA[16]),
+    (0xE552, SGA[17]),
+    (0xE553, SGA[18]),
+    (0xE554, SGA[19]),
+    (0xE555, SGA[20]),
+    (0xE556, SGA[21]),
+    (0xE557, SGA[22]),
+    (0xE558, SGA[23]),
+    (0xE559, SGA[24]),
+    (0xE55A, SGA[25]),
+];
