@@ -91,6 +91,54 @@ mod sga;
 
 #[cfg(feature = "unicode")]
 pub use self::basic::BASIC_UNICODE;
+pub mod utf16 {
+    //! `utf16` support for fonts.
+    pub use std::string::FromUtf16Error;
+
+    /// A single 8x8 font which supports `UTF-16` encoding/decoding.
+    #[derive(Clone, Copy, Debug, PartialEq)]
+    pub struct FontUtf16(pub u16, pub [u8; 8]);
+
+    impl FontUtf16 {
+        /// Return the utf16 value as `u16`.
+        pub fn utf16(&self) -> u16 {
+            self.0
+        }
+        /// Return the `[u8; 8]`-representation for this font.
+        pub fn byte_array(&self) -> [u8; 8] {
+            self.1
+        }
+        /// Return a result with the corresponding `String` for the font.
+        pub fn to_string(&self) -> String {
+            String::from_utf16(&[self.0]).unwrap()
+        }
+
+        /// Returns a `bool` indicating whether this font renders as a whitespace (all `0`).
+        pub fn is_whitespace(&self) -> bool {
+            self.1 == NOTHING_TO_DISPLAY
+        }
+    }
+
+    impl Into<u16> for FontUtf16 {
+        fn into(self) -> u16 {
+            self.0
+        }
+    }
+
+    impl Into<[u8; 8]> for FontUtf16 {
+        fn into(self) -> [u8; 8] {
+            self.1
+        }
+    }
+
+    /// A trait for collections of `FontUtf16`, which provide methods for retrieving
+    /// the `[u8; 8]` by key, using the corresponding Unicode value, encoded as UTF-16 (`u16`).
+    pub trait Utf16Fonts {
+        fn get(&self, key: u16) -> Option<[u8; 8]>;
+        fn get_font(&self, key: u16) -> Option<FontUtf16>;
+        fn print_set(&self);
+    }
+}
 
 use self::legacy::NOTHING_TO_DISPLAY;
 
@@ -118,3 +166,5 @@ pub use self::misc::MISC_UNICODE;
 #[cfg(feature = "unicode")]
 pub use self::sga::SGA_UNICODE;
 
+#[cfg(feature = "unicode")]
+pub use self::utf16::{FontUtf16, FromUtf16Error, Utf16Fonts};
