@@ -81,9 +81,11 @@ mod block;
 #[path = "box.rs"]
 mod box_chars;
 mod control;
-mod latin;
 mod greek;
 mod hiragana;
+mod latin;
+/// Re-export the original `[u8; 8]` constants, taken from C-header files.
+pub mod legacy;
 mod misc;
 mod sga;
 
