@@ -98,9 +98,9 @@ mod misc;
 mod sga;
 
 #[cfg(feature = "unicode")]
-pub use self::basic::BASIC_UNICODE;
 pub mod utf16 {
     //! `utf16` support for fonts.
+    pub use super::basic::{BASIC_UTF16, BasicFonts};
     pub use std::string::FromUtf16Error;
 
     /// A single 8x8 font which supports `UTF-16` encoding/decoding.

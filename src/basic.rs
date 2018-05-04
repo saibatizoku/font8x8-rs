@@ -1390,6 +1390,9 @@ pub const BASIC_UTF16: [FontUtf16; 128] = [
     FontUtf16(0x007F as u16, BASIC_LEGACY[127]),
 ];
 
+/// A wrapper type that implements `Utf16Fonts` for `BASIC_UTF16`.
+pub const BASIC_FONTS: BasicFonts = BasicFonts(BASIC_UTF16);
+
 /// Rust-enhanced wrapper for [BASIC_UTF16](./constant.BASIC_UTF16.html).
 pub struct BasicFonts([FontUtf16; 128]);
 
