@@ -35,10 +35,10 @@
 //! ```rust,norun
 //! extern crate font8x8;
 //!
-//! use font8x8::GREEK;
+//! use font8x8::GREEK_LEGACY;
 //!
 //! fn main() {
-//!     for x in &GREEK[0] {
+//!     for x in &GREEK_LEGACY[0] {
 //!         for bit in 0..8 {
 //!             match *x & 1 << bit {
 //!                 0 => print!(" "),
@@ -89,41 +89,32 @@ pub mod legacy;
 mod misc;
 mod sga;
 
-pub use self::basic::BASIC;
 #[cfg(feature = "unicode")]
 pub use self::basic::BASIC_UNICODE;
 
-pub use self::control::CONTROL;
+use self::legacy::NOTHING_TO_DISPLAY;
+
 #[cfg(feature = "unicode")]
 pub use self::control::CONTROL_UNICODE;
 
-pub use self::latin::LATIN;
 #[cfg(feature = "unicode")]
 pub use self::latin::LATIN_UNICODE;
 
-pub use self::greek::GREEK;
 #[cfg(feature = "unicode")]
 pub use self::greek::GREEK_UNICODE;
 
-pub use self::block::BLOCK;
 #[cfg(feature = "unicode")]
 pub use self::block::BLOCK_UNICODE;
 
-pub use self::box_chars::BOX;
 #[cfg(feature = "unicode")]
 pub use self::box_chars::BOX_UNICODE;
 
-pub use self::hiragana::HIRAGANA;
 #[cfg(feature = "unicode")]
 pub use self::hiragana::HIRAGANA_UNICODE;
 
-pub use self::misc::MISC;
 #[cfg(feature = "unicode")]
 pub use self::misc::MISC_UNICODE;
 
-pub use self::sga::SGA;
 #[cfg(feature = "unicode")]
 pub use self::sga::SGA_UNICODE;
 
-/// Indicates all zeros, meaning nothing to render.
-pub const NOTHING_TO_DISPLAY: [u8; 8] = [0x00; 8];

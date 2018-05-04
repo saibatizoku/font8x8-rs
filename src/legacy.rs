@@ -1,5 +1,7 @@
 //! Legacy constants.
-use NOTHING_TO_DISPLAY;
+
+/// Indicates all zeros, meaning nothing to render.
+pub const NOTHING_TO_DISPLAY: [u8; 8] = [0x00; 8];
 
 /// Legacy constants. Contains an 8x8 font map for unicode points `U+0000 - U+007F` (basic latin)
 ///
@@ -1266,4 +1268,3 @@ pub const BOX_LEGACY: [[u8; 8]; 128] = [
     [0x00, 0x00, 0x00, 0x0F, 0xFF, 0x00, 0x00, 0x00],
     [0x18, 0x18, 0x18, 0x18, 0x08, 0x08, 0x08, 0x08],
 ];
-
