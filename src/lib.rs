@@ -124,4 +124,4 @@ pub use self::sga::SGA;
 pub use self::sga::SGA_UNICODE;
 
 /// Indicates all zeros, meaning nothing to render.
-pub const NOTHING_TO_DISPLAY: [u8; 8] = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
+pub const NOTHING_TO_DISPLAY: [u8; 8] = [0x00; 8];
