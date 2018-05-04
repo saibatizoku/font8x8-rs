@@ -76,17 +76,25 @@
 //! [https://github.com/dhepper/font8x8](https://github.com/dhepper/font8x8).
 //!
 //! This crate is an extension of that work.
+#[cfg(feature = "unicode")]
 mod basic;
+#[cfg(feature = "unicode")]
 mod block;
+#[cfg(feature = "unicode")]
 #[path = "box.rs"]
 mod box_chars;
 mod control;
+#[cfg(feature = "unicode")]
 mod greek;
+#[cfg(feature = "unicode")]
 mod hiragana;
+#[cfg(feature = "unicode")]
 mod latin;
 /// Re-export the original `[u8; 8]` constants, taken from C-header files.
 pub mod legacy;
+#[cfg(feature = "unicode")]
 mod misc;
+#[cfg(feature = "unicode")]
 mod sga;
 
 #[cfg(feature = "unicode")]

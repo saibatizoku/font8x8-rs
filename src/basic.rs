@@ -1389,3 +1389,92 @@ pub const BASIC_UTF16: [FontUtf16; 128] = [
     FontUtf16(0x007E as u16, BASIC_LEGACY[126]),
     FontUtf16(0x007F as u16, BASIC_LEGACY[127]),
 ];
+
+/// Rust-enhanced wrapper for [BASIC_UTF16](./constant.BASIC_UTF16.html).
+pub struct BasicFonts([FontUtf16; 128]);
+
+impl fmt::Debug for BasicFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(BASIC_UTF16))
+    }
+}
+
+impl PartialEq for BasicFonts {
+    fn eq(&self, other: &BasicFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl BasicFonts {
+    /// Create a new collection of `BASIC_UTF16` fonts.
+    pub fn new() -> Self {
+        BasicFonts(BASIC_UTF16)
+    }
+}
+
+impl Default for BasicFonts {
+    fn default() -> Self {
+        BasicFonts::new()
+    }
+}
+
+impl Utf16Fonts for BasicFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn basic_set_implements_default_trait_with_method_new() {
+        let basic_set: BasicFonts = Default::default();
+        assert_eq!(basic_set, BasicFonts::new());
+    }
+}
