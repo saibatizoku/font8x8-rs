@@ -2,6 +2,7 @@
 use super::{legacy::HIRAGANA_LEGACY, FontUtf16, Utf16Fonts};
 use std::fmt;
 
+/// A constant `[FontUtf16; 96]`, for Hiragana fonts (`U+3040` - `U+309F`).
 pub const HIRAGANA_UTF16: [FontUtf16; 96] = [
     FontUtf16(0x3040 as u16, HIRAGANA_LEGACY[0]),
     FontUtf16(0x3041 as u16, HIRAGANA_LEGACY[1]),
@@ -101,105 +102,85 @@ pub const HIRAGANA_UTF16: [FontUtf16; 96] = [
     FontUtf16(0x309F as u16, HIRAGANA_LEGACY[95]),
 ];
 
-#[cfg(feature = "unicode")]
-pub const HIRAGANA_UNICODE: [(u16, [u8; 8]); 96] = [
-    (0x3040, HIRAGANA[0]),
-    (0x3041, HIRAGANA[1]),
-    (0x3042, HIRAGANA[2]),
-    (0x3043, HIRAGANA[3]),
-    (0x3044, HIRAGANA[4]),
-    (0x3045, HIRAGANA[5]),
-    (0x3046, HIRAGANA[6]),
-    (0x3047, HIRAGANA[7]),
-    (0x3048, HIRAGANA[8]),
-    (0x3049, HIRAGANA[9]),
-    (0x304A, HIRAGANA[10]),
-    (0x304B, HIRAGANA[11]),
-    (0x304C, HIRAGANA[12]),
-    (0x304D, HIRAGANA[13]),
-    (0x304E, HIRAGANA[14]),
-    (0x304F, HIRAGANA[15]),
-    (0x3050, HIRAGANA[16]),
-    (0x3051, HIRAGANA[17]),
-    (0x3052, HIRAGANA[18]),
-    (0x3053, HIRAGANA[19]),
-    (0x3054, HIRAGANA[20]),
-    (0x3055, HIRAGANA[21]),
-    (0x3056, HIRAGANA[22]),
-    (0x3057, HIRAGANA[23]),
-    (0x3058, HIRAGANA[24]),
-    (0x3059, HIRAGANA[25]),
-    (0x305A, HIRAGANA[26]),
-    (0x305B, HIRAGANA[27]),
-    (0x305C, HIRAGANA[28]),
-    (0x305D, HIRAGANA[29]),
-    (0x305E, HIRAGANA[30]),
-    (0x305F, HIRAGANA[31]),
-    (0x3060, HIRAGANA[32]),
-    (0x3061, HIRAGANA[33]),
-    (0x3062, HIRAGANA[34]),
-    (0x3063, HIRAGANA[35]),
-    (0x3064, HIRAGANA[36]),
-    (0x3065, HIRAGANA[37]),
-    (0x3066, HIRAGANA[38]),
-    (0x3067, HIRAGANA[39]),
-    (0x3068, HIRAGANA[40]),
-    (0x3069, HIRAGANA[41]),
-    (0x306A, HIRAGANA[42]),
-    (0x306B, HIRAGANA[43]),
-    (0x306C, HIRAGANA[44]),
-    (0x306D, HIRAGANA[45]),
-    (0x306E, HIRAGANA[46]),
-    (0x306F, HIRAGANA[47]),
-    (0x3070, HIRAGANA[48]),
-    (0x3071, HIRAGANA[49]),
-    (0x3072, HIRAGANA[50]),
-    (0x3073, HIRAGANA[51]),
-    (0x3074, HIRAGANA[52]),
-    (0x3075, HIRAGANA[53]),
-    (0x3076, HIRAGANA[54]),
-    (0x3077, HIRAGANA[55]),
-    (0x3078, HIRAGANA[56]),
-    (0x3079, HIRAGANA[57]),
-    (0x307A, HIRAGANA[58]),
-    (0x307B, HIRAGANA[59]),
-    (0x307C, HIRAGANA[60]),
-    (0x307D, HIRAGANA[61]),
-    (0x307E, HIRAGANA[62]),
-    (0x307F, HIRAGANA[63]),
-    (0x3080, HIRAGANA[64]),
-    (0x3081, HIRAGANA[65]),
-    (0x3082, HIRAGANA[66]),
-    (0x3083, HIRAGANA[67]),
-    (0x3084, HIRAGANA[68]),
-    (0x3085, HIRAGANA[69]),
-    (0x3086, HIRAGANA[70]),
-    (0x3087, HIRAGANA[71]),
-    (0x3088, HIRAGANA[72]),
-    (0x3089, HIRAGANA[73]),
-    (0x308A, HIRAGANA[74]),
-    (0x308B, HIRAGANA[75]),
-    (0x308C, HIRAGANA[76]),
-    (0x308D, HIRAGANA[77]),
-    (0x308E, HIRAGANA[78]),
-    (0x308F, HIRAGANA[79]),
-    (0x3090, HIRAGANA[80]),
-    (0x3091, HIRAGANA[81]),
-    (0x3092, HIRAGANA[82]),
-    (0x3093, HIRAGANA[83]),
-    (0x3094, HIRAGANA[84]),
-    (0x3095, HIRAGANA[85]),
-    (0x3096, HIRAGANA[86]),
-    (0x3097, HIRAGANA[87]),
-    (0x3098, HIRAGANA[88]),
-    (0x3099, HIRAGANA[89]),
-    (0x309A, HIRAGANA[90]),
-    (0x309B, HIRAGANA[91]),
-    (0x309C, HIRAGANA[92]),
-    (0x309D, HIRAGANA[93]),
-    (0x309E, HIRAGANA[94]),
-    (0x309F, HIRAGANA[95]),
-];
+/// A convenient constant for Hiragana fonts (`U+3040` - `U+309F`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const HIRAGANA_FONTS: HiraganaFonts = HiraganaFonts(HIRAGANA_UTF16);
+
+/// Strong-typed collection wrapper for [HIRAGANA_UTF16](./constant.HIRAGANA_UTF16.html).
+pub struct HiraganaFonts([FontUtf16; 96]);
+
+impl HiraganaFonts {
+    pub fn new() -> Self {
+        HiraganaFonts(HIRAGANA_UTF16)
+    }
+}
+
+impl fmt::Debug for HiraganaFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(HIRAGANA_UTF16))
+    }
+}
+
+impl PartialEq for HiraganaFonts {
+    fn eq(&self, other: &HiraganaFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for HiraganaFonts {
+    fn default() -> Self {
+        HiraganaFonts::new()
+    }
+}
+
+impl Utf16Fonts for HiraganaFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
