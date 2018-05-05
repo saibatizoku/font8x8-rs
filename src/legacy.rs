@@ -3,7 +3,7 @@
 /// Indicates all zeros, meaning nothing to render.
 pub const NOTHING_TO_DISPLAY: [u8; 8] = [0x00; 8];
 
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+0000 - U+007F` (basic latin)
+/// Contains raw-byte renderings for unicode points `U+0000` - `U+007F` (basic latin).
 ///
 /// * `U+0000` (nul)
 /// * `U+0001`
@@ -264,7 +264,7 @@ pub const BASIC_LEGACY: [[u8; 8]; 128] = [
     NOTHING_TO_DISPLAY,
 ];
 
-/// Legacy constants. C1/C2 Control. `U+0080 - U+009F`.
+/// Contains raw-byte renderings for unicode points `U+0080` - `U+009F` (C1/C2 Control).
 ///
 /// * `U+0080`
 /// * `U+0081`
@@ -333,8 +333,7 @@ pub const CONTROL_LEGACY: [[u8; 8]; 32] = [
     NOTHING_TO_DISPLAY,
 ];
 
-/// Extended Latin. `U+00A0 - U+00FF`
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+00A0 - U+00FF` (extended latin)
+/// Contains raw-byte renderings for unicode points `U+00A0` - `U+00FF` (Extended Latin).
 ///
 /// * `U+00A0` (no break space)
 /// * `U+00A1` (inverted !)
@@ -531,8 +530,7 @@ pub const LATIN_LEGACY: [[u8; 8]; 96] = [
     [0x00, 0x33, 0x00, 0x33, 0x33, 0x3E, 0x30, 0x1F],
 ];
 
-/// Greek Characters. `U+0390 - U+03C9`
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+0390 - U+03C9` (greek characters)
+/// Contains raw-byte renderings for unicode points `U+0390` - `U+03C9` (Greek).
 ///
 /// * `U+0390` (iota with tonos and diaeresis)
 /// * `U+0391` (Alpha)
@@ -653,8 +651,7 @@ pub const GREEK_LEGACY: [[u8; 8]; 58] = [
     [0x00, 0x00, 0x36, 0x63, 0x6B, 0x7F, 0x36, 0x00],
 ];
 
-///  Block Elements. `U+2580 - U+259F`
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+2580 - U+259F` (block elements)
+/// Contains raw-byte renderings for unicode points `U+2580` - `U+259F` (Block Elements).
 ///
 /// * `U+2580` (top half)
 /// * `U+2581` (box 1/8)
@@ -723,9 +720,8 @@ pub const BLOCK_LEGACY: [[u8; 8]; 32] = [
     [0xF0, 0xF0, 0xF0, 0xF0, 0xFF, 0xFF, 0xFF, 0xFF],
 ];
 
-/// A miscellanous set of characters.
-/// Legacy constants. A miscellanous set of characters: `U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
-/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`.
+/// Contains raw-byte renderings for unicode points: `U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
+/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3` (Miscellanous Elements).
 ///
 /// * `U+20A7` (Spanish Pesetas/Pt)
 /// * `U+0192` (latin small letter f with hook)
@@ -750,9 +746,8 @@ pub const MISC_LEGACY: [[u8; 8]; 10] = [
     [0x00, 0x07, 0x00, 0x33, 0x33, 0x3E, 0x30, 0x1F],
 ];
 
-/// Legacy constants. Special characters with private unicode points. `U+E541 - U+E55A`
-///
-/// Special characters with private unicode points. `U+E541 - U+E55A`
+/// Contains raw-byte renderings for unicode points `U+E541` - `U+E55A` (Special characters with
+/// private Unicode).
 ///
 /// * `U+E541` (SGA A)
 /// * `U+E542` (SGA B)
@@ -809,8 +804,7 @@ pub const SGA_LEGACY: [[u8; 8]; 26] = [
     [0x00, 0x00, 0x18, 0x3C, 0x66, 0x66, 0x66, 0x00],
 ];
 
-/// Hiragana. `U+3040 - U+309F`
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+3040 - U+309F` (Hiragana)
+/// Contains raw-byte renderings for unicode points `U+3040` - `U+309F` (Hiragana).
 ///
 /// * `U+3040`
 /// * `U+3041` (Hiragana a)
@@ -1007,8 +1001,7 @@ pub const HIRAGANA_LEGACY: [[u8; 8]; 96] = [
     NOTHING_TO_DISPLAY,
 ];
 
-///  Box Drawing. `U+2500 - U+257F`
-/// Legacy constants. Contains an 8x8 font map for unicode points `U+2500 - U+257F` (box drawing)
+/// Contains raw-byte renderings for unicode points `U+2500` - `U+257F` (Box Elements).
 ///
 /// * `U+2500` (thin horizontal)
 /// * `U+2501` (thick horizontal)
