@@ -1,8 +1,8 @@
-//!  Block Elements. `U+2580 - U+259F`
+//!  Block Elements. `U+2580` - `U+259F`
 use super::{legacy::BLOCK_LEGACY, FontUtf16, Utf16Fonts};
 use std::fmt;
 
-/// `BLOCK_UTF16` description and ASCII-art representation.
+/// A constant `[FontUtf16; 32]`, for Block Element fonts (`U+2580` - `U+259F`).
 ///
 /// ## `BLOCK_UTF16[0]`: `U+2580` `"▀"`
 ///
@@ -453,6 +453,87 @@ pub const BLOCK_UTF16: [FontUtf16; 32] = [
     FontUtf16(0x259E as u16, BLOCK_LEGACY[30]),
     FontUtf16(0x259F as u16, BLOCK_LEGACY[31]),
 ];
+
+/// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const BLOCK_FONTS: BlockFonts = BlockFonts(BLOCK_UTF16);
+
+/// Strong-typed collection wrapper for [BLOCK_UTF16](./constant.BLOCK_UTF16.html).
+pub struct BlockFonts([FontUtf16; 32]);
+
+impl BlockFonts {
+    /// Create a new collection of `BLOCK_UTF16` fonts.
+    pub fn new() -> Self {
+        BlockFonts(BLOCK_UTF16)
+    }
+}
+
+impl fmt::Debug for BlockFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(BLOCK_UTF16))
+    }
+}
+
+impl PartialEq for BlockFonts {
+    fn eq(&self, other: &BlockFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for BlockFonts {
+    fn default() -> Self {
+        BlockFonts::new()
+    }
+}
+
+impl Utf16Fonts for BlockFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
