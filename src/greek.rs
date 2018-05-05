@@ -2,9 +2,7 @@
 use super::{legacy::GREEK_LEGACY, FontUtf16, Utf16Fonts};
 use std::fmt;
 
-/// Constant array of `FontUtf16`, which map the items of `GREEK_LEGACY` with their associated
-/// utf16 value, encoded as `u16`. Please read [FontUtf16](./struct.FontUtf16.html) documentation
-/// for information about the methods and traits it implements.
+/// A constant `[FontUtf16; 128]`, for Greek fonts (`U+0390` - `U+03C9`).
 pub const GREEK_UTF16: [FontUtf16; 58] = [
     FontUtf16(0x0390 as u16, GREEK_LEGACY[0]),
     FontUtf16(0x0391 as u16, GREEK_LEGACY[1]),
@@ -65,6 +63,86 @@ pub const GREEK_UTF16: [FontUtf16; 58] = [
     FontUtf16(0x03C8 as u16, GREEK_LEGACY[56]),
     FontUtf16(0x03C9 as u16, GREEK_LEGACY[57]),
 ];
+
+/// A convenient constant for Greek fonts (`U+0390` - `U+03C9`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const GREEK_FONTS: GreekFonts = GreekFonts(GREEK_UTF16);
+
+/// Strong-typed collection wrapper for [GREEK_UTF16](./constant.GREEK_UTF16.html).
+pub struct GreekFonts([FontUtf16; 58]);
+
+impl GreekFonts {
+    pub fn new() -> Self {
+        GreekFonts(GREEK_UTF16)
+    }
+}
+
+impl fmt::Debug for GreekFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(GREEK_UTF16))
+    }
+}
+
+impl PartialEq for GreekFonts {
+    fn eq(&self, other: &GreekFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for GreekFonts {
+    fn default() -> Self {
+        GreekFonts::new()
+    }
+}
+
+impl Utf16Fonts for GreekFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
