@@ -14,25 +14,26 @@ Add this to your `Cargo.toml`:
 font8x8 = "0.1"
 ```
 
-Then you can use it with your crate:
+## Legacy constants
+You can use the constants provided in the legacy software.
 
 ```rust
 extern crate font8x8
 
-use font8x8::BASIC;    // U+0000 - U+007F
-use font8x8::CONTROL;  // U+0080 - U+009F
-use font8x8::LATIN;    // U+00A0 - U+00FF
+use font8x8::legacy::BASIC_LEGACY;    // U+0000 - U+007F
+use font8x8::legacy::CONTROL_LEGACY;  // U+0080 - U+009F
+use font8x8::legacy::LATIN_LEGACY;    // U+00A0 - U+00FF
 
-use font8x8::BOX;      // U+2500 - U+257F
-use font8x8::BLOCK;    // U+2580 - U+259F
-use font8x8::HIRAGANA; // U+3040 - U+309F
-use font8x8::GREEK;    // U+0390 - U+039C
+use font8x8::legacy::BOX_LEGACY;      // U+2500 - U+257F
+use font8x8::legacy::BLOCK_LEGACY;    // U+2580 - U+259F
+use font8x8::legacy::HIRAGANA_LEGACY; // U+3040 - U+309F
+use font8x8::legacy::GREEK_LEGACY;    // U+0390 - U+039C
 
-use font8x8::MISC;     // U+20A7, U+0192, U+00AA, U+00BA,
+use font8x8::legacy::MISC_LEGACY;     // U+20A7, U+0192, U+00AA, U+00BA,
                        // U+2310, U+2264, U+2265, U+0060,
                        // U+1EF2, U+1EF3
 
-use font8x8::SGA;      // U+E541 - U+E55A
+use font8x8::legacy::SGA_LEGACY;      // U+E541 - U+E55A
 
 ```
 
@@ -49,12 +50,12 @@ of the included characters. Better yet, dive into the source, it's pretty straig
 
 # Example
 
-## Decoding and printing to screen
+## Working directly with legacy constants
 Let's say we want to print out the first character belonging to the
 greek subset. In this case, it corresponds to the unicode `U+0390` described as `iota with
-tonos and diaeresis`, and we will retrieve it from the `GREEK` constant provided by our library.
+tonos and diaeresis`, and we will retrieve it from the `GREEK_LEGACY` constant provided by our library.
 
-Specifically, we will be working with `GREEK[0]`, which is an array of bytes with capacity for
+Specifically, we will be working with `GREEK_LEGACY[0]`, which is an array of bytes with capacity for
 eight separate bytes (`[u8; 8]`).
 
 Here's a program that will print the character to your terminal, by parsing each byte of the
@@ -63,10 +64,10 @@ array, inspecting it bit by bit, and printing an empty space `" "` for `0`, and 
 ```rust
 extern crate font8x8;
 
-use font8x8::GREEK;
+use font8x8::legacy::GREEK_LEGACY;
 
 fn main() {
-    for x in &GREEK[0] {
+    for x in &GREEK_LEGACY[0] {
         for bit in 0..8 {
             match *x & 1 << bit {
                 0 => print!(" "),
@@ -90,6 +91,33 @@ The generated output should mostly resemble this (it will depend on your termina
 ```
 
 and, it's meant to look like this: `ΐ`.
+
+
+## Working with fonts as UTF16
+
+We can also use UTF16-encoded text to render the font on stdout.
+
+This time, instead of using the index of the GREEK_LEGACY constant, we can use the trait method `Utf16Fonts::get` to retrieve the font rendering using the `u16` as key.
+
+```rust
+extern crate font8x8;
+
+use font8x8::{GREEK_FONTS, Utf16Fonts};
+
+fn main() {
+    if let Some(font_render) = GREEK_FONTS.get('ΐ' as u16) {
+        for x in &font_render {
+            for bit in 0..8 {
+                match *x & 1 << bit {
+                    0 => print!(" "),
+                    _ => print!("█"),
+                }
+            }
+            println!()
+        }
+    }
+}
+```
 
 Features
 ========

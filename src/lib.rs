@@ -21,18 +21,19 @@
 //!
 //! # Example
 //!
-//! ## Working directly with constants
+//! ## Working directly with legacy constants
+//!
 //! Let's say we want to print out the first character belonging to the
 //! greek subset. In this case, it corresponds to the unicode `U+0390` described as `iota with
-//! tonos and diaeresis`, and we will retrieve it from the `GREEK` constant provided by our library.
+//! tonos and diaeresis`, and we will retrieve it from the `GREEK_LEGACY` constant provided by our library.
 //!
-//! Specifically, we will be working with `GREEK[0]`, which is an array of bytes with capacity for
+//! Specifically, we will be working with `GREEK_LEGACY[0]`, which is an array of bytes with capacity for
 //! eight separate bytes (`[u8; 8]`).
 //!
 //! Here's a program that will print the character to your terminal, by parsing each byte of the
 //! array, inspecting it bit by bit, and printing an empty space `" "` for `0`, and `"█"` for `1`.
 //!
-//! ```rust,norun
+//! ```rust
 //! extern crate font8x8;
 //!
 //! use font8x8::legacy::GREEK_LEGACY;
@@ -62,6 +63,32 @@
 //! ```
 //!
 //! and, it's meant to look like this: `ΐ`.
+//!
+//! ## Working with fonts as UTF16
+//!
+//! We can also use UTF16-encoded text to render the font on stdout.
+//!
+//! This time, instead of using the index of the GREEK_LEGACY constant, we can use the trait method `Utf16Fonts::get` to retrieve the font rendering using the `u16` as key.
+//!
+//! ```rust
+//! extern crate font8x8;
+//!
+//! use font8x8::{GREEK_FONTS, Utf16Fonts};
+//!
+//! fn main() {
+//!     if let Some(font_render) = GREEK_FONTS.get('ΐ' as u16) {
+//!         for x in &font_render {
+//!             for bit in 0..8 {
+//!                 match *x & 1 << bit {
+//!                     0 => print!(" "),
+//!                     _ => print!("█"),
+//!                 }
+//!             }
+//!             println!()
+//!         }
+//!     }
+//! }
+//! ```
 //!
 //! # On the miscellanous characters included
 //! These characters are provided as-is, and some don't have a proper unicode point.
