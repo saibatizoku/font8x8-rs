@@ -2,7 +2,7 @@
 use super::{legacy::SGA_LEGACY, utf16::{FontUtf16, Utf16Fonts}};
 use std::fmt;
 
-/// `SGA_UTF16` description and ASCII-art representation.
+/// A constant `[FontUtf16; 26]`, for special SGA fonts (`U+E543` - `U+E55A`).
 ///
 /// ## `SGA_UTF16[0]`: `0xE541` `"\u{e541}"`
 ///
@@ -370,35 +370,87 @@ pub const SGA_UTF16: [FontUtf16; 26] = [
     FontUtf16(0xE55A as u16, SGA_LEGACY[25]),
 ];
 
-#[cfg(feature = "unicode")]
-pub const SGA_UNICODE: [(u16, [u8; 8]); 26] = [
-    (0xE541, SGA[0]),
-    (0xE542, SGA[1]),
-    (0xE543, SGA[2]),
-    (0xE544, SGA[3]),
-    (0xE545, SGA[4]),
-    (0xE546, SGA[5]),
-    (0xE547, SGA[6]),
-    (0xE548, SGA[7]),
-    (0xE549, SGA[8]),
-    (0xE54A, SGA[9]),
-    (0xE54B, SGA[10]),
-    (0xE54C, SGA[11]),
-    (0xE54D, SGA[12]),
-    (0xE54E, SGA[13]),
-    (0xE54F, SGA[14]),
-    (0xE550, SGA[15]),
-    (0xE551, SGA[16]),
-    (0xE552, SGA[17]),
-    (0xE553, SGA[18]),
-    (0xE554, SGA[19]),
-    (0xE555, SGA[20]),
-    (0xE556, SGA[21]),
-    (0xE557, SGA[22]),
-    (0xE558, SGA[23]),
-    (0xE559, SGA[24]),
-    (0xE55A, SGA[25]),
-];
+/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const SGA_FONTS: SgaFonts = SgaFonts(SGA_UTF16);
+
+/// Strong-typed collection wrapper for [SGA_UTF16](./constant.SGA_UTF16.html).
+pub struct SgaFonts([FontUtf16; 26]);
+
+impl SgaFonts {
+    pub fn new() -> Self {
+        SgaFonts(SGA_UTF16)
+    }
+}
+
+impl fmt::Debug for SgaFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(SGA_UTF16))
+    }
+}
+
+impl PartialEq for SgaFonts {
+    fn eq(&self, other: &SgaFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for SgaFonts {
+    fn default() -> Self {
+        SgaFonts::new()
+    }
+}
+
+impl Utf16Fonts for SgaFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            print_set(idx, &font);
+        }
+    }
+}
+fn print_set(idx: usize, font: &FontUtf16) {
+    if font.is_whitespace() {
+        println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+        return;
+    }
+    println!(
+        "## `[{:?}]`: `0x{:04X}` `{:?}`",
+        idx,
+        font.utf16(),
+        font.to_string()
+    );
+    println!();
+    println!("```text");
+    for x in &font.byte_array() {
+        for bit in 0..8 {
+            match *x & 1 << bit {
+                0 => print!("░"),
+                _ => print!("█"),
+            }
+        }
+        println!();
+    }
+    println!("```");
+    println!();
+}
 
 #[cfg(test)]
 mod tests {
