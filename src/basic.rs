@@ -1,43 +1,43 @@
-//! Basic Latin. `U+0000 - U+007F`
+//! Basic Latin. `U+0000` - `U+007F`
 use super::{FontUtf16, Utf16Fonts, legacy::BASIC_LEGACY};
 
 use std::fmt;
 
-/// `BASIC_UTF16` description and ASCII-art representation.
+/// A constant `[FontUtf16; 128]`, for Basic Latin fonts (`U+0000` - `U+007F`).
 ///
-/// ##   0: 0x0000 " "
-/// ##   1: 0x0001 " "
-/// ##   2: 0x0002 " "
-/// ##   3: 0x0003 " "
-/// ##   4: 0x0004 " "
-/// ##   5: 0x0005 " "
-/// ##   6: 0x0006 " "
-/// ##   7: 0x0007 " "
-/// ##   8: 0x0008 " "
-/// ##   9: 0x0009 " "
-/// ##  10: 0x000A " "
-/// ##  11: 0x000B " "
-/// ##  12: 0x000C " "
-/// ##  13: 0x000D " "
-/// ##  14: 0x000E " "
-/// ##  15: 0x000F " "
-/// ##  16: 0x0010 " "
-/// ##  17: 0x0011 " "
-/// ##  18: 0x0012 " "
-/// ##  19: 0x0013 " "
-/// ##  20: 0x0014 " "
-/// ##  21: 0x0015 " "
-/// ##  22: 0x0016 " "
-/// ##  23: 0x0017 " "
-/// ##  24: 0x0018 " "
-/// ##  25: 0x0019 " "
-/// ##  26: 0x001A " "
-/// ##  27: 0x001B " "
-/// ##  28: 0x001C " "
-/// ##  29: 0x001D " "
-/// ##  30: 0x001E " "
-/// ##  31: 0x001F " "
-/// ##  32: 0x0020 " "
+/// ## `BASIC_UTF16[0]`: `U+0000` " "
+/// ## `BASIC_UTF16[1]`: `U+0001` " "
+/// ## `BASIC_UTF16[2]`: `U+0002` " "
+/// ## `BASIC_UTF16[3]`: `U+0003` " "
+/// ## `BASIC_UTF16[4]`: `U+0004` " "
+/// ## `BASIC_UTF16[5]`: `U+0005` " "
+/// ## `BASIC_UTF16[6]`: `U+0006` " "
+/// ## `BASIC_UTF16[7]`: `U+0007` " "
+/// ## `BASIC_UTF16[8]`: `U+0008` " "
+/// ## `BASIC_UTF16[9]`: `U+0009` " "
+/// ## `BASIC_UTF16[10]`: `U+000A` " "
+/// ## `BASIC_UTF16[11]`: `U+000B` " "
+/// ## `BASIC_UTF16[12]`: `U+000C` " "
+/// ## `BASIC_UTF16[13]`: `U+000D` " "
+/// ## `BASIC_UTF16[14]`: `U+000E` " "
+/// ## `BASIC_UTF16[15]`: `U+000F` " "
+/// ## `BASIC_UTF16[16]`: `U+0010` " "
+/// ## `BASIC_UTF16[17]`: `U+0011` " "
+/// ## `BASIC_UTF16[18]`: `U+0012` " "
+/// ## `BASIC_UTF16[19]`: `U+0013` " "
+/// ## `BASIC_UTF16[20]`: `U+0014` " "
+/// ## `BASIC_UTF16[21]`: `U+0015` " "
+/// ## `BASIC_UTF16[22]`: `U+0016` " "
+/// ## `BASIC_UTF16[23]`: `U+0017` " "
+/// ## `BASIC_UTF16[24]`: `U+0018` " "
+/// ## `BASIC_UTF16[25]`: `U+0019` " "
+/// ## `BASIC_UTF16[26]`: `U+001A` " "
+/// ## `BASIC_UTF16[27]`: `U+001B` " "
+/// ## `BASIC_UTF16[28]`: `U+001C` " "
+/// ## `BASIC_UTF16[29]`: `U+001D` " "
+/// ## `BASIC_UTF16[30]`: `U+001E` " "
+/// ## `BASIC_UTF16[31]`: `U+001F` " "
+/// ## `BASIC_UTF16[32]`: `U+0020` " "
 /// ## `BASIC_UTF16[33]`: `U+0021` `"!"`
 ///
 /// ```text
@@ -1390,10 +1390,10 @@ pub const BASIC_UTF16: [FontUtf16; 128] = [
     FontUtf16(0x007F as u16, BASIC_LEGACY[127]),
 ];
 
-/// A wrapper type that implements `Utf16Fonts` for `BASIC_UTF16`.
+/// A convenient constant for Basic Latin fonts (`U+0000` - `U+007F`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
 pub const BASIC_FONTS: BasicFonts = BasicFonts(BASIC_UTF16);
 
-/// Rust-enhanced wrapper for [BASIC_UTF16](./constant.BASIC_UTF16.html).
+/// Strong-typed collection wrapper for [BASIC_UTF16](./constant.BASIC_UTF16.html).
 pub struct BasicFonts([FontUtf16; 128]);
 
 impl fmt::Debug for BasicFonts {
