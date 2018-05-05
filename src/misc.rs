@@ -2,6 +2,8 @@
 use super::{legacy::MISC_LEGACY, FontUtf16, Utf16Fonts};
 use std::fmt;
 
+/// A constant `[FontUtf16; 10]`, for  Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`,
+/// `U+00BA`, `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`).
 pub const MISC_UTF16: [FontUtf16; 10] = [
     FontUtf16(0x20A7 as u16, MISC_LEGACY[0]),
     FontUtf16(0x0192 as u16, MISC_LEGACY[1]),
@@ -15,19 +17,86 @@ pub const MISC_UTF16: [FontUtf16; 10] = [
     FontUtf16(0x1EF3 as u16, MISC_LEGACY[9]),
 ];
 
-#[cfg(feature = "unicode")]
-pub const MISC_UNICODE: [(u16, [u8; 8]); 10] = [
-    (0x20A7, MISC[0]),
-    (0x0192, MISC[1]),
-    (0x00AA, MISC[2]),
-    (0x00BA, MISC[3]),
-    (0x2310, MISC[4]),
-    (0x2264, MISC[5]),
-    (0x2265, MISC[6]),
-    (0x0060, MISC[7]),
-    (0x1EF2, MISC[8]),
-    (0x1EF3, MISC[9]),
-];
+/// A convenient constant for Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
+/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const MISC_FONTS: MiscFonts = MiscFonts(MISC_UTF16);
+
+/// Strong-typed collection wrapper for [MISC_UTF16](./constant.MISC_UTF16.html).
+pub struct MiscFonts([FontUtf16; 10]);
+
+impl MiscFonts {
+    pub fn new() -> Self {
+        MiscFonts(MISC_UTF16)
+    }
+}
+
+impl fmt::Debug for MiscFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(MISC_UTF16))
+    }
+}
+
+impl PartialEq for MiscFonts {
+    fn eq(&self, other: &MiscFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for MiscFonts {
+    fn default() -> Self {
+        MiscFonts::new()
+    }
+}
+
+impl Utf16Fonts for MiscFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
