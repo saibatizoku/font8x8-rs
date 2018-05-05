@@ -2,7 +2,7 @@
 use super::{legacy::BOX_LEGACY, FontUtf16, Utf16Fonts};
 use std::fmt;
 
-/// `BOX_UTF16` description and ASCII-art representation.
+/// A constant `[FontUtf16; 128]`, for Box Element fonts (`U+2500` - `U+257F`).
 ///
 /// ## `BOX_UTF16[0]`: `U+2500` `"─"`
 ///
@@ -1797,6 +1797,86 @@ pub const BOX_UTF16: [FontUtf16; 128] = [
     FontUtf16(0x257E as u16, BOX_LEGACY[126]),
     FontUtf16(0x257F as u16, BOX_LEGACY[127]),
 ];
+
+/// A convenient constant for Box Element fonts (`U+2500` - `U+257F`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const BOX_FONTS: BoxFonts = BoxFonts(BOX_UTF16);
+
+/// Strong-typed collection wrapper for [BOX_UTF16](./constant.BOX_UTF16.html).
+pub struct BoxFonts([FontUtf16; 128]);
+
+impl BoxFonts {
+    pub fn new() -> Self {
+        BoxFonts(BOX_UTF16)
+    }
+}
+
+impl fmt::Debug for BoxFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(BOX_UTF16))
+    }
+}
+
+impl PartialEq for BoxFonts {
+    fn eq(&self, other: &BoxFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for BoxFonts {
+    fn default() -> Self {
+        BoxFonts::new()
+    }
+}
+
+impl Utf16Fonts for BoxFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
