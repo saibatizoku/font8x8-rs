@@ -35,7 +35,7 @@
 //! ```rust,norun
 //! extern crate font8x8;
 //!
-//! use font8x8::GREEK_LEGACY;
+//! use font8x8::legacy::GREEK_LEGACY;
 //!
 //! fn main() {
 //!     for x in &GREEK_LEGACY[0] {
@@ -83,7 +83,6 @@ mod block;
 #[cfg(feature = "unicode")]
 #[path = "box.rs"]
 mod box_chars;
-mod control;
 #[cfg(feature = "unicode")]
 mod greek;
 #[cfg(feature = "unicode")]
@@ -100,7 +99,15 @@ mod sga;
 #[cfg(feature = "unicode")]
 pub mod utf16 {
     //! `utf16` support for fonts.
+    use super::legacy::NOTHING_TO_DISPLAY;
     pub use super::basic::{BASIC_UTF16, BasicFonts};
+    pub use super::block::{BLOCK_UTF16, BlockFonts};
+    pub use super::box_chars::{BOX_UTF16, BoxFonts};
+    pub use super::greek::{GREEK_UTF16, GreekFonts};
+    pub use super::hiragana::{HIRAGANA_UTF16, HiraganaFonts};
+    pub use super::latin::{LATIN_UTF16, LatinFonts};
+    pub use super::misc::{MISC_UTF16, MiscFonts};
+    pub use super::sga::{SGA_UTF16, SgaFonts};
     pub use std::string::FromUtf16Error;
 
     /// A single 8x8 font which supports `UTF-16` encoding/decoding.
@@ -148,31 +155,29 @@ pub mod utf16 {
     }
 }
 
-use self::legacy::NOTHING_TO_DISPLAY;
+#[cfg(feature = "unicode")]
+pub use self::basic::BASIC_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::control::CONTROL_UNICODE;
+pub use self::latin::LATIN_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::latin::LATIN_UNICODE;
+pub use self::greek::GREEK_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::greek::GREEK_UNICODE;
+pub use self::block::BLOCK_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::block::BLOCK_UNICODE;
+pub use self::box_chars::BOX_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::box_chars::BOX_UNICODE;
+pub use self::hiragana::HIRAGANA_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::hiragana::HIRAGANA_UNICODE;
+pub use self::misc::MISC_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::misc::MISC_UNICODE;
-
-#[cfg(feature = "unicode")]
-pub use self::sga::SGA_UNICODE;
+pub use self::sga::SGA_FONTS;
 
 #[cfg(feature = "unicode")]
 pub use self::utf16::{FontUtf16, FromUtf16Error, Utf16Fonts};
