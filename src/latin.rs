@@ -2,7 +2,7 @@
 use super::{legacy::LATIN_LEGACY, utf16::{FontUtf16, Utf16Fonts}};
 use std::fmt;
 
-/// `LATIN_UTF16` description and ASCII-art representation.
+/// A constant `[FontUtf16; 96]`, for Extended Latin fonts (`U+00A0` - `U+00FF`).
 ///
 /// ##   0: 0x00A0 " "
 /// ## `LATIN_UTF16[1]`: `0x00A1` `"¡"`
@@ -1326,105 +1326,85 @@ pub const LATIN_UTF16: [FontUtf16; 96] = [
     FontUtf16(0x00FF as u16, LATIN_LEGACY[95]),
 ];
 
-#[cfg(feature = "unicode")]
-pub const LATIN_UNICODE: [(u16, [u8; 8]); 96] = [
-    (0x00A0, LATIN[0]),
-    (0x00A1, LATIN[1]),
-    (0x00A2, LATIN[2]),
-    (0x00A3, LATIN[3]),
-    (0x00A4, LATIN[4]),
-    (0x00A5, LATIN[5]),
-    (0x00A6, LATIN[6]),
-    (0x00A7, LATIN[7]),
-    (0x00A8, LATIN[8]),
-    (0x00A9, LATIN[9]),
-    (0x00AA, LATIN[10]),
-    (0x00AB, LATIN[11]),
-    (0x00AC, LATIN[12]),
-    (0x00AD, LATIN[13]),
-    (0x00AE, LATIN[14]),
-    (0x00AF, LATIN[15]),
-    (0x00B0, LATIN[16]),
-    (0x00B1, LATIN[17]),
-    (0x00B2, LATIN[18]),
-    (0x00B2, LATIN[19]),
-    (0x00B2, LATIN[20]),
-    (0x00B5, LATIN[21]),
-    (0x00B6, LATIN[22]),
-    (0x00B7, LATIN[23]),
-    (0x00B8, LATIN[24]),
-    (0x00B9, LATIN[25]),
-    (0x00BA, LATIN[26]),
-    (0x00BB, LATIN[27]),
-    (0x00BC, LATIN[28]),
-    (0x00BD, LATIN[29]),
-    (0x00BE, LATIN[30]),
-    (0x00BF, LATIN[31]),
-    (0x00C0, LATIN[32]),
-    (0x00C1, LATIN[33]),
-    (0x00C2, LATIN[34]),
-    (0x00C3, LATIN[35]),
-    (0x00C4, LATIN[36]),
-    (0x00C5, LATIN[37]),
-    (0x00C6, LATIN[38]),
-    (0x00C7, LATIN[39]),
-    (0x00C8, LATIN[40]),
-    (0x00C9, LATIN[41]),
-    (0x00CA, LATIN[42]),
-    (0x00CB, LATIN[43]),
-    (0x00CC, LATIN[44]),
-    (0x00CD, LATIN[45]),
-    (0x00CE, LATIN[46]),
-    (0x00CF, LATIN[47]),
-    (0x00D0, LATIN[48]),
-    (0x00D1, LATIN[49]),
-    (0x00D2, LATIN[50]),
-    (0x00D3, LATIN[51]),
-    (0x00D4, LATIN[52]),
-    (0x00D5, LATIN[53]),
-    (0x00D6, LATIN[54]),
-    (0x00D7, LATIN[55]),
-    (0x00D8, LATIN[56]),
-    (0x00D9, LATIN[57]),
-    (0x00DA, LATIN[58]),
-    (0x00DB, LATIN[59]),
-    (0x00DC, LATIN[60]),
-    (0x00DD, LATIN[61]),
-    (0x00DE, LATIN[62]),
-    (0x00DF, LATIN[63]),
-    (0x00E0, LATIN[64]),
-    (0x00E1, LATIN[65]),
-    (0x00E2, LATIN[66]),
-    (0x00E3, LATIN[67]),
-    (0x00E4, LATIN[68]),
-    (0x00E5, LATIN[69]),
-    (0x00E6, LATIN[70]),
-    (0x00E7, LATIN[71]),
-    (0x00E8, LATIN[72]),
-    (0x00E9, LATIN[73]),
-    (0x00EA, LATIN[74]),
-    (0x00EB, LATIN[75]),
-    (0x00EC, LATIN[76]),
-    (0x00ED, LATIN[77]),
-    (0x00EE, LATIN[78]),
-    (0x00EF, LATIN[79]),
-    (0x00F0, LATIN[80]),
-    (0x00F1, LATIN[81]),
-    (0x00F2, LATIN[82]),
-    (0x00F3, LATIN[83]),
-    (0x00F4, LATIN[84]),
-    (0x00F5, LATIN[85]),
-    (0x00F6, LATIN[86]),
-    (0x00F7, LATIN[87]),
-    (0x00F8, LATIN[88]),
-    (0x00F9, LATIN[89]),
-    (0x00FA, LATIN[90]),
-    (0x00FB, LATIN[91]),
-    (0x00FC, LATIN[92]),
-    (0x00FD, LATIN[93]),
-    (0x00FE, LATIN[94]),
-    (0x00FF, LATIN[95]),
-];
+/// A convenient constant for Extended Latin fonts (`U+00A0` - `U+00FF`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
+pub const LATIN_FONTS: LatinFonts = LatinFonts(LATIN_UTF16);
+
+/// Strong-typed collection wrapper for [LATIN_UTF16](./constant.LATIN_UTF16.html).
+pub struct LatinFonts([FontUtf16; 96]);
+
+impl LatinFonts {
+    pub fn new() -> Self {
+        LatinFonts(LATIN_UTF16)
+    }
+}
+
+impl fmt::Debug for LatinFonts {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", stringify!(LATIN_UTF16))
+    }
+}
+
+impl PartialEq for LatinFonts {
+    fn eq(&self, other: &LatinFonts) -> bool {
+        self.0
+            .iter()
+            .zip(other.0.iter())
+            .fold(true, |eq, (a, b)| eq && a == b)
+    }
+}
+
+impl Default for LatinFonts {
+    fn default() -> Self {
+        LatinFonts::new()
+    }
+}
+
+impl Utf16Fonts for LatinFonts {
+    fn get(&self, key: u16) -> Option<[u8; 8]> {
+        match self.get_font(key) {
+            Some(font) => Some(font.into()),
+            None => None,
+        }
+    }
+
+    fn get_font(&self, key: u16) -> Option<FontUtf16> {
+        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+            Ok(idx) => Some(self.0[idx]),
+            _ => None,
+        }
+    }
+
+    fn print_set(&self) {
+        println!();
+        println!("# `{:?}`", self);
+        for (idx, font) in self.0.iter().enumerate() {
+            if font.is_whitespace() {
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                continue;
+            }
+            println!(
+                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
+                self,
+                idx,
+                font.utf16(),
+                font.to_string()
+            );
+            println!();
+            println!("```text");
+            for x in &font.byte_array() {
+                for bit in 0..8 {
+                    match *x & 1 << bit {
+                        0 => print!("░"),
+                        _ => print!("█"),
+                    }
+                }
+                println!();
+            }
+            println!("```");
+            println!();
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
