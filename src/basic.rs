@@ -1480,4 +1480,18 @@ mod tests {
         let basic_set: BasicFonts = Default::default();
         assert_eq!(basic_set, BasicFonts::new());
     }
+
+    #[test]
+    fn basic_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(BASIC_FONTS, BasicFonts::new());
+    }
+
+    #[test]
+    fn basic_fonts_constant_wraps_basic_utf16_constant() {
+        let basic = BasicFonts::new();
+        assert!(basic.0.len() == BASIC_UTF16.len());
+        for (idx, font) in basic.0.iter().enumerate() {
+            assert_eq!(font, &BASIC_UTF16[idx]);
+        }
+    }
 }
