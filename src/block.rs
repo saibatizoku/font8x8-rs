@@ -453,3 +453,28 @@ pub const BLOCK_UTF16: [FontUtf16; 32] = [
     FontUtf16(0x259E as u16, BLOCK_LEGACY[30]),
     FontUtf16(0x259F as u16, BLOCK_LEGACY[31]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn block_set_implements_default_trait_with_method_new() {
+        let block_set: BlockFonts = Default::default();
+        assert_eq!(block_set, BlockFonts::new());
+    }
+
+    #[test]
+    fn block_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(BLOCK_FONTS, BlockFonts::new());
+    }
+
+    #[test]
+    fn block_fonts_constant_wraps_basic_utf16_constant() {
+        let block = BlockFonts::new();
+        assert!(block.0.len() == BLOCK_UTF16.len());
+        for (idx, font) in block.0.iter().enumerate() {
+            assert_eq!(font, &BLOCK_UTF16[idx]);
+        }
+    }
+}

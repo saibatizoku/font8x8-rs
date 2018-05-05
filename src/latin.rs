@@ -1425,3 +1425,28 @@ pub const LATIN_UNICODE: [(u16, [u8; 8]); 96] = [
     (0x00FE, LATIN[94]),
     (0x00FF, LATIN[95]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn latin_set_implements_default_trait_with_method_new() {
+        let latin_set: LatinFonts = Default::default();
+        assert_eq!(latin_set, LatinFonts::new());
+    }
+
+    #[test]
+    fn latin_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(LATIN_FONTS, LatinFonts::new());
+    }
+
+    #[test]
+    fn latin_fonts_constant_wraps_basic_utf16_constant() {
+        let latin = LatinFonts::new();
+        assert!(latin.0.len() == LATIN_UTF16.len());
+        for (idx, font) in latin.0.iter().enumerate() {
+            assert_eq!(font, &LATIN_UTF16[idx]);
+        }
+    }
+}

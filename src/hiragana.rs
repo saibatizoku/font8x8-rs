@@ -200,3 +200,28 @@ pub const HIRAGANA_UNICODE: [(u16, [u8; 8]); 96] = [
     (0x309E, HIRAGANA[94]),
     (0x309F, HIRAGANA[95]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn hiragana_set_implements_default_trait_with_method_new() {
+        let hiragana_set: HiraganaFonts = Default::default();
+        assert_eq!(hiragana_set, HiraganaFonts::new());
+    }
+
+    #[test]
+    fn hiragana_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(HIRAGANA_FONTS, HiraganaFonts::new());
+    }
+
+    #[test]
+    fn hiragana_fonts_constant_wraps_basic_utf16_constant() {
+        let hiragana = HiraganaFonts::new();
+        assert!(hiragana.0.len() == HIRAGANA_UTF16.len());
+        for (idx, font) in hiragana.0.iter().enumerate() {
+            assert_eq!(font, &HIRAGANA_UTF16[idx]);
+        }
+    }
+}

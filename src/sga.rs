@@ -399,3 +399,28 @@ pub const SGA_UNICODE: [(u16, [u8; 8]); 26] = [
     (0xE559, SGA[24]),
     (0xE55A, SGA[25]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn sga_set_implements_default_trait_with_method_new() {
+        let sga_set: SgaFonts = Default::default();
+        assert_eq!(sga_set, SgaFonts::new());
+    }
+
+    #[test]
+    fn sga_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(SGA_FONTS, SgaFonts::new());
+    }
+
+    #[test]
+    fn sga_fonts_constant_wraps_basic_utf16_constant() {
+        let sga = SgaFonts::new();
+        assert!(sga.0.len() == SGA_UTF16.len());
+        for (idx, font) in sga.0.iter().enumerate() {
+            assert_eq!(font, &SGA_UTF16[idx]);
+        }
+    }
+}

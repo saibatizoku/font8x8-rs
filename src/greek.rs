@@ -65,3 +65,28 @@ pub const GREEK_UTF16: [FontUtf16; 58] = [
     FontUtf16(0x03C8 as u16, GREEK_LEGACY[56]),
     FontUtf16(0x03C9 as u16, GREEK_LEGACY[57]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn greek_set_implements_default_trait_with_method_new() {
+        let greek_set: GreekFonts = Default::default();
+        assert_eq!(greek_set, GreekFonts::new());
+    }
+
+    #[test]
+    fn greek_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(GREEK_FONTS, GreekFonts::new());
+    }
+
+    #[test]
+    fn greek_fonts_constant_wraps_basic_utf16_constant() {
+        let greek = GreekFonts::new();
+        assert!(greek.0.len() == GREEK_UTF16.len());
+        for (idx, font) in greek.0.iter().enumerate() {
+            assert_eq!(font, &GREEK_UTF16[idx]);
+        }
+    }
+}

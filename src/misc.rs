@@ -28,3 +28,28 @@ pub const MISC_UNICODE: [(u16, [u8; 8]); 10] = [
     (0x1EF2, MISC[8]),
     (0x1EF3, MISC[9]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn misc_set_implements_default_trait_with_method_new() {
+        let misc_set: MiscFonts = Default::default();
+        assert_eq!(misc_set, MiscFonts::new());
+    }
+
+    #[test]
+    fn misc_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(MISC_FONTS, MiscFonts::new());
+    }
+
+    #[test]
+    fn misc_fonts_constant_wraps_basic_utf16_constant() {
+        let misc = MiscFonts::new();
+        assert!(misc.0.len() == MISC_UTF16.len());
+        for (idx, font) in misc.0.iter().enumerate() {
+            assert_eq!(font, &MISC_UTF16[idx]);
+        }
+    }
+}

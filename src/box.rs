@@ -1797,3 +1797,28 @@ pub const BOX_UTF16: [FontUtf16; 128] = [
     FontUtf16(0x257E as u16, BOX_LEGACY[126]),
     FontUtf16(0x257F as u16, BOX_LEGACY[127]),
 ];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn box_set_implements_default_trait_with_method_new() {
+        let box_set: BoxFonts = Default::default();
+        assert_eq!(box_set, BoxFonts::new());
+    }
+
+    #[test]
+    fn box_fonts_constant_is_equal_to_a_new_instance() {
+        assert_eq!(BOX_FONTS, BoxFonts::new());
+    }
+
+    #[test]
+    fn box_fonts_constant_wraps_basic_utf16_constant() {
+        let box_font = BoxFonts::new();
+        assert!(box_font.0.len() == BOX_UTF16.len());
+        for (idx, font) in box_font.0.iter().enumerate() {
+            assert_eq!(font, &BOX_UTF16[idx]);
+        }
+    }
+}
