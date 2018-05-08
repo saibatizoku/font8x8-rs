@@ -180,6 +180,17 @@ pub mod utf16 {
         fn get_font(&self, key: u16) -> Option<FontUtf16>;
         fn print_set(&self);
     }
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        #[test]
+        fn font_utf16_converts_into_inner_tuple() {
+            let my_font = FontUtf16('Á' as u16, [110u8; 8]);
+            assert_eq!(my_font.into_inner(), ('Á' as u16, [110u8; 8]));
+        }
+    }
 }
 
 #[cfg(feature = "unicode")]
