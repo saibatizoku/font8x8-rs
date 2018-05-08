@@ -202,6 +202,39 @@ pub mod utf16 {
         #[test]
         fn font_utf16_converts_into_inner_tuple() {
             let my_font = FontUtf16('Á' as u16, [110u8; 8]);
+            let font_tuple: (u16, [u8; 8]) = my_font.into();
+            assert_eq!(font_tuple, ('Á' as u16, [110u8; 8]));
+        }
+
+        #[test]
+        fn font_utf16_api_method_utf16_returns_u16() {
+            let my_font = FontUtf16('ñ' as u16, [0x20; 8]);
+            assert_eq!(my_font.utf16(), 'ñ' as u16);
+        }
+
+        #[test]
+        fn font_utf16_api_method_byte_array_returns_array_with_8_bytes() {
+            let my_font = FontUtf16('Ñ' as u16, [0x20; 8]);
+            assert_eq!(my_font.byte_array(), [0x20; 8]);
+        }
+
+        #[test]
+        fn font_utf16_api_method_to_string_returns_string_from_utf16() {
+            let my_font = FontUtf16('Ñ' as u16, [0x20; 8]);
+            assert_eq!(my_font.to_string(), "Ñ".to_string());
+        }
+
+        #[test]
+        fn font_utf16_api_method_is_whitespace_returns_bool() {
+            let my_font = FontUtf16('Ñ' as u16, [0x20; 8]);
+            assert_eq!(my_font.is_whitespace(), false);
+            let my_font = FontUtf16('Ñ' as u16, NOTHING_TO_DISPLAY);
+            assert!(my_font.is_whitespace());
+        }
+
+        #[test]
+        fn font_utf16_api_method_into_inner_returns_inner_tuple() {
+            let my_font = FontUtf16('Á' as u16, [110u8; 8]);
             assert_eq!(my_font.into_inner(), ('Á' as u16, [110u8; 8]));
         }
     }
