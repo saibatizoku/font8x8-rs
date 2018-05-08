@@ -159,6 +159,11 @@ pub mod utf16 {
         pub fn is_whitespace(&self) -> bool {
             self.1 == NOTHING_TO_DISPLAY
         }
+
+        /// Consumes the current `FontUtf16` and returns the inner `(u16, [u8; 8])` tuple.
+        pub fn into_inner(self) -> (u16, [u8; 8]) {
+            self.into()
+        }
     }
 
     impl Into<u16> for FontUtf16 {
@@ -170,6 +175,12 @@ pub mod utf16 {
     impl Into<[u8; 8]> for FontUtf16 {
         fn into(self) -> [u8; 8] {
             self.1
+        }
+    }
+
+    impl Into<(u16, [u8; 8])> for FontUtf16 {
+        fn into(self) -> (u16, [u8; 8]) {
+            (self.0, self.1)
         }
     }
 
