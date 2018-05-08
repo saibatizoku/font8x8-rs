@@ -186,6 +186,20 @@ pub mod utf16 {
         use super::*;
 
         #[test]
+        fn font_utf16_converts_into_u16() {
+            let my_font = FontUtf16('á' as u16, [110u8; 8]);
+            let utf16: u16 = my_font.into();
+            assert_eq!(utf16, 'á' as u16);
+        }
+
+        #[test]
+        fn font_utf16_converts_into_byte_array() {
+            let my_font = FontUtf16('C' as u16, NOTHING_TO_DISPLAY);
+            let byte_array: [u8; 8] = my_font.into();
+            assert_eq!(byte_array, NOTHING_TO_DISPLAY);
+        }
+
+        #[test]
         fn font_utf16_converts_into_inner_tuple() {
             let my_font = FontUtf16('Á' as u16, [110u8; 8]);
             assert_eq!(my_font.into_inner(), ('Á' as u16, [110u8; 8]));
