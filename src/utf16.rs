@@ -63,6 +63,7 @@ pub trait Utf16Fonts {
     fn get(&self, key: u16) -> Option<[u8; 8]>;
     fn get_font(&self, key: u16) -> Option<FontUtf16>;
     fn print_set(&self);
+    fn to_vec(&self) -> Vec<(u16, FontUtf16)>;
 }
 
 #[cfg(test)]

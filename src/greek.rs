@@ -142,6 +142,13 @@ impl Utf16Fonts for GreekFonts {
             println!();
         }
     }
+
+    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+        self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
+            v.push((font.utf16(), *font));
+            v
+        })
+    }
 }
 
 #[cfg(test)]

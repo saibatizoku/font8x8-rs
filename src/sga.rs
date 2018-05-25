@@ -425,6 +425,13 @@ impl Utf16Fonts for SgaFonts {
             print_set(idx, &font);
         }
     }
+
+    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+        self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
+            v.push((font.utf16(), *font));
+            v
+        })
+    }
 }
 fn print_set(idx: usize, font: &FontUtf16) {
     if font.is_whitespace() {
