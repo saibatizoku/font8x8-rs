@@ -53,13 +53,13 @@
 //!
 //! The generated output should mostly resemble this (it will depend on your terminal's font settings):
 //! ```text
-//!  █ ██ █  
-//!          
-//!    ██    
-//!    ██    
-//!    ██    
-//!    ██ █  
-//!     ██   
+//!  █ ██ █
+//!
+//!    ██
+//!    ██
+//!    ██
+//!    ██ █
+//!     ██
 //! ```
 //!
 //! and, it's meant to look like this: `ΐ`.
@@ -103,6 +103,9 @@
 //! [https://github.com/dhepper/font8x8](https://github.com/dhepper/font8x8).
 //!
 //! This crate is an extension of that work.
+
+#![cfg_attr(not(feature = "std"), no_std)]
+
 #[cfg(feature = "unicode")]
 mod basic;
 #[cfg(feature = "unicode")]
@@ -151,4 +154,11 @@ pub use self::misc::MISC_FONTS;
 pub use self::sga::SGA_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::utf16::{FontUtf16, FromUtf16Error, Utf16Fonts};
+pub use self::utf16::{FontUtf16, Utf16Fonts};
+#[cfg(all(feature = "unicode", feature = "std"))]
+pub use self::utf16::FromUtf16Error;
+
+#[cfg(feature = "std")]
+mod core {
+    pub use std::*;
+}

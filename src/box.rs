@@ -1,6 +1,6 @@
 //!  Box Drawing. `U+2500 - U+257F`
 use super::{legacy::BOX_LEGACY, FontUtf16, Utf16Fonts};
-use std::fmt;
+use core::fmt;
 
 /// A constant `[FontUtf16; 128]`, for Box Element fonts (`U+2500` - `U+257F`).
 ///
@@ -1846,6 +1846,7 @@ impl Utf16Fonts for BoxFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn print_set(&self) {
         println!();
         println!("# `{:?}`", self);
@@ -1877,6 +1878,7 @@ impl Utf16Fonts for BoxFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
             v.push((font.utf16(), *font));

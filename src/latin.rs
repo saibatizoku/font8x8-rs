@@ -1,6 +1,6 @@
 //! Extended Latin. `U+00A0 - U+00FF`
 use super::{legacy::LATIN_LEGACY, utf16::{FontUtf16, Utf16Fonts}};
-use std::fmt;
+use core::fmt;
 
 /// A constant `[FontUtf16; 96]`, for Extended Latin fonts (`U+00A0` - `U+00FF`).
 ///
@@ -1374,6 +1374,7 @@ impl Utf16Fonts for LatinFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn print_set(&self) {
         println!();
         println!("# `{:?}`", self);
@@ -1405,6 +1406,7 @@ impl Utf16Fonts for LatinFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
             v.push((font.utf16(), *font));
