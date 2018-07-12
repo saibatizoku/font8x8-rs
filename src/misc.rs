@@ -1,6 +1,6 @@
 //! A miscellanous set of characters.
 use super::{legacy::MISC_LEGACY, FontUtf16, Utf16Fonts};
-use std::fmt;
+use core::fmt;
 
 /// A constant `[FontUtf16; 10]`, for  Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`,
 /// `U+00BA`, `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`).
@@ -66,6 +66,7 @@ impl Utf16Fonts for MiscFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn print_set(&self) {
         println!();
         println!("# `{:?}`", self);
@@ -97,6 +98,7 @@ impl Utf16Fonts for MiscFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
             v.push((font.utf16(), *font));

@@ -8,6 +8,7 @@ pub use super::hiragana::{HIRAGANA_UTF16, HiraganaFonts};
 pub use super::latin::{LATIN_UTF16, LatinFonts};
 pub use super::misc::{MISC_UTF16, MiscFonts};
 pub use super::sga::{SGA_UTF16, SgaFonts};
+#[cfg(feature = "std")]
 pub use std::string::FromUtf16Error;
 
 /// A single 8x8 font which supports `UTF-16` encoding/decoding.
@@ -24,6 +25,7 @@ impl FontUtf16 {
         self.1
     }
     /// Return a result with the corresponding `String` for the font.
+    #[cfg(feature = "std")]
     pub fn to_string(&self) -> String {
         String::from_utf16(&[self.0]).unwrap()
     }
@@ -61,8 +63,13 @@ impl Into<(u16, [u8; 8])> for FontUtf16 {
 /// the `[u8; 8]` by key, using the corresponding Unicode value, encoded as UTF-16 (`u16`).
 pub trait Utf16Fonts {
     fn get(&self, key: u16) -> Option<[u8; 8]>;
+
     fn get_font(&self, key: u16) -> Option<FontUtf16>;
+
+    #[cfg(feature = "std")]
     fn print_set(&self);
+
+    #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(u16, FontUtf16)>;
 }
 

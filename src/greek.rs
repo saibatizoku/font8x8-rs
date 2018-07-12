@@ -1,6 +1,6 @@
 //! Greek Characters. `U+0390 - U+03C9`
 use super::{legacy::GREEK_LEGACY, FontUtf16, Utf16Fonts};
-use std::fmt;
+use core::fmt;
 
 /// A constant `[FontUtf16; 128]`, for Greek fonts (`U+0390` - `U+03C9`).
 pub const GREEK_UTF16: [FontUtf16; 58] = [
@@ -112,6 +112,7 @@ impl Utf16Fonts for GreekFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn print_set(&self) {
         println!();
         println!("# `{:?}`", self);
@@ -143,6 +144,7 @@ impl Utf16Fonts for GreekFonts {
         }
     }
 
+    #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
             v.push((font.utf16(), *font));
