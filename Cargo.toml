@@ -1,6 +1,6 @@
 [package]
 name = "font8x8"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Joaquin Rosales <globojorro@gmail.com>"]
 description = "8x8 monochrome bitmap font for rendering."
 homepage = "https://github.com/saibatizoku/font8x8-rs"
@@ -8,7 +8,7 @@ repository = "https://github.com/saibatizoku/font8x8-rs"
 readme = "README.md"
 keywords = ["font", "8bit", "8-bit", "bitmap", "monochrome"]
 categories = ["rendering"]
-license = "Unlicense"
+license = "MIT"
 
 [dependencies]
 
