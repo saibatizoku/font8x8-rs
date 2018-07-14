@@ -129,9 +129,11 @@ Credits
 
 Summary: 8x8 monochrome bitmap fonts for rendering. Implemented in Rust.
 
-Author: Joaquín Rosales <globojorro@gmail.com>
+Author(s):
 
-License: The Unlicense. [http://unlicense.org](http://unlicense.org).
+* Joaquín Rosales <globojorro@gmail.com>
+
+License: MIT License.
 
 These header files are directly derived from an assembler file fetched from:
 `http://dimensionalrift.homelinux.net/combuster/mos3/?p=viewsource&file=/modules/gfx/font8_8.asm`
