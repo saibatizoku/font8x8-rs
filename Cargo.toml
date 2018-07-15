@@ -1,7 +1,7 @@
 [package]
 name = "font8x8"
 version = "0.1.6"
-authors = ["Joaquin Rosales <globojorro@gmail.com>"]
+authors = ["Joaquin Rosales <globojorro@gmail.com>", "Philipp Oppermann <dev@phil-opp.com>"]
 description = "8x8 monochrome bitmap font for rendering."
 homepage = "https://github.com/saibatizoku/font8x8-rs"
 repository = "https://github.com/saibatizoku/font8x8-rs"
