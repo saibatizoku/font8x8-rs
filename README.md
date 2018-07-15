@@ -146,7 +146,7 @@ Summary: 8x8 monochrome bitmap fonts for rendering. Implemented in Rust.
 
 Author(s):
 
-* Joaquín Rosales <globojorro@gmail.com>
+* Please read the `Cargo.toml` manifest for a list of the authors.
 
 License: MIT License.
 
