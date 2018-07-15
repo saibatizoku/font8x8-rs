@@ -121,8 +121,23 @@ fn main() {
 
 Features
 ========
-The default features include 'unicode', which provides a wrapper for the font constants, tupled with their
-corresponding unicode point.
+
+## `default`
+
+The default features include `unicode`, and `std`.
+
+For information about using none or some of the features, please consult the [features section of the Cargo Manifest Format](https://doc.rust-lang.org/cargo/reference/manifest.html#the-features-section).
+
+## `unicode`
+
+Provides a wrapper for the font constants, tupled with their corresponding unicode point.
+
+For more information, please refer to the [utf16 module documentation](https://docs.rs/font8x8/0.1.6/font8x8/utf16/index.html).
+
+## `std`
+
+Enables the use of the `std` Rust library. Disable this feature to run with `no_std` programs.
+
 
 Credits
 =======
