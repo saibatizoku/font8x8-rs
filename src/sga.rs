@@ -1,10 +1,10 @@
 //! Special characters with private unicode points.
-use super::{legacy::SGA_LEGACY, utf16::{FontUtf16, Utf16Fonts}};
+use super::{legacy::SGA_LEGACY, unicode::{FontUnicode, UnicodeFonts}};
 use core::fmt;
 
-/// A constant `[FontUtf16; 26]`, for special SGA fonts (`U+E543` - `U+E55A`).
+/// A constant `[FontUnicode; 26]`, for special SGA fonts (`U+E543` - `U+E55A`).
 ///
-/// ## `SGA_UTF16[0]`: `0xE541` `"\u{e541}"`
+/// ## `SGA_UNICODE[0]`: `0xE541` `"\u{e541}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -17,7 +17,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[1]`: `0xE542` `"\u{e542}"`
+/// ## `SGA_UNICODE[1]`: `0xE542` `"\u{e542}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -30,7 +30,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[2]`: `0xE543` `"\u{e543}"`
+/// ## `SGA_UNICODE[2]`: `0xE543` `"\u{e543}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -43,7 +43,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[3]`: `0xE544` `"\u{e544}"`
+/// ## `SGA_UNICODE[3]`: `0xE544` `"\u{e544}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -56,7 +56,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[4]`: `0xE545` `"\u{e545}"`
+/// ## `SGA_UNICODE[4]`: `0xE545` `"\u{e545}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -69,7 +69,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[5]`: `0xE546` `"\u{e546}"`
+/// ## `SGA_UNICODE[5]`: `0xE546` `"\u{e546}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -82,7 +82,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[6]`: `0xE547` `"\u{e547}"`
+/// ## `SGA_UNICODE[6]`: `0xE547` `"\u{e547}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -95,7 +95,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[7]`: `0xE548` `"\u{e548}"`
+/// ## `SGA_UNICODE[7]`: `0xE548` `"\u{e548}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -108,7 +108,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[8]`: `0xE549` `"\u{e549}"`
+/// ## `SGA_UNICODE[8]`: `0xE549` `"\u{e549}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -121,7 +121,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[9]`: `0xE54A` `"\u{e54a}"`
+/// ## `SGA_UNICODE[9]`: `0xE54A` `"\u{e54a}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -134,7 +134,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[10]`: `0xE54B` `"\u{e54b}"`
+/// ## `SGA_UNICODE[10]`: `0xE54B` `"\u{e54b}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -147,7 +147,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[11]`: `0xE54C` `"\u{e54c}"`
+/// ## `SGA_UNICODE[11]`: `0xE54C` `"\u{e54c}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -160,7 +160,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[12]`: `0xE54D` `"\u{e54d}"`
+/// ## `SGA_UNICODE[12]`: `0xE54D` `"\u{e54d}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -173,7 +173,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[13]`: `0xE54E` `"\u{e54e}"`
+/// ## `SGA_UNICODE[13]`: `0xE54E` `"\u{e54e}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -186,7 +186,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[14]`: `0xE54F` `"\u{e54f}"`
+/// ## `SGA_UNICODE[14]`: `0xE54F` `"\u{e54f}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -199,7 +199,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[15]`: `0xE550` `"\u{e550}"`
+/// ## `SGA_UNICODE[15]`: `0xE550` `"\u{e550}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -212,7 +212,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[16]`: `0xE551` `"\u{e551}"`
+/// ## `SGA_UNICODE[16]`: `0xE551` `"\u{e551}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -225,7 +225,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[17]`: `0xE552` `"\u{e552}"`
+/// ## `SGA_UNICODE[17]`: `0xE552` `"\u{e552}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -238,7 +238,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[18]`: `0xE553` `"\u{e553}"`
+/// ## `SGA_UNICODE[18]`: `0xE553` `"\u{e553}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -251,7 +251,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[19]`: `0xE554` `"\u{e554}"`
+/// ## `SGA_UNICODE[19]`: `0xE554` `"\u{e554}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -264,7 +264,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[20]`: `0xE555` `"\u{e555}"`
+/// ## `SGA_UNICODE[20]`: `0xE555` `"\u{e555}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -277,7 +277,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[21]`: `0xE556` `"\u{e556}"`
+/// ## `SGA_UNICODE[21]`: `0xE556` `"\u{e556}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -290,7 +290,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[22]`: `0xE557` `"\u{e557}"`
+/// ## `SGA_UNICODE[22]`: `0xE557` `"\u{e557}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -303,7 +303,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[23]`: `0xE558` `"\u{e558}"`
+/// ## `SGA_UNICODE[23]`: `0xE558` `"\u{e558}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -316,7 +316,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[24]`: `0xE559` `"\u{e559}"`
+/// ## `SGA_UNICODE[24]`: `0xE559` `"\u{e559}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -329,7 +329,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UTF16[25]`: `0xE55A` `"\u{e55a}"`
+/// ## `SGA_UNICODE[25]`: `0xE55A` `"\u{e55a}"`
 ///
 /// ```markdown
 /// ░░░░░░░░
@@ -341,50 +341,50 @@ use core::fmt;
 /// ░██░░██░
 /// ░░░░░░░░
 /// ```
-pub const SGA_UTF16: [FontUtf16; 26] = [
-    FontUtf16(0xE541 as u16, SGA_LEGACY[0]),
-    FontUtf16(0xE542 as u16, SGA_LEGACY[1]),
-    FontUtf16(0xE543 as u16, SGA_LEGACY[2]),
-    FontUtf16(0xE544 as u16, SGA_LEGACY[3]),
-    FontUtf16(0xE545 as u16, SGA_LEGACY[4]),
-    FontUtf16(0xE546 as u16, SGA_LEGACY[5]),
-    FontUtf16(0xE547 as u16, SGA_LEGACY[6]),
-    FontUtf16(0xE548 as u16, SGA_LEGACY[7]),
-    FontUtf16(0xE549 as u16, SGA_LEGACY[8]),
-    FontUtf16(0xE54A as u16, SGA_LEGACY[9]),
-    FontUtf16(0xE54B as u16, SGA_LEGACY[10]),
-    FontUtf16(0xE54C as u16, SGA_LEGACY[11]),
-    FontUtf16(0xE54D as u16, SGA_LEGACY[12]),
-    FontUtf16(0xE54E as u16, SGA_LEGACY[13]),
-    FontUtf16(0xE54F as u16, SGA_LEGACY[14]),
-    FontUtf16(0xE550 as u16, SGA_LEGACY[15]),
-    FontUtf16(0xE551 as u16, SGA_LEGACY[16]),
-    FontUtf16(0xE552 as u16, SGA_LEGACY[17]),
-    FontUtf16(0xE553 as u16, SGA_LEGACY[18]),
-    FontUtf16(0xE554 as u16, SGA_LEGACY[19]),
-    FontUtf16(0xE555 as u16, SGA_LEGACY[20]),
-    FontUtf16(0xE556 as u16, SGA_LEGACY[21]),
-    FontUtf16(0xE557 as u16, SGA_LEGACY[22]),
-    FontUtf16(0xE558 as u16, SGA_LEGACY[23]),
-    FontUtf16(0xE559 as u16, SGA_LEGACY[24]),
-    FontUtf16(0xE55A as u16, SGA_LEGACY[25]),
+pub const SGA_UNICODE: [FontUnicode; 26] = [
+    FontUnicode('\u{E541}', SGA_LEGACY[0]),
+    FontUnicode('\u{E542}', SGA_LEGACY[1]),
+    FontUnicode('\u{E543}', SGA_LEGACY[2]),
+    FontUnicode('\u{E544}', SGA_LEGACY[3]),
+    FontUnicode('\u{E545}', SGA_LEGACY[4]),
+    FontUnicode('\u{E546}', SGA_LEGACY[5]),
+    FontUnicode('\u{E547}', SGA_LEGACY[6]),
+    FontUnicode('\u{E548}', SGA_LEGACY[7]),
+    FontUnicode('\u{E549}', SGA_LEGACY[8]),
+    FontUnicode('\u{E54A}', SGA_LEGACY[9]),
+    FontUnicode('\u{E54B}', SGA_LEGACY[10]),
+    FontUnicode('\u{E54C}', SGA_LEGACY[11]),
+    FontUnicode('\u{E54D}', SGA_LEGACY[12]),
+    FontUnicode('\u{E54E}', SGA_LEGACY[13]),
+    FontUnicode('\u{E54F}', SGA_LEGACY[14]),
+    FontUnicode('\u{E550}', SGA_LEGACY[15]),
+    FontUnicode('\u{E551}', SGA_LEGACY[16]),
+    FontUnicode('\u{E552}', SGA_LEGACY[17]),
+    FontUnicode('\u{E553}', SGA_LEGACY[18]),
+    FontUnicode('\u{E554}', SGA_LEGACY[19]),
+    FontUnicode('\u{E555}', SGA_LEGACY[20]),
+    FontUnicode('\u{E556}', SGA_LEGACY[21]),
+    FontUnicode('\u{E557}', SGA_LEGACY[22]),
+    FontUnicode('\u{E558}', SGA_LEGACY[23]),
+    FontUnicode('\u{E559}', SGA_LEGACY[24]),
+    FontUnicode('\u{E55A}', SGA_LEGACY[25]),
 ];
 
-/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
-pub const SGA_FONTS: SgaFonts = SgaFonts(SGA_UTF16);
+/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+pub const SGA_FONTS: SgaFonts = SgaFonts(SGA_UNICODE);
 
-/// Strong-typed collection wrapper for [SGA_UTF16](./constant.SGA_UTF16.html).
-pub struct SgaFonts([FontUtf16; 26]);
+/// Strong-typed collection wrapper for [SGA_UNICODE](./constant.SGA_UNICODE.html).
+pub struct SgaFonts([FontUnicode; 26]);
 
 impl SgaFonts {
     pub fn new() -> Self {
-        SgaFonts(SGA_UTF16)
+        SgaFonts(SGA_UNICODE)
     }
 }
 
 impl fmt::Debug for SgaFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(SGA_UTF16))
+        write!(f, "{}", stringify!(SGA_UNICODE))
     }
 }
 
@@ -403,16 +403,16 @@ impl Default for SgaFonts {
     }
 }
 
-impl Utf16Fonts for SgaFonts {
-    fn get(&self, key: u16) -> Option<[u8; 8]> {
+impl UnicodeFonts for SgaFonts {
+    fn get(&self, key: char) -> Option<[u8; 8]> {
         match self.get_font(key) {
             Some(font) => Some(font.into()),
             None => None,
         }
     }
 
-    fn get_font(&self, key: u16) -> Option<FontUtf16> {
-        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+    fn get_font(&self, key: char) -> Option<FontUnicode> {
+        match self.0.binary_search_by_key(&key, |&f| f.char()) {
             Ok(idx) => Some(self.0[idx]),
             _ => None,
         }
@@ -428,24 +428,24 @@ impl Utf16Fonts for SgaFonts {
     }
 
     #[cfg(feature = "std")]
-    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+    fn to_vec(&self) -> Vec<(char, FontUnicode)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
-            v.push((font.utf16(), *font));
+            v.push((font.char(), *font));
             v
         })
     }
 }
 
 #[cfg(feature = "std")]
-fn print_set(idx: usize, font: &FontUtf16) {
+fn print_set(idx: usize, font: &FontUnicode) {
     if font.is_whitespace() {
-        println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+        println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
         return;
     }
     println!(
         "## `[{:?}]`: `0x{:04X}` `{:?}`",
         idx,
-        font.utf16(),
+        font.char() as u32,
         font.to_string()
     );
     println!();
@@ -479,11 +479,11 @@ mod tests {
     }
 
     #[test]
-    fn sga_fonts_constant_wraps_basic_utf16_constant() {
+    fn sga_fonts_constant_wraps_basic_unicode_constant() {
         let sga = SgaFonts::new();
-        assert!(sga.0.len() == SGA_UTF16.len());
+        assert!(sga.0.len() == SGA_UNICODE.len());
         for (idx, font) in sga.0.iter().enumerate() {
-            assert_eq!(font, &SGA_UTF16[idx]);
+            assert_eq!(font, &SGA_UNICODE[idx]);
         }
     }
 }

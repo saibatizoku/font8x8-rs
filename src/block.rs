@@ -1,10 +1,10 @@
 //!  Block Elements. `U+2580` - `U+259F`
-use super::{legacy::BLOCK_LEGACY, FontUtf16, Utf16Fonts};
+use super::{legacy::BLOCK_LEGACY, FontUnicode, UnicodeFonts};
 use core::fmt;
 
-/// A constant `[FontUtf16; 32]`, for Block Element fonts (`U+2580` - `U+259F`).
+/// A constant `[FontUnicode; 32]`, for Block Element fonts (`U+2580` - `U+259F`).
 ///
-/// ## `BLOCK_UTF16[0]`: `U+2580` `"▀"`
+/// ## `BLOCK_UNICODE[0]`: `U+2580` `"▀"`
 ///
 /// ```text
 /// ████████
@@ -17,7 +17,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[1]`: `U+2581` `"▁"`
+/// ## `BLOCK_UNICODE[1]`: `U+2581` `"▁"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -30,7 +30,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[2]`: `U+2582` `"▂"`
+/// ## `BLOCK_UNICODE[2]`: `U+2582` `"▂"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -43,7 +43,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[3]`: `U+2583` `"▃"`
+/// ## `BLOCK_UNICODE[3]`: `U+2583` `"▃"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -56,7 +56,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[4]`: `U+2584` `"▄"`
+/// ## `BLOCK_UNICODE[4]`: `U+2584` `"▄"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -69,7 +69,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[5]`: `U+2585` `"▅"`
+/// ## `BLOCK_UNICODE[5]`: `U+2585` `"▅"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -82,7 +82,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[6]`: `U+2586` `"▆"`
+/// ## `BLOCK_UNICODE[6]`: `U+2586` `"▆"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -95,7 +95,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[7]`: `U+2587` `"▇"`
+/// ## `BLOCK_UNICODE[7]`: `U+2587` `"▇"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -108,7 +108,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[8]`: `U+2588` `"█"`
+/// ## `BLOCK_UNICODE[8]`: `U+2588` `"█"`
 ///
 /// ```text
 /// ████████
@@ -121,7 +121,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[9]`: `U+2589` `"▉"`
+/// ## `BLOCK_UNICODE[9]`: `U+2589` `"▉"`
 ///
 /// ```text
 /// ███████░
@@ -134,7 +134,7 @@ use core::fmt;
 /// ███████░
 /// ```
 ///
-/// ## `BLOCK_UTF16[10]`: `U+258A` `"▊"`
+/// ## `BLOCK_UNICODE[10]`: `U+258A` `"▊"`
 ///
 /// ```text
 /// ██████░░
@@ -147,7 +147,7 @@ use core::fmt;
 /// ██████░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[11]`: `U+258B` `"▋"`
+/// ## `BLOCK_UNICODE[11]`: `U+258B` `"▋"`
 ///
 /// ```text
 /// █████░░░
@@ -160,7 +160,7 @@ use core::fmt;
 /// █████░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[12]`: `U+258C` `"▌"`
+/// ## `BLOCK_UNICODE[12]`: `U+258C` `"▌"`
 ///
 /// ```text
 /// ████░░░░
@@ -173,7 +173,7 @@ use core::fmt;
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[13]`: `U+258D` `"▍"`
+/// ## `BLOCK_UNICODE[13]`: `U+258D` `"▍"`
 ///
 /// ```text
 /// ███░░░░░
@@ -186,7 +186,7 @@ use core::fmt;
 /// ███░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[14]`: `U+258E` `"▎"`
+/// ## `BLOCK_UNICODE[14]`: `U+258E` `"▎"`
 ///
 /// ```text
 /// ██░░░░░░
@@ -199,7 +199,7 @@ use core::fmt;
 /// ██░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[15]`: `U+258F` `"▏"`
+/// ## `BLOCK_UNICODE[15]`: `U+258F` `"▏"`
 ///
 /// ```text
 /// █░░░░░░░
@@ -212,7 +212,7 @@ use core::fmt;
 /// █░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[16]`: `U+2590` `"▐"`
+/// ## `BLOCK_UNICODE[16]`: `U+2590` `"▐"`
 ///
 /// ```text
 /// ░░░░████
@@ -225,7 +225,7 @@ use core::fmt;
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UTF16[17]`: `U+2591` `"░"`
+/// ## `BLOCK_UNICODE[17]`: `U+2591` `"░"`
 ///
 /// ```text
 /// █░█░█░█░
@@ -238,7 +238,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[18]`: `U+2592` `"▒"`
+/// ## `BLOCK_UNICODE[18]`: `U+2592` `"▒"`
 ///
 /// ```text
 /// █░█░█░█░
@@ -251,7 +251,7 @@ use core::fmt;
 /// ░█░█░█░█
 /// ```
 ///
-/// ## `BLOCK_UTF16[19]`: `U+2593` `"▓"`
+/// ## `BLOCK_UNICODE[19]`: `U+2593` `"▓"`
 ///
 /// ```text
 /// ████████
@@ -264,7 +264,7 @@ use core::fmt;
 /// █░█░█░█░
 /// ```
 ///
-/// ## `BLOCK_UTF16[20]`: `U+2594` `"▔"`
+/// ## `BLOCK_UNICODE[20]`: `U+2594` `"▔"`
 ///
 /// ```text
 /// ████████
@@ -277,7 +277,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[21]`: `U+2595` `"▕"`
+/// ## `BLOCK_UNICODE[21]`: `U+2595` `"▕"`
 ///
 /// ```text
 /// ░░░░░░░█
@@ -290,7 +290,7 @@ use core::fmt;
 /// ░░░░░░░█
 /// ```
 ///
-/// ## `BLOCK_UTF16[22]`: `U+2596` `"▖"`
+/// ## `BLOCK_UNICODE[22]`: `U+2596` `"▖"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -303,7 +303,7 @@ use core::fmt;
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[23]`: `U+2597` `"▗"`
+/// ## `BLOCK_UNICODE[23]`: `U+2597` `"▗"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -316,7 +316,7 @@ use core::fmt;
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UTF16[24]`: `U+2598` `"▘"`
+/// ## `BLOCK_UNICODE[24]`: `U+2598` `"▘"`
 ///
 /// ```text
 /// ████░░░░
@@ -329,7 +329,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[25]`: `U+2599` `"▙"`
+/// ## `BLOCK_UNICODE[25]`: `U+2599` `"▙"`
 ///
 /// ```text
 /// ████░░░░
@@ -342,7 +342,7 @@ use core::fmt;
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UTF16[26]`: `U+259A` `"▚"`
+/// ## `BLOCK_UNICODE[26]`: `U+259A` `"▚"`
 ///
 /// ```text
 /// ████░░░░
@@ -355,7 +355,7 @@ use core::fmt;
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UTF16[27]`: `U+259B` `"▛"`
+/// ## `BLOCK_UNICODE[27]`: `U+259B` `"▛"`
 ///
 /// ```text
 /// ████████
@@ -368,7 +368,7 @@ use core::fmt;
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[28]`: `U+259C` `"▜"`
+/// ## `BLOCK_UNICODE[28]`: `U+259C` `"▜"`
 ///
 /// ```text
 /// ████████
@@ -381,7 +381,7 @@ use core::fmt;
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UTF16[29]`: `U+259D` `"▝"`
+/// ## `BLOCK_UNICODE[29]`: `U+259D` `"▝"`
 ///
 /// ```text
 /// ░░░░████
@@ -394,7 +394,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[30]`: `U+259E` `"▞"`
+/// ## `BLOCK_UNICODE[30]`: `U+259E` `"▞"`
 ///
 /// ```text
 /// ░░░░████
@@ -407,7 +407,7 @@ use core::fmt;
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UTF16[31]`: `U+259F` `"▟"`
+/// ## `BLOCK_UNICODE[31]`: `U+259F` `"▟"`
 ///
 /// ```text
 /// ░░░░████
@@ -419,57 +419,57 @@ use core::fmt;
 /// ████████
 /// ████████
 /// ```
-pub const BLOCK_UTF16: [FontUtf16; 32] = [
-    FontUtf16(0x2580 as u16, BLOCK_LEGACY[0]),
-    FontUtf16(0x2581 as u16, BLOCK_LEGACY[1]),
-    FontUtf16(0x2582 as u16, BLOCK_LEGACY[2]),
-    FontUtf16(0x2583 as u16, BLOCK_LEGACY[3]),
-    FontUtf16(0x2584 as u16, BLOCK_LEGACY[4]),
-    FontUtf16(0x2585 as u16, BLOCK_LEGACY[5]),
-    FontUtf16(0x2586 as u16, BLOCK_LEGACY[6]),
-    FontUtf16(0x2587 as u16, BLOCK_LEGACY[7]),
-    FontUtf16(0x2588 as u16, BLOCK_LEGACY[8]),
-    FontUtf16(0x2589 as u16, BLOCK_LEGACY[9]),
-    FontUtf16(0x258A as u16, BLOCK_LEGACY[10]),
-    FontUtf16(0x258B as u16, BLOCK_LEGACY[11]),
-    FontUtf16(0x258C as u16, BLOCK_LEGACY[12]),
-    FontUtf16(0x258D as u16, BLOCK_LEGACY[13]),
-    FontUtf16(0x258E as u16, BLOCK_LEGACY[14]),
-    FontUtf16(0x258F as u16, BLOCK_LEGACY[15]),
-    FontUtf16(0x2590 as u16, BLOCK_LEGACY[16]),
-    FontUtf16(0x2591 as u16, BLOCK_LEGACY[17]),
-    FontUtf16(0x2592 as u16, BLOCK_LEGACY[18]),
-    FontUtf16(0x2593 as u16, BLOCK_LEGACY[19]),
-    FontUtf16(0x2594 as u16, BLOCK_LEGACY[20]),
-    FontUtf16(0x2595 as u16, BLOCK_LEGACY[21]),
-    FontUtf16(0x2596 as u16, BLOCK_LEGACY[22]),
-    FontUtf16(0x2597 as u16, BLOCK_LEGACY[23]),
-    FontUtf16(0x2598 as u16, BLOCK_LEGACY[24]),
-    FontUtf16(0x2599 as u16, BLOCK_LEGACY[25]),
-    FontUtf16(0x259A as u16, BLOCK_LEGACY[26]),
-    FontUtf16(0x259B as u16, BLOCK_LEGACY[27]),
-    FontUtf16(0x259C as u16, BLOCK_LEGACY[28]),
-    FontUtf16(0x259D as u16, BLOCK_LEGACY[29]),
-    FontUtf16(0x259E as u16, BLOCK_LEGACY[30]),
-    FontUtf16(0x259F as u16, BLOCK_LEGACY[31]),
+pub const BLOCK_UNICODE: [FontUnicode; 32] = [
+    FontUnicode('\u{2580}', BLOCK_LEGACY[0]),
+    FontUnicode('\u{2581}', BLOCK_LEGACY[1]),
+    FontUnicode('\u{2582}', BLOCK_LEGACY[2]),
+    FontUnicode('\u{2583}', BLOCK_LEGACY[3]),
+    FontUnicode('\u{2584}', BLOCK_LEGACY[4]),
+    FontUnicode('\u{2585}', BLOCK_LEGACY[5]),
+    FontUnicode('\u{2586}', BLOCK_LEGACY[6]),
+    FontUnicode('\u{2587}', BLOCK_LEGACY[7]),
+    FontUnicode('\u{2588}', BLOCK_LEGACY[8]),
+    FontUnicode('\u{2589}', BLOCK_LEGACY[9]),
+    FontUnicode('\u{258A}', BLOCK_LEGACY[10]),
+    FontUnicode('\u{258B}', BLOCK_LEGACY[11]),
+    FontUnicode('\u{258C}', BLOCK_LEGACY[12]),
+    FontUnicode('\u{258D}', BLOCK_LEGACY[13]),
+    FontUnicode('\u{258E}', BLOCK_LEGACY[14]),
+    FontUnicode('\u{258F}', BLOCK_LEGACY[15]),
+    FontUnicode('\u{2590}', BLOCK_LEGACY[16]),
+    FontUnicode('\u{2591}', BLOCK_LEGACY[17]),
+    FontUnicode('\u{2592}', BLOCK_LEGACY[18]),
+    FontUnicode('\u{2593}', BLOCK_LEGACY[19]),
+    FontUnicode('\u{2594}', BLOCK_LEGACY[20]),
+    FontUnicode('\u{2595}', BLOCK_LEGACY[21]),
+    FontUnicode('\u{2596}', BLOCK_LEGACY[22]),
+    FontUnicode('\u{2597}', BLOCK_LEGACY[23]),
+    FontUnicode('\u{2598}', BLOCK_LEGACY[24]),
+    FontUnicode('\u{2599}', BLOCK_LEGACY[25]),
+    FontUnicode('\u{259A}', BLOCK_LEGACY[26]),
+    FontUnicode('\u{259B}', BLOCK_LEGACY[27]),
+    FontUnicode('\u{259C}', BLOCK_LEGACY[28]),
+    FontUnicode('\u{259D}', BLOCK_LEGACY[29]),
+    FontUnicode('\u{259E}', BLOCK_LEGACY[30]),
+    FontUnicode('\u{259F}', BLOCK_LEGACY[31]),
 ];
 
-/// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
-pub const BLOCK_FONTS: BlockFonts = BlockFonts(BLOCK_UTF16);
+/// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+pub const BLOCK_FONTS: BlockFonts = BlockFonts(BLOCK_UNICODE);
 
-/// Strong-typed collection wrapper for [BLOCK_UTF16](./constant.BLOCK_UTF16.html).
-pub struct BlockFonts([FontUtf16; 32]);
+/// Strong-typed collection wrapper for [BLOCK_UNICODE](./constant.BLOCK_UNICODE.html).
+pub struct BlockFonts([FontUnicode; 32]);
 
 impl BlockFonts {
-    /// Create a new collection of `BLOCK_UTF16` fonts.
+    /// Create a new collection of `BLOCK_UNICODE` fonts.
     pub fn new() -> Self {
-        BlockFonts(BLOCK_UTF16)
+        BlockFonts(BLOCK_UNICODE)
     }
 }
 
 impl fmt::Debug for BlockFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(BLOCK_UTF16))
+        write!(f, "{}", stringify!(BLOCK_UNICODE))
     }
 }
 
@@ -488,16 +488,16 @@ impl Default for BlockFonts {
     }
 }
 
-impl Utf16Fonts for BlockFonts {
-    fn get(&self, key: u16) -> Option<[u8; 8]> {
+impl UnicodeFonts for BlockFonts {
+    fn get(&self, key: char) -> Option<[u8; 8]> {
         match self.get_font(key) {
             Some(font) => Some(font.into()),
             None => None,
         }
     }
 
-    fn get_font(&self, key: u16) -> Option<FontUtf16> {
-        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+    fn get_font(&self, key: char) -> Option<FontUnicode> {
+        match self.0.binary_search_by_key(&key, |&f| f.char()) {
             Ok(idx) => Some(self.0[idx]),
             _ => None,
         }
@@ -509,14 +509,14 @@ impl Utf16Fonts for BlockFonts {
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
                 continue;
             }
             println!(
                 "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
                 self,
                 idx,
-                font.utf16(),
+                font.char() as u32,
                 font.to_string()
             );
             println!();
@@ -536,9 +536,9 @@ impl Utf16Fonts for BlockFonts {
     }
 
     #[cfg(feature = "std")]
-    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+    fn to_vec(&self) -> Vec<(char, FontUnicode)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
-            v.push((font.utf16(), *font));
+            v.push((font.char(), *font));
             v
         })
     }
@@ -560,11 +560,11 @@ mod tests {
     }
 
     #[test]
-    fn block_fonts_constant_wraps_basic_utf16_constant() {
+    fn block_fonts_constant_wraps_basic_unicode_constant() {
         let block = BlockFonts::new();
-        assert!(block.0.len() == BLOCK_UTF16.len());
+        assert!(block.0.len() == BLOCK_UNICODE.len());
         for (idx, font) in block.0.iter().enumerate() {
-            assert_eq!(font, &BLOCK_UTF16[idx]);
+            assert_eq!(font, &BLOCK_UNICODE[idx]);
         }
     }
 }

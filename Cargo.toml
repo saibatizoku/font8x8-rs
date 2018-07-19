@@ -1,7 +1,11 @@
 [package]
 name = "font8x8"
-version = "0.1.6"
-authors = ["Joaquin Rosales <globojorro@gmail.com>", "Philipp Oppermann <dev@phil-opp.com>"]
+version = "0.2.0"
+authors = [
+	"Joaquin Rosales <globojorro@gmail.com>",
+	"Philipp Oppermann <dev@phil-opp.com>",
+	"Jonathan Pallant <github@thejpster.org.uk>"
+]
 description = "8x8 monochrome bitmap font for rendering."
 homepage = "https://github.com/saibatizoku/font8x8-rs"
 repository = "https://github.com/saibatizoku/font8x8-rs"
@@ -11,7 +15,6 @@ categories = ["rendering"]
 license = "MIT"
 
 [dependencies]
-
 # To disable all features, run `cargo build` with the `--no-default-features` option.
 # Doing  This only includes the constants.
 [features]

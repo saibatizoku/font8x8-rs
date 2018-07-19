@@ -1,11 +1,11 @@
 //! Extended Latin. `U+00A0 - U+00FF`
-use super::{legacy::LATIN_LEGACY, utf16::{FontUtf16, Utf16Fonts}};
+use super::{legacy::LATIN_LEGACY, unicode::{FontUnicode, UnicodeFonts}};
 use core::fmt;
 
-/// A constant `[FontUtf16; 96]`, for Extended Latin fonts (`U+00A0` - `U+00FF`).
+/// A constant `[FontUnicode; 96]`, for Extended Latin fonts (`U+00A0` - `U+00FF`).
 ///
 /// ##   0: 0x00A0 " "
-/// ## `LATIN_UTF16[1]`: `0x00A1` `"¡"`
+/// ## `LATIN_UNICODE[1]`: `0x00A1` `"¡"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -18,7 +18,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[2]`: `0x00A2` `"¢"`
+/// ## `LATIN_UNICODE[2]`: `0x00A2` `"¢"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -31,7 +31,7 @@ use core::fmt;
 /// ░░░██░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[3]`: `0x00A3` `"£"`
+/// ## `LATIN_UNICODE[3]`: `0x00A3` `"£"`
 ///
 /// ```text
 /// ░░███░░░
@@ -44,7 +44,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[4]`: `0x00A4` `"¤"`
+/// ## `LATIN_UNICODE[4]`: `0x00A4` `"¤"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -57,7 +57,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[5]`: `0x00A5` `"¥"`
+/// ## `LATIN_UNICODE[5]`: `0x00A5` `"¥"`
 ///
 /// ```text
 /// ██░░██░░
@@ -70,7 +70,7 @@ use core::fmt;
 /// ░░██░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[6]`: `0x00A6` `"¦"`
+/// ## `LATIN_UNICODE[6]`: `0x00A6` `"¦"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -83,7 +83,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[7]`: `0x00A7` `"§"`
+/// ## `LATIN_UNICODE[7]`: `0x00A7` `"§"`
 ///
 /// ```text
 /// ░░█████░
@@ -96,7 +96,7 @@ use core::fmt;
 /// ░████░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[8]`: `0x00A8` `"¨"`
+/// ## `LATIN_UNICODE[8]`: `0x00A8` `"¨"`
 ///
 /// ```text
 /// ██░░██░░
@@ -109,7 +109,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[9]`: `0x00A9` `"©"`
+/// ## `LATIN_UNICODE[9]`: `0x00A9` `"©"`
 ///
 /// ```text
 /// ░░████░░
@@ -122,7 +122,7 @@ use core::fmt;
 /// ░░████░░
 /// ```
 ///
-/// ## `LATIN_UTF16[10]`: `0x00AA` `"ª"`
+/// ## `LATIN_UNICODE[10]`: `0x00AA` `"ª"`
 ///
 /// ```text
 /// ░░████░░
@@ -135,7 +135,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[11]`: `0x00AB` `"«"`
+/// ## `LATIN_UNICODE[11]`: `0x00AB` `"«"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -148,7 +148,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[12]`: `0x00AC` `"¬"`
+/// ## `LATIN_UNICODE[12]`: `0x00AC` `"¬"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -162,7 +162,7 @@ use core::fmt;
 /// ```
 ///
 /// ##  13: 0x00AD " "
-/// ## `LATIN_UTF16[14]`: `0x00AE` `"®"`
+/// ## `LATIN_UNICODE[14]`: `0x00AE` `"®"`
 ///
 /// ```text
 /// ░░████░░
@@ -175,7 +175,7 @@ use core::fmt;
 /// ░░████░░
 /// ```
 ///
-/// ## `LATIN_UTF16[15]`: `0x00AF` `"¯"`
+/// ## `LATIN_UNICODE[15]`: `0x00AF` `"¯"`
 ///
 /// ```text
 /// ░██████░
@@ -188,7 +188,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[16]`: `0x00B0` `"°"`
+/// ## `LATIN_UNICODE[16]`: `0x00B0` `"°"`
 ///
 /// ```text
 /// ░░███░░░
@@ -201,7 +201,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[17]`: `0x00B1` `"±"`
+/// ## `LATIN_UNICODE[17]`: `0x00B1` `"±"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -214,7 +214,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[18]`: `0x00B2` `"²"`
+/// ## `LATIN_UNICODE[18]`: `0x00B2` `"²"`
 ///
 /// ```text
 /// ░░███░░░
@@ -227,7 +227,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[19]`: `0x00B2` `"²"`
+/// ## `LATIN_UNICODE[19]`: `0x00B2` `"²"`
 ///
 /// ```text
 /// ░░███░░░
@@ -240,7 +240,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[20]`: `0x00B2` `"²"`
+/// ## `LATIN_UNICODE[20]`: `0x00B2` `"²"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -253,7 +253,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[21]`: `0x00B5` `"µ"`
+/// ## `LATIN_UNICODE[21]`: `0x00B5` `"µ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -266,7 +266,7 @@ use core::fmt;
 /// ██░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[22]`: `0x00B6` `"¶"`
+/// ## `LATIN_UNICODE[22]`: `0x00B6` `"¶"`
 ///
 /// ```text
 /// ░███████
@@ -279,7 +279,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[23]`: `0x00B7` `"·"`
+/// ## `LATIN_UNICODE[23]`: `0x00B7` `"·"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -292,7 +292,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[24]`: `0x00B8` `"¸"`
+/// ## `LATIN_UNICODE[24]`: `0x00B8` `"¸"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -305,7 +305,7 @@ use core::fmt;
 /// ░████░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[25]`: `0x00B9` `"¹"`
+/// ## `LATIN_UNICODE[25]`: `0x00B9` `"¹"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -318,7 +318,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[26]`: `0x00BA` `"º"`
+/// ## `LATIN_UNICODE[26]`: `0x00BA` `"º"`
 ///
 /// ```text
 /// ░░███░░░
@@ -331,7 +331,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[27]`: `0x00BB` `"»"`
+/// ## `LATIN_UNICODE[27]`: `0x00BB` `"»"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -344,7 +344,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[28]`: `0x00BC` `"¼"`
+/// ## `LATIN_UNICODE[28]`: `0x00BC` `"¼"`
 ///
 /// ```text
 /// ██░░░░██
@@ -357,7 +357,7 @@ use core::fmt;
 /// ██░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[29]`: `0x00BD` `"½"`
+/// ## `LATIN_UNICODE[29]`: `0x00BD` `"½"`
 ///
 /// ```text
 /// ██░░░░██
@@ -370,7 +370,7 @@ use core::fmt;
 /// ░░░░████
 /// ```
 ///
-/// ## `LATIN_UTF16[30]`: `0x00BE` `"¾"`
+/// ## `LATIN_UNICODE[30]`: `0x00BE` `"¾"`
 ///
 /// ```text
 /// ██░░░░░░
@@ -383,7 +383,7 @@ use core::fmt;
 /// ░░░░░░░█
 /// ```
 ///
-/// ## `LATIN_UTF16[31]`: `0x00BF` `"¿"`
+/// ## `LATIN_UNICODE[31]`: `0x00BF` `"¿"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -396,7 +396,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[32]`: `0x00C0` `"À"`
+/// ## `LATIN_UNICODE[32]`: `0x00C0` `"À"`
 ///
 /// ```text
 /// ███░░░░░
@@ -409,7 +409,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[33]`: `0x00C1` `"Á"`
+/// ## `LATIN_UNICODE[33]`: `0x00C1` `"Á"`
 ///
 /// ```text
 /// ░░░░███░
@@ -422,7 +422,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[34]`: `0x00C2` `"Â"`
+/// ## `LATIN_UNICODE[34]`: `0x00C2` `"Â"`
 ///
 /// ```text
 /// ░░███░░░
@@ -435,7 +435,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[35]`: `0x00C3` `"Ã"`
+/// ## `LATIN_UNICODE[35]`: `0x00C3` `"Ã"`
 ///
 /// ```text
 /// ░███░██░
@@ -448,7 +448,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[36]`: `0x00C4` `"Ä"`
+/// ## `LATIN_UNICODE[36]`: `0x00C4` `"Ä"`
 ///
 /// ```text
 /// ██░░░██░
@@ -461,7 +461,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[37]`: `0x00C5` `"Å"`
+/// ## `LATIN_UNICODE[37]`: `0x00C5` `"Å"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -474,7 +474,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[38]`: `0x00C6` `"Æ"`
+/// ## `LATIN_UNICODE[38]`: `0x00C6` `"Æ"`
 ///
 /// ```text
 /// ░░█████░
@@ -487,7 +487,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[39]`: `0x00C7` `"Ç"`
+/// ## `LATIN_UNICODE[39]`: `0x00C7` `"Ç"`
 ///
 /// ```text
 /// ░████░░░
@@ -500,7 +500,7 @@ use core::fmt;
 /// ░████░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[40]`: `0x00C8` `"È"`
+/// ## `LATIN_UNICODE[40]`: `0x00C8` `"È"`
 ///
 /// ```text
 /// ███░░░░░
@@ -513,7 +513,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[41]`: `0x00C9` `"É"`
+/// ## `LATIN_UNICODE[41]`: `0x00C9` `"É"`
 ///
 /// ```text
 /// ░░░███░░
@@ -526,7 +526,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[42]`: `0x00CA` `"Ê"`
+/// ## `LATIN_UNICODE[42]`: `0x00CA` `"Ê"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -539,7 +539,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[43]`: `0x00CB` `"Ë"`
+/// ## `LATIN_UNICODE[43]`: `0x00CB` `"Ë"`
 ///
 /// ```text
 /// ░██░██░░
@@ -552,7 +552,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[44]`: `0x00CC` `"Ì"`
+/// ## `LATIN_UNICODE[44]`: `0x00CC` `"Ì"`
 ///
 /// ```text
 /// ███░░░░░
@@ -565,7 +565,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[45]`: `0x00CD` `"Í"`
+/// ## `LATIN_UNICODE[45]`: `0x00CD` `"Í"`
 ///
 /// ```text
 /// ░░░███░░
@@ -578,7 +578,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[46]`: `0x00CE` `"Î"`
+/// ## `LATIN_UNICODE[46]`: `0x00CE` `"Î"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -591,7 +591,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[47]`: `0x00CF` `"Ï"`
+/// ## `LATIN_UNICODE[47]`: `0x00CF` `"Ï"`
 ///
 /// ```text
 /// ██░░██░░
@@ -604,7 +604,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[48]`: `0x00D0` `"Ð"`
+/// ## `LATIN_UNICODE[48]`: `0x00D0` `"Ð"`
 ///
 /// ```text
 /// ██████░░
@@ -617,7 +617,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[49]`: `0x00D1` `"Ñ"`
+/// ## `LATIN_UNICODE[49]`: `0x00D1` `"Ñ"`
 ///
 /// ```text
 /// ██████░░
@@ -630,7 +630,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[50]`: `0x00D2` `"Ò"`
+/// ## `LATIN_UNICODE[50]`: `0x00D2` `"Ò"`
 ///
 /// ```text
 /// ░███░░░░
@@ -643,7 +643,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[51]`: `0x00D3` `"Ó"`
+/// ## `LATIN_UNICODE[51]`: `0x00D3` `"Ó"`
 ///
 /// ```text
 /// ░░░░███░
@@ -656,7 +656,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[52]`: `0x00D4` `"Ô"`
+/// ## `LATIN_UNICODE[52]`: `0x00D4` `"Ô"`
 ///
 /// ```text
 /// ░░████░░
@@ -669,7 +669,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[53]`: `0x00D5` `"Õ"`
+/// ## `LATIN_UNICODE[53]`: `0x00D5` `"Õ"`
 ///
 /// ```text
 /// ░███░██░
@@ -682,7 +682,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[54]`: `0x00D6` `"Ö"`
+/// ## `LATIN_UNICODE[54]`: `0x00D6` `"Ö"`
 ///
 /// ```text
 /// ██░░░░██
@@ -695,7 +695,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[55]`: `0x00D7` `"×"`
+/// ## `LATIN_UNICODE[55]`: `0x00D7` `"×"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -708,7 +708,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[56]`: `0x00D8` `"Ø"`
+/// ## `LATIN_UNICODE[56]`: `0x00D8` `"Ø"`
 ///
 /// ```text
 /// ░░███░█░
@@ -721,7 +721,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[57]`: `0x00D9` `"Ù"`
+/// ## `LATIN_UNICODE[57]`: `0x00D9` `"Ù"`
 ///
 /// ```text
 /// ░███░░░░
@@ -734,7 +734,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[58]`: `0x00DA` `"Ú"`
+/// ## `LATIN_UNICODE[58]`: `0x00DA` `"Ú"`
 ///
 /// ```text
 /// ░░░░███░
@@ -747,7 +747,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[59]`: `0x00DB` `"Û"`
+/// ## `LATIN_UNICODE[59]`: `0x00DB` `"Û"`
 ///
 /// ```text
 /// ░░████░░
@@ -760,7 +760,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[60]`: `0x00DC` `"Ü"`
+/// ## `LATIN_UNICODE[60]`: `0x00DC` `"Ü"`
 ///
 /// ```text
 /// ██░░██░░
@@ -773,7 +773,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[61]`: `0x00DD` `"Ý"`
+/// ## `LATIN_UNICODE[61]`: `0x00DD` `"Ý"`
 ///
 /// ```text
 /// ░░░░███░
@@ -786,7 +786,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[62]`: `0x00DE` `"Þ"`
+/// ## `LATIN_UNICODE[62]`: `0x00DE` `"Þ"`
 ///
 /// ```text
 /// ████░░░░
@@ -799,7 +799,7 @@ use core::fmt;
 /// ████░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[63]`: `0x00DF` `"ß"`
+/// ## `LATIN_UNICODE[63]`: `0x00DF` `"ß"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -812,7 +812,7 @@ use core::fmt;
 /// ██░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[64]`: `0x00E0` `"à"`
+/// ## `LATIN_UNICODE[64]`: `0x00E0` `"à"`
 ///
 /// ```text
 /// ███░░░░░
@@ -825,7 +825,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[65]`: `0x00E1` `"á"`
+/// ## `LATIN_UNICODE[65]`: `0x00E1` `"á"`
 ///
 /// ```text
 /// ░░░███░░
@@ -838,7 +838,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[66]`: `0x00E2` `"â"`
+/// ## `LATIN_UNICODE[66]`: `0x00E2` `"â"`
 ///
 /// ```text
 /// ░██████░
@@ -851,7 +851,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[67]`: `0x00E3` `"ã"`
+/// ## `LATIN_UNICODE[67]`: `0x00E3` `"ã"`
 ///
 /// ```text
 /// ░███░██░
@@ -864,7 +864,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[68]`: `0x00E4` `"ä"`
+/// ## `LATIN_UNICODE[68]`: `0x00E4` `"ä"`
 ///
 /// ```text
 /// ██░░██░░
@@ -877,7 +877,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[69]`: `0x00E5` `"å"`
+/// ## `LATIN_UNICODE[69]`: `0x00E5` `"å"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -890,7 +890,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[70]`: `0x00E6` `"æ"`
+/// ## `LATIN_UNICODE[70]`: `0x00E6` `"æ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -903,7 +903,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[71]`: `0x00E7` `"ç"`
+/// ## `LATIN_UNICODE[71]`: `0x00E7` `"ç"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -916,7 +916,7 @@ use core::fmt;
 /// ░░███░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[72]`: `0x00E8` `"è"`
+/// ## `LATIN_UNICODE[72]`: `0x00E8` `"è"`
 ///
 /// ```text
 /// ███░░░░░
@@ -929,7 +929,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[73]`: `0x00E9` `"é"`
+/// ## `LATIN_UNICODE[73]`: `0x00E9` `"é"`
 ///
 /// ```text
 /// ░░░███░░
@@ -942,7 +942,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[74]`: `0x00EA` `"ê"`
+/// ## `LATIN_UNICODE[74]`: `0x00EA` `"ê"`
 ///
 /// ```text
 /// ░██████░
@@ -955,7 +955,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[75]`: `0x00EB` `"ë"`
+/// ## `LATIN_UNICODE[75]`: `0x00EB` `"ë"`
 ///
 /// ```text
 /// ██░░██░░
@@ -968,7 +968,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[76]`: `0x00EC` `"ì"`
+/// ## `LATIN_UNICODE[76]`: `0x00EC` `"ì"`
 ///
 /// ```text
 /// ███░░░░░
@@ -981,7 +981,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[77]`: `0x00ED` `"í"`
+/// ## `LATIN_UNICODE[77]`: `0x00ED` `"í"`
 ///
 /// ```text
 /// ░░███░░░
@@ -994,7 +994,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[78]`: `0x00EE` `"î"`
+/// ## `LATIN_UNICODE[78]`: `0x00EE` `"î"`
 ///
 /// ```text
 /// ░█████░░
@@ -1007,7 +1007,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[79]`: `0x00EF` `"ï"`
+/// ## `LATIN_UNICODE[79]`: `0x00EF` `"ï"`
 ///
 /// ```text
 /// ██░░██░░
@@ -1020,7 +1020,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[80]`: `0x00F0` `"ð"`
+/// ## `LATIN_UNICODE[80]`: `0x00F0` `"ð"`
 ///
 /// ```text
 /// ██░██░░░
@@ -1033,7 +1033,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[81]`: `0x00F1` `"ñ"`
+/// ## `LATIN_UNICODE[81]`: `0x00F1` `"ñ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1046,7 +1046,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[82]`: `0x00F2` `"ò"`
+/// ## `LATIN_UNICODE[82]`: `0x00F2` `"ò"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1059,7 +1059,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[83]`: `0x00F3` `"ó"`
+/// ## `LATIN_UNICODE[83]`: `0x00F3` `"ó"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1072,7 +1072,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[84]`: `0x00F4` `"ô"`
+/// ## `LATIN_UNICODE[84]`: `0x00F4` `"ô"`
 ///
 /// ```text
 /// ░████░░░
@@ -1085,7 +1085,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[85]`: `0x00F5` `"õ"`
+/// ## `LATIN_UNICODE[85]`: `0x00F5` `"õ"`
 ///
 /// ```text
 /// ░███░██░
@@ -1098,7 +1098,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[86]`: `0x00F6` `"ö"`
+/// ## `LATIN_UNICODE[86]`: `0x00F6` `"ö"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1111,7 +1111,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[87]`: `0x00F7` `"÷"`
+/// ## `LATIN_UNICODE[87]`: `0x00F7` `"÷"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -1124,7 +1124,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[88]`: `0x00F8` `"ø"`
+/// ## `LATIN_UNICODE[88]`: `0x00F8` `"ø"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1137,7 +1137,7 @@ use core::fmt;
 /// ░██░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[89]`: `0x00F9` `"ù"`
+/// ## `LATIN_UNICODE[89]`: `0x00F9` `"ù"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1150,7 +1150,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[90]`: `0x00FA` `"ú"`
+/// ## `LATIN_UNICODE[90]`: `0x00FA` `"ú"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1163,7 +1163,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[91]`: `0x00FB` `"û"`
+/// ## `LATIN_UNICODE[91]`: `0x00FB` `"û"`
 ///
 /// ```text
 /// ░████░░░
@@ -1176,7 +1176,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[92]`: `0x00FC` `"ü"`
+/// ## `LATIN_UNICODE[92]`: `0x00FC` `"ü"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1189,7 +1189,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[93]`: `0x00FD` `"ý"`
+/// ## `LATIN_UNICODE[93]`: `0x00FD` `"ý"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1202,7 +1202,7 @@ use core::fmt;
 /// █████░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[94]`: `0x00FE` `"þ"`
+/// ## `LATIN_UNICODE[94]`: `0x00FE` `"þ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1215,7 +1215,7 @@ use core::fmt;
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `LATIN_UTF16[95]`: `0x00FF` `"ÿ"`
+/// ## `LATIN_UNICODE[95]`: `0x00FF` `"ÿ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1227,120 +1227,120 @@ use core::fmt;
 /// ░░░░██░░
 /// █████░░░
 /// ```
-pub const LATIN_UTF16: [FontUtf16; 96] = [
-    FontUtf16(0x00A0 as u16, LATIN_LEGACY[0]),
-    FontUtf16(0x00A1 as u16, LATIN_LEGACY[1]),
-    FontUtf16(0x00A2 as u16, LATIN_LEGACY[2]),
-    FontUtf16(0x00A3 as u16, LATIN_LEGACY[3]),
-    FontUtf16(0x00A4 as u16, LATIN_LEGACY[4]),
-    FontUtf16(0x00A5 as u16, LATIN_LEGACY[5]),
-    FontUtf16(0x00A6 as u16, LATIN_LEGACY[6]),
-    FontUtf16(0x00A7 as u16, LATIN_LEGACY[7]),
-    FontUtf16(0x00A8 as u16, LATIN_LEGACY[8]),
-    FontUtf16(0x00A9 as u16, LATIN_LEGACY[9]),
-    FontUtf16(0x00AA as u16, LATIN_LEGACY[10]),
-    FontUtf16(0x00AB as u16, LATIN_LEGACY[11]),
-    FontUtf16(0x00AC as u16, LATIN_LEGACY[12]),
-    FontUtf16(0x00AD as u16, LATIN_LEGACY[13]),
-    FontUtf16(0x00AE as u16, LATIN_LEGACY[14]),
-    FontUtf16(0x00AF as u16, LATIN_LEGACY[15]),
-    FontUtf16(0x00B0 as u16, LATIN_LEGACY[16]),
-    FontUtf16(0x00B1 as u16, LATIN_LEGACY[17]),
-    FontUtf16(0x00B2 as u16, LATIN_LEGACY[18]),
-    FontUtf16(0x00B2 as u16, LATIN_LEGACY[19]),
-    FontUtf16(0x00B2 as u16, LATIN_LEGACY[20]),
-    FontUtf16(0x00B5 as u16, LATIN_LEGACY[21]),
-    FontUtf16(0x00B6 as u16, LATIN_LEGACY[22]),
-    FontUtf16(0x00B7 as u16, LATIN_LEGACY[23]),
-    FontUtf16(0x00B8 as u16, LATIN_LEGACY[24]),
-    FontUtf16(0x00B9 as u16, LATIN_LEGACY[25]),
-    FontUtf16(0x00BA as u16, LATIN_LEGACY[26]),
-    FontUtf16(0x00BB as u16, LATIN_LEGACY[27]),
-    FontUtf16(0x00BC as u16, LATIN_LEGACY[28]),
-    FontUtf16(0x00BD as u16, LATIN_LEGACY[29]),
-    FontUtf16(0x00BE as u16, LATIN_LEGACY[30]),
-    FontUtf16(0x00BF as u16, LATIN_LEGACY[31]),
-    FontUtf16(0x00C0 as u16, LATIN_LEGACY[32]),
-    FontUtf16(0x00C1 as u16, LATIN_LEGACY[33]),
-    FontUtf16(0x00C2 as u16, LATIN_LEGACY[34]),
-    FontUtf16(0x00C3 as u16, LATIN_LEGACY[35]),
-    FontUtf16(0x00C4 as u16, LATIN_LEGACY[36]),
-    FontUtf16(0x00C5 as u16, LATIN_LEGACY[37]),
-    FontUtf16(0x00C6 as u16, LATIN_LEGACY[38]),
-    FontUtf16(0x00C7 as u16, LATIN_LEGACY[39]),
-    FontUtf16(0x00C8 as u16, LATIN_LEGACY[40]),
-    FontUtf16(0x00C9 as u16, LATIN_LEGACY[41]),
-    FontUtf16(0x00CA as u16, LATIN_LEGACY[42]),
-    FontUtf16(0x00CB as u16, LATIN_LEGACY[43]),
-    FontUtf16(0x00CC as u16, LATIN_LEGACY[44]),
-    FontUtf16(0x00CD as u16, LATIN_LEGACY[45]),
-    FontUtf16(0x00CE as u16, LATIN_LEGACY[46]),
-    FontUtf16(0x00CF as u16, LATIN_LEGACY[47]),
-    FontUtf16(0x00D0 as u16, LATIN_LEGACY[48]),
-    FontUtf16(0x00D1 as u16, LATIN_LEGACY[49]),
-    FontUtf16(0x00D2 as u16, LATIN_LEGACY[50]),
-    FontUtf16(0x00D3 as u16, LATIN_LEGACY[51]),
-    FontUtf16(0x00D4 as u16, LATIN_LEGACY[52]),
-    FontUtf16(0x00D5 as u16, LATIN_LEGACY[53]),
-    FontUtf16(0x00D6 as u16, LATIN_LEGACY[54]),
-    FontUtf16(0x00D7 as u16, LATIN_LEGACY[55]),
-    FontUtf16(0x00D8 as u16, LATIN_LEGACY[56]),
-    FontUtf16(0x00D9 as u16, LATIN_LEGACY[57]),
-    FontUtf16(0x00DA as u16, LATIN_LEGACY[58]),
-    FontUtf16(0x00DB as u16, LATIN_LEGACY[59]),
-    FontUtf16(0x00DC as u16, LATIN_LEGACY[60]),
-    FontUtf16(0x00DD as u16, LATIN_LEGACY[61]),
-    FontUtf16(0x00DE as u16, LATIN_LEGACY[62]),
-    FontUtf16(0x00DF as u16, LATIN_LEGACY[63]),
-    FontUtf16(0x00E0 as u16, LATIN_LEGACY[64]),
-    FontUtf16(0x00E1 as u16, LATIN_LEGACY[65]),
-    FontUtf16(0x00E2 as u16, LATIN_LEGACY[66]),
-    FontUtf16(0x00E3 as u16, LATIN_LEGACY[67]),
-    FontUtf16(0x00E4 as u16, LATIN_LEGACY[68]),
-    FontUtf16(0x00E5 as u16, LATIN_LEGACY[69]),
-    FontUtf16(0x00E6 as u16, LATIN_LEGACY[70]),
-    FontUtf16(0x00E7 as u16, LATIN_LEGACY[71]),
-    FontUtf16(0x00E8 as u16, LATIN_LEGACY[72]),
-    FontUtf16(0x00E9 as u16, LATIN_LEGACY[73]),
-    FontUtf16(0x00EA as u16, LATIN_LEGACY[74]),
-    FontUtf16(0x00EB as u16, LATIN_LEGACY[75]),
-    FontUtf16(0x00EC as u16, LATIN_LEGACY[76]),
-    FontUtf16(0x00ED as u16, LATIN_LEGACY[77]),
-    FontUtf16(0x00EE as u16, LATIN_LEGACY[78]),
-    FontUtf16(0x00EF as u16, LATIN_LEGACY[79]),
-    FontUtf16(0x00F0 as u16, LATIN_LEGACY[80]),
-    FontUtf16(0x00F1 as u16, LATIN_LEGACY[81]),
-    FontUtf16(0x00F2 as u16, LATIN_LEGACY[82]),
-    FontUtf16(0x00F3 as u16, LATIN_LEGACY[83]),
-    FontUtf16(0x00F4 as u16, LATIN_LEGACY[84]),
-    FontUtf16(0x00F5 as u16, LATIN_LEGACY[85]),
-    FontUtf16(0x00F6 as u16, LATIN_LEGACY[86]),
-    FontUtf16(0x00F7 as u16, LATIN_LEGACY[87]),
-    FontUtf16(0x00F8 as u16, LATIN_LEGACY[88]),
-    FontUtf16(0x00F9 as u16, LATIN_LEGACY[89]),
-    FontUtf16(0x00FA as u16, LATIN_LEGACY[90]),
-    FontUtf16(0x00FB as u16, LATIN_LEGACY[91]),
-    FontUtf16(0x00FC as u16, LATIN_LEGACY[92]),
-    FontUtf16(0x00FD as u16, LATIN_LEGACY[93]),
-    FontUtf16(0x00FE as u16, LATIN_LEGACY[94]),
-    FontUtf16(0x00FF as u16, LATIN_LEGACY[95]),
+pub const LATIN_UNICODE: [FontUnicode; 96] = [
+    FontUnicode('\u{00A0}', LATIN_LEGACY[0]),
+    FontUnicode('\u{00A1}', LATIN_LEGACY[1]),
+    FontUnicode('\u{00A2}', LATIN_LEGACY[2]),
+    FontUnicode('\u{00A3}', LATIN_LEGACY[3]),
+    FontUnicode('\u{00A4}', LATIN_LEGACY[4]),
+    FontUnicode('\u{00A5}', LATIN_LEGACY[5]),
+    FontUnicode('\u{00A6}', LATIN_LEGACY[6]),
+    FontUnicode('\u{00A7}', LATIN_LEGACY[7]),
+    FontUnicode('\u{00A8}', LATIN_LEGACY[8]),
+    FontUnicode('\u{00A9}', LATIN_LEGACY[9]),
+    FontUnicode('\u{00AA}', LATIN_LEGACY[10]),
+    FontUnicode('\u{00AB}', LATIN_LEGACY[11]),
+    FontUnicode('\u{00AC}', LATIN_LEGACY[12]),
+    FontUnicode('\u{00AD}', LATIN_LEGACY[13]),
+    FontUnicode('\u{00AE}', LATIN_LEGACY[14]),
+    FontUnicode('\u{00AF}', LATIN_LEGACY[15]),
+    FontUnicode('\u{00B0}', LATIN_LEGACY[16]),
+    FontUnicode('\u{00B1}', LATIN_LEGACY[17]),
+    FontUnicode('\u{00B2}', LATIN_LEGACY[18]),
+    FontUnicode('\u{00B2}', LATIN_LEGACY[19]),
+    FontUnicode('\u{00B2}', LATIN_LEGACY[20]),
+    FontUnicode('\u{00B5}', LATIN_LEGACY[21]),
+    FontUnicode('\u{00B6}', LATIN_LEGACY[22]),
+    FontUnicode('\u{00B7}', LATIN_LEGACY[23]),
+    FontUnicode('\u{00B8}', LATIN_LEGACY[24]),
+    FontUnicode('\u{00B9}', LATIN_LEGACY[25]),
+    FontUnicode('\u{00BA}', LATIN_LEGACY[26]),
+    FontUnicode('\u{00BB}', LATIN_LEGACY[27]),
+    FontUnicode('\u{00BC}', LATIN_LEGACY[28]),
+    FontUnicode('\u{00BD}', LATIN_LEGACY[29]),
+    FontUnicode('\u{00BE}', LATIN_LEGACY[30]),
+    FontUnicode('\u{00BF}', LATIN_LEGACY[31]),
+    FontUnicode('\u{00C0}', LATIN_LEGACY[32]),
+    FontUnicode('\u{00C1}', LATIN_LEGACY[33]),
+    FontUnicode('\u{00C2}', LATIN_LEGACY[34]),
+    FontUnicode('\u{00C3}', LATIN_LEGACY[35]),
+    FontUnicode('\u{00C4}', LATIN_LEGACY[36]),
+    FontUnicode('\u{00C5}', LATIN_LEGACY[37]),
+    FontUnicode('\u{00C6}', LATIN_LEGACY[38]),
+    FontUnicode('\u{00C7}', LATIN_LEGACY[39]),
+    FontUnicode('\u{00C8}', LATIN_LEGACY[40]),
+    FontUnicode('\u{00C9}', LATIN_LEGACY[41]),
+    FontUnicode('\u{00CA}', LATIN_LEGACY[42]),
+    FontUnicode('\u{00CB}', LATIN_LEGACY[43]),
+    FontUnicode('\u{00CC}', LATIN_LEGACY[44]),
+    FontUnicode('\u{00CD}', LATIN_LEGACY[45]),
+    FontUnicode('\u{00CE}', LATIN_LEGACY[46]),
+    FontUnicode('\u{00CF}', LATIN_LEGACY[47]),
+    FontUnicode('\u{00D0}', LATIN_LEGACY[48]),
+    FontUnicode('\u{00D1}', LATIN_LEGACY[49]),
+    FontUnicode('\u{00D2}', LATIN_LEGACY[50]),
+    FontUnicode('\u{00D3}', LATIN_LEGACY[51]),
+    FontUnicode('\u{00D4}', LATIN_LEGACY[52]),
+    FontUnicode('\u{00D5}', LATIN_LEGACY[53]),
+    FontUnicode('\u{00D6}', LATIN_LEGACY[54]),
+    FontUnicode('\u{00D7}', LATIN_LEGACY[55]),
+    FontUnicode('\u{00D8}', LATIN_LEGACY[56]),
+    FontUnicode('\u{00D9}', LATIN_LEGACY[57]),
+    FontUnicode('\u{00DA}', LATIN_LEGACY[58]),
+    FontUnicode('\u{00DB}', LATIN_LEGACY[59]),
+    FontUnicode('\u{00DC}', LATIN_LEGACY[60]),
+    FontUnicode('\u{00DD}', LATIN_LEGACY[61]),
+    FontUnicode('\u{00DE}', LATIN_LEGACY[62]),
+    FontUnicode('\u{00DF}', LATIN_LEGACY[63]),
+    FontUnicode('\u{00E0}', LATIN_LEGACY[64]),
+    FontUnicode('\u{00E1}', LATIN_LEGACY[65]),
+    FontUnicode('\u{00E2}', LATIN_LEGACY[66]),
+    FontUnicode('\u{00E3}', LATIN_LEGACY[67]),
+    FontUnicode('\u{00E4}', LATIN_LEGACY[68]),
+    FontUnicode('\u{00E5}', LATIN_LEGACY[69]),
+    FontUnicode('\u{00E6}', LATIN_LEGACY[70]),
+    FontUnicode('\u{00E7}', LATIN_LEGACY[71]),
+    FontUnicode('\u{00E8}', LATIN_LEGACY[72]),
+    FontUnicode('\u{00E9}', LATIN_LEGACY[73]),
+    FontUnicode('\u{00EA}', LATIN_LEGACY[74]),
+    FontUnicode('\u{00EB}', LATIN_LEGACY[75]),
+    FontUnicode('\u{00EC}', LATIN_LEGACY[76]),
+    FontUnicode('\u{00ED}', LATIN_LEGACY[77]),
+    FontUnicode('\u{00EE}', LATIN_LEGACY[78]),
+    FontUnicode('\u{00EF}', LATIN_LEGACY[79]),
+    FontUnicode('\u{00F0}', LATIN_LEGACY[80]),
+    FontUnicode('\u{00F1}', LATIN_LEGACY[81]),
+    FontUnicode('\u{00F2}', LATIN_LEGACY[82]),
+    FontUnicode('\u{00F3}', LATIN_LEGACY[83]),
+    FontUnicode('\u{00F4}', LATIN_LEGACY[84]),
+    FontUnicode('\u{00F5}', LATIN_LEGACY[85]),
+    FontUnicode('\u{00F6}', LATIN_LEGACY[86]),
+    FontUnicode('\u{00F7}', LATIN_LEGACY[87]),
+    FontUnicode('\u{00F8}', LATIN_LEGACY[88]),
+    FontUnicode('\u{00F9}', LATIN_LEGACY[89]),
+    FontUnicode('\u{00FA}', LATIN_LEGACY[90]),
+    FontUnicode('\u{00FB}', LATIN_LEGACY[91]),
+    FontUnicode('\u{00FC}', LATIN_LEGACY[92]),
+    FontUnicode('\u{00FD}', LATIN_LEGACY[93]),
+    FontUnicode('\u{00FE}', LATIN_LEGACY[94]),
+    FontUnicode('\u{00FF}', LATIN_LEGACY[95]),
 ];
 
-/// A convenient constant for Extended Latin fonts (`U+00A0` - `U+00FF`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
-pub const LATIN_FONTS: LatinFonts = LatinFonts(LATIN_UTF16);
+/// A convenient constant for Extended Latin fonts (`U+00A0` - `U+00FF`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+pub const LATIN_FONTS: LatinFonts = LatinFonts(LATIN_UNICODE);
 
-/// Strong-typed collection wrapper for [LATIN_UTF16](./constant.LATIN_UTF16.html).
-pub struct LatinFonts([FontUtf16; 96]);
+/// Strong-typed collection wrapper for [LATIN_UNICODE](./constant.LATIN_UNICODE.html).
+pub struct LatinFonts([FontUnicode; 96]);
 
 impl LatinFonts {
     pub fn new() -> Self {
-        LatinFonts(LATIN_UTF16)
+        LatinFonts(LATIN_UNICODE)
     }
 }
 
 impl fmt::Debug for LatinFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(LATIN_UTF16))
+        write!(f, "{}", stringify!(LATIN_UNICODE))
     }
 }
 
@@ -1359,16 +1359,16 @@ impl Default for LatinFonts {
     }
 }
 
-impl Utf16Fonts for LatinFonts {
-    fn get(&self, key: u16) -> Option<[u8; 8]> {
+impl UnicodeFonts for LatinFonts {
+    fn get(&self, key: char) -> Option<[u8; 8]> {
         match self.get_font(key) {
             Some(font) => Some(font.into()),
             None => None,
         }
     }
 
-    fn get_font(&self, key: u16) -> Option<FontUtf16> {
-        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+    fn get_font(&self, key: char) -> Option<FontUnicode> {
+        match self.0.binary_search_by_key(&key, |&f| f.char()) {
             Ok(idx) => Some(self.0[idx]),
             _ => None,
         }
@@ -1380,14 +1380,14 @@ impl Utf16Fonts for LatinFonts {
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
                 continue;
             }
             println!(
                 "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
                 self,
                 idx,
-                font.utf16(),
+                font.char() as u32,
                 font.to_string()
             );
             println!();
@@ -1407,9 +1407,9 @@ impl Utf16Fonts for LatinFonts {
     }
 
     #[cfg(feature = "std")]
-    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+    fn to_vec(&self) -> Vec<(char, FontUnicode)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
-            v.push((font.utf16(), *font));
+            v.push((font.char(), *font));
             v
         })
     }
@@ -1431,11 +1431,11 @@ mod tests {
     }
 
     #[test]
-    fn latin_fonts_constant_wraps_basic_utf16_constant() {
+    fn latin_fonts_constant_wraps_basic_unicode_constant() {
         let latin = LatinFonts::new();
-        assert!(latin.0.len() == LATIN_UTF16.len());
+        assert!(latin.0.len() == LATIN_UNICODE.len());
         for (idx, font) in latin.0.iter().enumerate() {
-            assert_eq!(font, &LATIN_UTF16[idx]);
+            assert_eq!(font, &LATIN_UNICODE[idx]);
         }
     }
 }
