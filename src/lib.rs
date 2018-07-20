@@ -2,93 +2,7 @@
 //!
 //! This crate contains a Rust implementation of a public domain 8-bit by 8-bit font.
 //!
-//! # Usage
-//!
-//! To use this crate, add to your `Cargo.toml`:
-//!
-//! ```Cargo
-//! [dependencies]
-//! font8x8 = "0.1"
-//! ```
-//!
-//! Then, in your code:
-//!
-//! ```rust,norun
-//! extern crate font8x8;
-//!
-//! use font8x8;
-//! ```
-//!
-//! # Example
-//!
-//! ## Working directly with legacy constants
-//!
-//! Let's say we want to print out the first character belonging to the
-//! greek subset. In this case, it corresponds to the unicode `U+0390` described as `iota with
-//! tonos and diaeresis`, and we will retrieve it from the `GREEK_LEGACY` constant provided by our library.
-//!
-//! Specifically, we will be working with `GREEK_LEGACY[0]`, which is an array of bytes with capacity for
-//! eight separate bytes (`[u8; 8]`).
-//!
-//! Here's a program that will print the character to your terminal, by parsing each byte of the
-//! array, inspecting it bit by bit, and printing an empty space `" "` for `0`, and `"█"` for `1`.
-//!
-//! ```rust
-//! extern crate font8x8;
-//!
-//! use font8x8::legacy::GREEK_LEGACY;
-//!
-//! fn main() {
-//!     for x in &GREEK_LEGACY[0] {
-//!         for bit in 0..8 {
-//!             match *x & 1 << bit {
-//!                 0 => print!(" "),
-//!                 _ => print!("█"),
-//!             }
-//!         }
-//!         println!()
-//!     }
-//! }
-//! ```
-//!
-//! The generated output should mostly resemble this (it will depend on your terminal's font settings):
-//! ```text
-//!  █ ██ █
-//!
-//!    ██
-//!    ██
-//!    ██
-//!    ██ █
-//!     ██
-//! ```
-//!
-//! and, it's meant to look like this: `ΐ`.
-//!
-//! ## Working with fonts as UTF16
-//!
-//! We can also use UTF16-encoded text to render the font on stdout.
-//!
-//! This time, instead of using the index of the GREEK_LEGACY constant, we can use the trait method `Utf16Fonts::get` to retrieve the font rendering using the `u16` as key.
-//!
-//! ```rust
-//! extern crate font8x8;
-//!
-//! use font8x8::{GREEK_FONTS, Utf16Fonts};
-//!
-//! fn main() {
-//!     if let Some(font_render) = GREEK_FONTS.get('ΐ' as u16) {
-//!         for x in &font_render {
-//!             for bit in 0..8 {
-//!                 match *x & 1 << bit {
-//!                     0 => print!(" "),
-//!                     _ => print!("█"),
-//!                 }
-//!             }
-//!             println!()
-//!         }
-//!     }
-//! }
-//! ```
+//! See '../README.md`.
 //!
 //! # On the miscellanous characters included
 //! These characters are provided as-is, and some don't have a proper unicode point.
@@ -127,7 +41,7 @@ mod misc;
 mod sga;
 
 #[cfg(feature = "unicode")]
-pub mod utf16;
+pub mod unicode;
 
 #[cfg(feature = "unicode")]
 pub use self::basic::BASIC_FONTS;
@@ -154,9 +68,9 @@ pub use self::misc::MISC_FONTS;
 pub use self::sga::SGA_FONTS;
 
 #[cfg(feature = "unicode")]
-pub use self::utf16::{FontUtf16, Utf16Fonts};
+pub use self::unicode::{FontUnicode, UnicodeFonts};
 #[cfg(all(feature = "unicode", feature = "std"))]
-pub use self::utf16::FromUtf16Error;
+pub use self::unicode::FromUtf16Error;
 
 #[cfg(feature = "std")]
 mod core {

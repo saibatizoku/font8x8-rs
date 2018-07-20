@@ -1,38 +1,38 @@
 //! A miscellanous set of characters.
-use super::{legacy::MISC_LEGACY, FontUtf16, Utf16Fonts};
+use super::{legacy::MISC_LEGACY, FontUnicode, UnicodeFonts};
 use core::fmt;
 
-/// A constant `[FontUtf16; 10]`, for  Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`,
+/// A constant `[FontUnicode; 10]`, for  Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`,
 /// `U+00BA`, `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`).
-pub const MISC_UTF16: [FontUtf16; 10] = [
-    FontUtf16(0x20A7 as u16, MISC_LEGACY[0]),
-    FontUtf16(0x0192 as u16, MISC_LEGACY[1]),
-    FontUtf16(0x00AA as u16, MISC_LEGACY[2]),
-    FontUtf16(0x00BA as u16, MISC_LEGACY[3]),
-    FontUtf16(0x2310 as u16, MISC_LEGACY[4]),
-    FontUtf16(0x2264 as u16, MISC_LEGACY[5]),
-    FontUtf16(0x2265 as u16, MISC_LEGACY[6]),
-    FontUtf16(0x0060 as u16, MISC_LEGACY[7]),
-    FontUtf16(0x1EF2 as u16, MISC_LEGACY[8]),
-    FontUtf16(0x1EF3 as u16, MISC_LEGACY[9]),
+pub const MISC_UNICODE: [FontUnicode; 10] = [
+    FontUnicode('\u{20A7}', MISC_LEGACY[0]),
+    FontUnicode('\u{0192}', MISC_LEGACY[1]),
+    FontUnicode('\u{00AA}', MISC_LEGACY[2]),
+    FontUnicode('\u{00BA}', MISC_LEGACY[3]),
+    FontUnicode('\u{2310}', MISC_LEGACY[4]),
+    FontUnicode('\u{2264}', MISC_LEGACY[5]),
+    FontUnicode('\u{2265}', MISC_LEGACY[6]),
+    FontUnicode('\u{0060}', MISC_LEGACY[7]),
+    FontUnicode('\u{1EF2}', MISC_LEGACY[8]),
+    FontUnicode('\u{1EF3}', MISC_LEGACY[9]),
 ];
 
 /// A convenient constant for Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
-/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the [`Utf16Fonts`](./utf16/trait.Utf16Fonts.html) trait.
-pub const MISC_FONTS: MiscFonts = MiscFonts(MISC_UTF16);
+/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+pub const MISC_FONTS: MiscFonts = MiscFonts(MISC_UNICODE);
 
-/// Strong-typed collection wrapper for [MISC_UTF16](./constant.MISC_UTF16.html).
-pub struct MiscFonts([FontUtf16; 10]);
+/// Strong-typed collection wrapper for [MISC_UNICODE](./constant.MISC_UNICODE.html).
+pub struct MiscFonts([FontUnicode; 10]);
 
 impl MiscFonts {
     pub fn new() -> Self {
-        MiscFonts(MISC_UTF16)
+        MiscFonts(MISC_UNICODE)
     }
 }
 
 impl fmt::Debug for MiscFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(MISC_UTF16))
+        write!(f, "{}", stringify!(MISC_UNICODE))
     }
 }
 
@@ -51,16 +51,16 @@ impl Default for MiscFonts {
     }
 }
 
-impl Utf16Fonts for MiscFonts {
-    fn get(&self, key: u16) -> Option<[u8; 8]> {
+impl UnicodeFonts for MiscFonts {
+    fn get(&self, key: char) -> Option<[u8; 8]> {
         match self.get_font(key) {
             Some(font) => Some(font.into()),
             None => None,
         }
     }
 
-    fn get_font(&self, key: u16) -> Option<FontUtf16> {
-        match self.0.binary_search_by_key(&key, |&f| f.utf16()) {
+    fn get_font(&self, key: char) -> Option<FontUnicode> {
+        match self.0.binary_search_by_key(&key, |&f| f.char()) {
             Ok(idx) => Some(self.0[idx]),
             _ => None,
         }
@@ -72,14 +72,14 @@ impl Utf16Fonts for MiscFonts {
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.utf16());
+                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
                 continue;
             }
             println!(
                 "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
                 self,
                 idx,
-                font.utf16(),
+                font.char() as u32,
                 font.to_string()
             );
             println!();
@@ -99,9 +99,9 @@ impl Utf16Fonts for MiscFonts {
     }
 
     #[cfg(feature = "std")]
-    fn to_vec(&self) -> Vec<(u16, FontUtf16)> {
+    fn to_vec(&self) -> Vec<(char, FontUnicode)> {
         self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
-            v.push((font.utf16(), *font));
+            v.push((font.char(), *font));
             v
         })
     }
@@ -123,11 +123,11 @@ mod tests {
     }
 
     #[test]
-    fn misc_fonts_constant_wraps_basic_utf16_constant() {
+    fn misc_fonts_constant_wraps_basic_unicode_constant() {
         let misc = MiscFonts::new();
-        assert!(misc.0.len() == MISC_UTF16.len());
+        assert!(misc.0.len() == MISC_UNICODE.len());
         for (idx, font) in misc.0.iter().enumerate() {
-            assert_eq!(font, &MISC_UTF16[idx]);
+            assert_eq!(font, &MISC_UNICODE[idx]);
         }
     }
 }
