@@ -97,12 +97,12 @@ and, it's meant to look like this: `ΐ`.
 
 We can also take Rust strings and characters and convert them to glyphs.
 
-This time, instead of using the index of the GREEK_LEGACY constant, we can use the trait method `Utf16Fonts::get` to retrieve the font rendering using a `char` as key.
+This time, instead of using the index of the GREEK_LEGACY constant, we can use the trait method `UnicodeFonts::get` to retrieve the font rendering using a `char` as key.
 
 ```rust
 extern crate font8x8;
 
-use font8x8::{GREEK_FONTS, Utf16Fonts};
+use font8x8::{GREEK_FONTS, UnicodeFonts};
 
 fn main() {
     if let Some(font_render) = GREEK_FONTS.get('ΐ') {
