@@ -110,12 +110,14 @@ mod tests {
         assert_eq!(my_font.byte_array(), [0x20; 8]);
     }
 
+    #[cfg(feature = "std")]
     #[test]
     fn font_unicode_api_method_to_string_returns_string_from_unicode() {
         let my_font = FontUnicode('Ñ', [0x20; 8]);
         assert_eq!(my_font.to_string(), "Ñ".to_string());
     }
 
+    #[cfg(feature = "std")]
     #[test]
     fn font_unicode_api_method_is_whitespace_returns_bool() {
         let my_font = FontUnicode('Ñ', [0x20; 8]);
