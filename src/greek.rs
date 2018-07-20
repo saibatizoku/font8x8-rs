@@ -64,7 +64,7 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
     FontUnicode('\u{03C9}', GREEK_LEGACY[57]),
 ];
 
-/// A convenient constant for Greek fonts (`U+0390` - `U+03C9`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Greek fonts (`U+0390` - `U+03C9`), that implements the `UnicodeFonts` trait.
 pub const GREEK_FONTS: GreekFonts = GreekFonts(GREEK_UNICODE);
 
 /// Strong-typed collection wrapper for [GREEK_UNICODE](./constant.GREEK_UNICODE.html).

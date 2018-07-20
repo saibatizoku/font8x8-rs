@@ -1,4 +1,4 @@
-//! Fonts with `UTF16` support.
+//! Unicode support for 8x8 fonts.
 use super::legacy::NOTHING_TO_DISPLAY;
 pub use super::basic::{BASIC_UNICODE, BasicFonts};
 pub use super::block::{BLOCK_UNICODE, BlockFonts};
@@ -60,7 +60,7 @@ impl Into<(char, [u8; 8])> for FontUnicode {
 }
 
 /// A trait for collections of `FontUnicode`, which provide methods for retrieving
-/// the `[u8; 8]` by key, using the corresponding Unicode value, encoded as UTF-16 (`u16`).
+/// the `Option<[u8; 8]>`, using the corresponding `char` as key.
 pub trait UnicodeFonts {
     fn get(&self, key: char) -> Option<[u8; 8]>;
 
@@ -78,7 +78,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn font_unicode_converts_into_u16() {
+    fn font_unicode_converts_into_char() {
         let my_font = FontUnicode('á', [110u8; 8]);
         let ch: char = my_font.into();
         assert_eq!(ch, 'á');
@@ -99,7 +99,7 @@ mod tests {
     }
 
     #[test]
-    fn font_unicode_api_method_unicode_returns_u16() {
+    fn font_unicode_api_method_unicode_returns_char() {
         let my_font = FontUnicode('ñ', [0x20; 8]);
         assert_eq!(my_font.char(), 'ñ');
     }

@@ -18,7 +18,7 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 ];
 
 /// A convenient constant for Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
-/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the `UnicodeFonts` trait.
 pub const MISC_FONTS: MiscFonts = MiscFonts(MISC_UNICODE);
 
 /// Strong-typed collection wrapper for [MISC_UNICODE](./constant.MISC_UNICODE.html).

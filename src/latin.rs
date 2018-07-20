@@ -1326,7 +1326,7 @@ pub const LATIN_UNICODE: [FontUnicode; 96] = [
     FontUnicode('\u{00FF}', LATIN_LEGACY[95]),
 ];
 
-/// A convenient constant for Extended Latin fonts (`U+00A0` - `U+00FF`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Extended Latin fonts (`U+00A0` - `U+00FF`), that implements the `UnicodeFonts` trait.
 pub const LATIN_FONTS: LatinFonts = LatinFonts(LATIN_UNICODE);
 
 /// Strong-typed collection wrapper for [LATIN_UNICODE](./constant.LATIN_UNICODE.html).

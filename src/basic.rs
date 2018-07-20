@@ -1390,7 +1390,7 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
     FontUnicode('\u{007F}', BASIC_LEGACY[127]),
 ];
 
-/// A convenient constant for Basic Latin fonts (`U+0000` - `U+007F`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Basic Latin fonts (`U+0000` - `U+007F`), that implements the `UnicodeFonts` trait.
 pub const BASIC_FONTS: BasicFonts = BasicFonts(BASIC_UNICODE);
 
 /// Strong-typed collection wrapper for [BASIC_UNICODE](./constant.BASIC_UNICODE.html).

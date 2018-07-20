@@ -1798,7 +1798,7 @@ pub const BOX_UNICODE: [FontUnicode; 128] = [
     FontUnicode('\u{257F}', BOX_LEGACY[127]),
 ];
 
-/// A convenient constant for Box Element fonts (`U+2500` - `U+257F`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Box Element fonts (`U+2500` - `U+257F`), that implements the `UnicodeFonts` trait.
 pub const BOX_FONTS: BoxFonts = BoxFonts(BOX_UNICODE);
 
 /// Strong-typed collection wrapper for [BOX_UNICODE](./constant.BOX_UNICODE.html).

@@ -454,7 +454,7 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
     FontUnicode('\u{259F}', BLOCK_LEGACY[31]),
 ];
 
-/// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the `UnicodeFonts` trait.
 pub const BLOCK_FONTS: BlockFonts = BlockFonts(BLOCK_UNICODE);
 
 /// Strong-typed collection wrapper for [BLOCK_UNICODE](./constant.BLOCK_UNICODE.html).

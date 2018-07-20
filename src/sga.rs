@@ -370,7 +370,7 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
     FontUnicode('\u{E55A}', SGA_LEGACY[25]),
 ];
 
-/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the [`UnicodeFonts`](./utf16/trait.UnicodeFonts.html) trait.
+/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the `UnicodeFonts` trait.
 pub const SGA_FONTS: SgaFonts = SgaFonts(SGA_UNICODE);
 
 /// Strong-typed collection wrapper for [SGA_UNICODE](./constant.SGA_UNICODE.html).
