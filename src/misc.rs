@@ -32,7 +32,7 @@ impl MiscFonts {
 
 impl fmt::Debug for MiscFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(MISC_UNICODE))
+        write!(f, stringify!(MISC_UNICODE))
     }
 }
 

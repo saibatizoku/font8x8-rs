@@ -469,7 +469,7 @@ impl BlockFonts {
 
 impl fmt::Debug for BlockFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(BLOCK_UNICODE))
+        write!(f, stringify!(BLOCK_UNICODE))
     }
 }
 

@@ -1398,7 +1398,7 @@ pub struct BasicFonts([FontUnicode; 128]);
 
 impl fmt::Debug for BasicFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(BASIC_UNICODE))
+        write!(f, stringify!(BASIC_UNICODE))
     }
 }
 

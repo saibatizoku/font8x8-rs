@@ -78,7 +78,7 @@ impl GreekFonts {
 
 impl fmt::Debug for GreekFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(GREEK_UNICODE))
+        write!(f, stringify!(GREEK_UNICODE))
     }
 }
 

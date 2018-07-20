@@ -1340,7 +1340,7 @@ impl LatinFonts {
 
 impl fmt::Debug for LatinFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(LATIN_UNICODE))
+        write!(f, stringify!(LATIN_UNICODE))
     }
 }
 

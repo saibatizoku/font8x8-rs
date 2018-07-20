@@ -1812,7 +1812,7 @@ impl BoxFonts {
 
 impl fmt::Debug for BoxFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(BOX_UNICODE))
+        write!(f, stringify!(BOX_UNICODE))
     }
 }
 

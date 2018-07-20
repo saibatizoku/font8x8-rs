@@ -116,7 +116,7 @@ impl HiraganaFonts {
 
 impl fmt::Debug for HiraganaFonts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", stringify!(HIRAGANA_UNICODE))
+        write!(f, stringify!(HIRAGANA_UNICODE))
     }
 }
 
