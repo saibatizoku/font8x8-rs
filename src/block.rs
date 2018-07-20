@@ -419,40 +419,38 @@ use core::fmt;
 /// ████████
 /// ████████
 /// ```
-pub const BLOCK_UNICODE: [FontUnicode; 32] = [
-    FontUnicode('\u{2580}', BLOCK_LEGACY[0]),
-    FontUnicode('\u{2581}', BLOCK_LEGACY[1]),
-    FontUnicode('\u{2582}', BLOCK_LEGACY[2]),
-    FontUnicode('\u{2583}', BLOCK_LEGACY[3]),
-    FontUnicode('\u{2584}', BLOCK_LEGACY[4]),
-    FontUnicode('\u{2585}', BLOCK_LEGACY[5]),
-    FontUnicode('\u{2586}', BLOCK_LEGACY[6]),
-    FontUnicode('\u{2587}', BLOCK_LEGACY[7]),
-    FontUnicode('\u{2588}', BLOCK_LEGACY[8]),
-    FontUnicode('\u{2589}', BLOCK_LEGACY[9]),
-    FontUnicode('\u{258A}', BLOCK_LEGACY[10]),
-    FontUnicode('\u{258B}', BLOCK_LEGACY[11]),
-    FontUnicode('\u{258C}', BLOCK_LEGACY[12]),
-    FontUnicode('\u{258D}', BLOCK_LEGACY[13]),
-    FontUnicode('\u{258E}', BLOCK_LEGACY[14]),
-    FontUnicode('\u{258F}', BLOCK_LEGACY[15]),
-    FontUnicode('\u{2590}', BLOCK_LEGACY[16]),
-    FontUnicode('\u{2591}', BLOCK_LEGACY[17]),
-    FontUnicode('\u{2592}', BLOCK_LEGACY[18]),
-    FontUnicode('\u{2593}', BLOCK_LEGACY[19]),
-    FontUnicode('\u{2594}', BLOCK_LEGACY[20]),
-    FontUnicode('\u{2595}', BLOCK_LEGACY[21]),
-    FontUnicode('\u{2596}', BLOCK_LEGACY[22]),
-    FontUnicode('\u{2597}', BLOCK_LEGACY[23]),
-    FontUnicode('\u{2598}', BLOCK_LEGACY[24]),
-    FontUnicode('\u{2599}', BLOCK_LEGACY[25]),
-    FontUnicode('\u{259A}', BLOCK_LEGACY[26]),
-    FontUnicode('\u{259B}', BLOCK_LEGACY[27]),
-    FontUnicode('\u{259C}', BLOCK_LEGACY[28]),
-    FontUnicode('\u{259D}', BLOCK_LEGACY[29]),
-    FontUnicode('\u{259E}', BLOCK_LEGACY[30]),
-    FontUnicode('\u{259F}', BLOCK_LEGACY[31]),
-];
+pub const BLOCK_UNICODE: [FontUnicode; 32] = [FontUnicode('\u{2580}', BLOCK_LEGACY[0]),
+                                              FontUnicode('\u{2581}', BLOCK_LEGACY[1]),
+                                              FontUnicode('\u{2582}', BLOCK_LEGACY[2]),
+                                              FontUnicode('\u{2583}', BLOCK_LEGACY[3]),
+                                              FontUnicode('\u{2584}', BLOCK_LEGACY[4]),
+                                              FontUnicode('\u{2585}', BLOCK_LEGACY[5]),
+                                              FontUnicode('\u{2586}', BLOCK_LEGACY[6]),
+                                              FontUnicode('\u{2587}', BLOCK_LEGACY[7]),
+                                              FontUnicode('\u{2588}', BLOCK_LEGACY[8]),
+                                              FontUnicode('\u{2589}', BLOCK_LEGACY[9]),
+                                              FontUnicode('\u{258A}', BLOCK_LEGACY[10]),
+                                              FontUnicode('\u{258B}', BLOCK_LEGACY[11]),
+                                              FontUnicode('\u{258C}', BLOCK_LEGACY[12]),
+                                              FontUnicode('\u{258D}', BLOCK_LEGACY[13]),
+                                              FontUnicode('\u{258E}', BLOCK_LEGACY[14]),
+                                              FontUnicode('\u{258F}', BLOCK_LEGACY[15]),
+                                              FontUnicode('\u{2590}', BLOCK_LEGACY[16]),
+                                              FontUnicode('\u{2591}', BLOCK_LEGACY[17]),
+                                              FontUnicode('\u{2592}', BLOCK_LEGACY[18]),
+                                              FontUnicode('\u{2593}', BLOCK_LEGACY[19]),
+                                              FontUnicode('\u{2594}', BLOCK_LEGACY[20]),
+                                              FontUnicode('\u{2595}', BLOCK_LEGACY[21]),
+                                              FontUnicode('\u{2596}', BLOCK_LEGACY[22]),
+                                              FontUnicode('\u{2597}', BLOCK_LEGACY[23]),
+                                              FontUnicode('\u{2598}', BLOCK_LEGACY[24]),
+                                              FontUnicode('\u{2599}', BLOCK_LEGACY[25]),
+                                              FontUnicode('\u{259A}', BLOCK_LEGACY[26]),
+                                              FontUnicode('\u{259B}', BLOCK_LEGACY[27]),
+                                              FontUnicode('\u{259C}', BLOCK_LEGACY[28]),
+                                              FontUnicode('\u{259D}', BLOCK_LEGACY[29]),
+                                              FontUnicode('\u{259E}', BLOCK_LEGACY[30]),
+                                              FontUnicode('\u{259F}', BLOCK_LEGACY[31])];
 
 /// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the `UnicodeFonts` trait.
 pub const BLOCK_FONTS: BlockFonts = BlockFonts(BLOCK_UNICODE);
@@ -475,8 +473,7 @@ impl fmt::Debug for BlockFonts {
 
 impl PartialEq for BlockFonts {
     fn eq(&self, other: &BlockFonts) -> bool {
-        self.0
-            .iter()
+        self.0.iter()
             .zip(other.0.iter())
             .fold(true, |eq, (a, b)| eq && a == b)
     }
@@ -512,13 +509,11 @@ impl UnicodeFonts for BlockFonts {
                 println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
                 continue;
             }
-            println!(
-                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
+            println!("## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
+                     self,
+                     idx,
+                     font.char() as u32,
+                     font.to_string());
             println!();
             println!("```text");
             for x in &font.byte_array() {
@@ -537,10 +532,11 @@ impl UnicodeFonts for BlockFonts {
 
     #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(char, FontUnicode)> {
-        self.0.into_iter().fold(Vec::with_capacity(128), |mut v, font| {
-            v.push((font.char(), *font));
-            v
-        })
+        self.0.into_iter()
+            .fold(Vec::with_capacity(128), |mut v, font| {
+                v.push((font.char(), *font));
+                v
+            })
     }
 }
 

@@ -1,13 +1,13 @@
 //! Unicode support for 8x8 fonts.
+pub use super::basic::{BasicFonts, BASIC_UNICODE};
+pub use super::block::{BlockFonts, BLOCK_UNICODE};
+pub use super::box_chars::{BoxFonts, BOX_UNICODE};
+pub use super::greek::{GreekFonts, GREEK_UNICODE};
+pub use super::hiragana::{HiraganaFonts, HIRAGANA_UNICODE};
+pub use super::latin::{LatinFonts, LATIN_UNICODE};
 use super::legacy::NOTHING_TO_DISPLAY;
-pub use super::basic::{BASIC_UNICODE, BasicFonts};
-pub use super::block::{BLOCK_UNICODE, BlockFonts};
-pub use super::box_chars::{BOX_UNICODE, BoxFonts};
-pub use super::greek::{GREEK_UNICODE, GreekFonts};
-pub use super::hiragana::{HIRAGANA_UNICODE, HiraganaFonts};
-pub use super::latin::{LATIN_UNICODE, LatinFonts};
-pub use super::misc::{MISC_UNICODE, MiscFonts};
-pub use super::sga::{SGA_UNICODE, SgaFonts};
+pub use super::misc::{MiscFonts, MISC_UNICODE};
+pub use super::sga::{SgaFonts, SGA_UNICODE};
 #[cfg(feature = "std")]
 pub use std::string::FromUtf16Error;
 

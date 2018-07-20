@@ -67,10 +67,10 @@ pub use self::misc::MISC_FONTS;
 #[cfg(feature = "unicode")]
 pub use self::sga::SGA_FONTS;
 
-#[cfg(feature = "unicode")]
-pub use self::unicode::{FontUnicode, UnicodeFonts};
 #[cfg(all(feature = "unicode", feature = "std"))]
 pub use self::unicode::FromUtf16Error;
+#[cfg(feature = "unicode")]
+pub use self::unicode::{FontUnicode, UnicodeFonts};
 
 #[cfg(feature = "std")]
 mod core {
