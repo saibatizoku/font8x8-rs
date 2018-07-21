@@ -100,7 +100,7 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [FontUnicode('\u{3040}', HIRAGAN
                                                  FontUnicode('\u{309E}', HIRAGANA_LEGACY[94]),
                                                  FontUnicode('\u{309F}', HIRAGANA_LEGACY[95])];
 
-/// A convenient constant for Hiragana fonts (`U+3040` - `U+309F`), that implements the [`UnicodeFonts`](./char/trait.UnicodeFonts.html) trait.
+/// A convenient constant for Hiragana fonts (`U+3040` - `U+309F`), that implements the `UnicodeFonts` trait.
 ///
 /// ## `HIRAGANA_UNICODE[1]`: `0x3041` `"ぁ"`
 ///
