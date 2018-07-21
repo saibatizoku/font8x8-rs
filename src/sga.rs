@@ -5,6 +5,34 @@ use super::{
 use core::fmt;
 
 /// A constant `[FontUnicode; 26]`, for special SGA fonts (`U+E543` - `U+E55A`).
+pub const SGA_UNICODE: [FontUnicode; 26] = [FontUnicode('\u{E541}', SGA_LEGACY[0]),
+                                            FontUnicode('\u{E542}', SGA_LEGACY[1]),
+                                            FontUnicode('\u{E543}', SGA_LEGACY[2]),
+                                            FontUnicode('\u{E544}', SGA_LEGACY[3]),
+                                            FontUnicode('\u{E545}', SGA_LEGACY[4]),
+                                            FontUnicode('\u{E546}', SGA_LEGACY[5]),
+                                            FontUnicode('\u{E547}', SGA_LEGACY[6]),
+                                            FontUnicode('\u{E548}', SGA_LEGACY[7]),
+                                            FontUnicode('\u{E549}', SGA_LEGACY[8]),
+                                            FontUnicode('\u{E54A}', SGA_LEGACY[9]),
+                                            FontUnicode('\u{E54B}', SGA_LEGACY[10]),
+                                            FontUnicode('\u{E54C}', SGA_LEGACY[11]),
+                                            FontUnicode('\u{E54D}', SGA_LEGACY[12]),
+                                            FontUnicode('\u{E54E}', SGA_LEGACY[13]),
+                                            FontUnicode('\u{E54F}', SGA_LEGACY[14]),
+                                            FontUnicode('\u{E550}', SGA_LEGACY[15]),
+                                            FontUnicode('\u{E551}', SGA_LEGACY[16]),
+                                            FontUnicode('\u{E552}', SGA_LEGACY[17]),
+                                            FontUnicode('\u{E553}', SGA_LEGACY[18]),
+                                            FontUnicode('\u{E554}', SGA_LEGACY[19]),
+                                            FontUnicode('\u{E555}', SGA_LEGACY[20]),
+                                            FontUnicode('\u{E556}', SGA_LEGACY[21]),
+                                            FontUnicode('\u{E557}', SGA_LEGACY[22]),
+                                            FontUnicode('\u{E558}', SGA_LEGACY[23]),
+                                            FontUnicode('\u{E559}', SGA_LEGACY[24]),
+                                            FontUnicode('\u{E55A}', SGA_LEGACY[25])];
+
+/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the `UnicodeFonts` trait.
 ///
 /// ## `SGA_UNICODE[0]`: `0xE541` `"\u{e541}"`
 ///
@@ -343,34 +371,6 @@ use core::fmt;
 /// ░██░░██░
 /// ░░░░░░░░
 /// ```
-pub const SGA_UNICODE: [FontUnicode; 26] = [FontUnicode('\u{E541}', SGA_LEGACY[0]),
-                                            FontUnicode('\u{E542}', SGA_LEGACY[1]),
-                                            FontUnicode('\u{E543}', SGA_LEGACY[2]),
-                                            FontUnicode('\u{E544}', SGA_LEGACY[3]),
-                                            FontUnicode('\u{E545}', SGA_LEGACY[4]),
-                                            FontUnicode('\u{E546}', SGA_LEGACY[5]),
-                                            FontUnicode('\u{E547}', SGA_LEGACY[6]),
-                                            FontUnicode('\u{E548}', SGA_LEGACY[7]),
-                                            FontUnicode('\u{E549}', SGA_LEGACY[8]),
-                                            FontUnicode('\u{E54A}', SGA_LEGACY[9]),
-                                            FontUnicode('\u{E54B}', SGA_LEGACY[10]),
-                                            FontUnicode('\u{E54C}', SGA_LEGACY[11]),
-                                            FontUnicode('\u{E54D}', SGA_LEGACY[12]),
-                                            FontUnicode('\u{E54E}', SGA_LEGACY[13]),
-                                            FontUnicode('\u{E54F}', SGA_LEGACY[14]),
-                                            FontUnicode('\u{E550}', SGA_LEGACY[15]),
-                                            FontUnicode('\u{E551}', SGA_LEGACY[16]),
-                                            FontUnicode('\u{E552}', SGA_LEGACY[17]),
-                                            FontUnicode('\u{E553}', SGA_LEGACY[18]),
-                                            FontUnicode('\u{E554}', SGA_LEGACY[19]),
-                                            FontUnicode('\u{E555}', SGA_LEGACY[20]),
-                                            FontUnicode('\u{E556}', SGA_LEGACY[21]),
-                                            FontUnicode('\u{E557}', SGA_LEGACY[22]),
-                                            FontUnicode('\u{E558}', SGA_LEGACY[23]),
-                                            FontUnicode('\u{E559}', SGA_LEGACY[24]),
-                                            FontUnicode('\u{E55A}', SGA_LEGACY[25])];
-
-/// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the `UnicodeFonts` trait.
 pub const SGA_FONTS: SgaFonts = SgaFonts(SGA_UNICODE);
 
 /// Strong-typed collection wrapper for [SGA_UNICODE](./constant.SGA_UNICODE.html).
