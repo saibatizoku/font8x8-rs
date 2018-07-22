@@ -1,3 +1,4 @@
+#![feature(default)]
 extern crate font8x8;
 
 use font8x8::legacy::GREEK_LEGACY;
