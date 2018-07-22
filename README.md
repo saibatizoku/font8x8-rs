@@ -3,6 +3,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/font8x8.svg)](https://crates.io/crates/font8x8)
 [![docs](https://docs.rs/font8x8/badge.svg)](https://docs.rs/font8x8)
+[![Build Status](https://travis-ci.org/saibatizoku/font8x8-rs.svg?branch=master)](https://travis-ci.org/saibatizoku/font8x8-rs)
 
 A collection of Unicode characters in a 8x8 bitmap font.
 
