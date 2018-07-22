@@ -66,6 +66,8 @@ pub trait UnicodeFonts {
 
     fn get_font(&self, key: char) -> Option<FontUnicode>;
 
+    fn iter(&self) -> ::core::slice::Iter<FontUnicode>;
+
     #[cfg(feature = "std")]
     fn print_set(&self);
 

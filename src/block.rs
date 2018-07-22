@@ -500,6 +500,10 @@ impl UnicodeFonts for BlockFonts {
         }
     }
 
+    fn iter(&self) -> ::core::slice::Iter<FontUnicode> {
+        self.0.iter()
+    }
+
     #[cfg(feature = "std")]
     fn print_set(&self) {
         println!();
