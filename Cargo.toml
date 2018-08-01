@@ -11,7 +11,7 @@ homepage = "https://github.com/saibatizoku/font8x8-rs"
 repository = "https://github.com/saibatizoku/font8x8-rs"
 readme = "README.md"
 keywords = ["font", "8bit", "8-bit", "bitmap", "monochrome"]
-categories = ["rendering"]
+categories = ["no-std", "rendering"]
 license = "MIT"
 
 [dependencies]
