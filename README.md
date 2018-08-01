@@ -7,16 +7,16 @@
 
 A collection of Unicode characters in a 8x8 bitmap font.
 
+This crate is compatible with `no-std`.
+
 # Usage
 
+## Using Legacy C-Header constants
 Add this to your `Cargo.toml`:
 ```cargo
 [dependencies]
-font8x8 = "0.2"
+font8x8 = { version = "0.2", default-features = false }
 ```
-
-## Legacy constants
-You can use the constants provided in the legacy software.
 
 ```rust
 extern crate font8x8
@@ -38,6 +38,30 @@ use font8x8::legacy::SGA_LEGACY;      // U+E541 - U+E55A
 
 ```
 
+## Using Unicode characters
+Add this to your `Cargo.toml`:
+```cargo
+[dependencies]
+font8x8 = "0.2"
+```
+
+```rust
+extern crate font8x8
+
+use font8x8::BASIC_FONTS;
+use font8x8::CONTROL_FONTS;
+use font8x8::LATIN_FONTS;
+
+use font8x8::BOX_FONTS;
+use font8x8::BLOCK_FONTS;
+use font8x8::HIRAGANA_FONTS;
+use font8x8::GREEK_FONTS;
+
+use font8x8::MISC_FONTS;
+use font8x8::SGA_FONTS;
+
+```
+
 # Documentation
 
 To generate the crate's documentation, you can use:
@@ -46,10 +70,11 @@ To generate the crate's documentation, you can use:
 
 from the terminal.
 
-It's highly recommended that you inspect the docs for each constant, as there is a listing
-of the included characters. Better yet, dive into the source, it's pretty straightforward.
+It's highly recommended that you inspect the [online docs](https://docs.rs/font8x8/) for each constant, as there is a listing of the included characters, as well as ASCII-art renderings.
 
-# Example
+We encourage that you dive into the [source-code](https://github.com/saibatizoku/font8x8-rs), it's pretty straightforward.
+
+# Examples
 
 ## Working directly with legacy constants
 Let's say we want to print out the first character belonging to the
@@ -83,7 +108,7 @@ fn main() {
 The generated output should mostly resemble this (it will depend on your terminal's font settings):
 ```text
  █ ██ █  
-         
+
    ██    
    ██    
    ██    
