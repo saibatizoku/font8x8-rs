@@ -1884,11 +1884,10 @@ impl UnicodeFonts for BoxFonts {
 
     #[cfg(feature = "std")]
     fn to_vec(&self) -> Vec<(char, FontUnicode)> {
-        self.0.into_iter()
-            .fold(Vec::with_capacity(128), |mut v, font| {
-                v.push((font.char(), *font));
-                v
-            })
+        self.0.iter().fold(Vec::with_capacity(128), |mut v, font| {
+            v.push((font.char(), *font));
+            v
+        })
     }
 }
 
