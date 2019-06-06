@@ -4,16 +4,18 @@ use core::fmt;
 
 /// A constant `[FontUnicode; 10]`, for  Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`,
 /// `U+00BA`, `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`).
-pub const MISC_UNICODE: [FontUnicode; 10] = [FontUnicode('\u{20A7}', MISC_LEGACY[0]),
-                                             FontUnicode('\u{0192}', MISC_LEGACY[1]),
-                                             FontUnicode('\u{00AA}', MISC_LEGACY[2]),
-                                             FontUnicode('\u{00BA}', MISC_LEGACY[3]),
-                                             FontUnicode('\u{2310}', MISC_LEGACY[4]),
-                                             FontUnicode('\u{2264}', MISC_LEGACY[5]),
-                                             FontUnicode('\u{2265}', MISC_LEGACY[6]),
-                                             FontUnicode('\u{0060}', MISC_LEGACY[7]),
-                                             FontUnicode('\u{1EF2}', MISC_LEGACY[8]),
-                                             FontUnicode('\u{1EF3}', MISC_LEGACY[9])];
+pub const MISC_UNICODE: [FontUnicode; 10] = [
+    FontUnicode('\u{20A7}', MISC_LEGACY[0]),
+    FontUnicode('\u{0192}', MISC_LEGACY[1]),
+    FontUnicode('\u{00AA}', MISC_LEGACY[2]),
+    FontUnicode('\u{00BA}', MISC_LEGACY[3]),
+    FontUnicode('\u{2310}', MISC_LEGACY[4]),
+    FontUnicode('\u{2264}', MISC_LEGACY[5]),
+    FontUnicode('\u{2265}', MISC_LEGACY[6]),
+    FontUnicode('\u{0060}', MISC_LEGACY[7]),
+    FontUnicode('\u{1EF2}', MISC_LEGACY[8]),
+    FontUnicode('\u{1EF3}', MISC_LEGACY[9]),
+];
 
 /// A convenient constant for Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
 /// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the `UnicodeFonts` trait.
@@ -166,7 +168,8 @@ impl fmt::Debug for MiscFonts {
 
 impl PartialEq for MiscFonts {
     fn eq(&self, other: &MiscFonts) -> bool {
-        self.0.iter()
+        self.0
+            .iter()
             .zip(other.0.iter())
             .fold(true, |eq, (a, b)| eq && a == b)
     }
@@ -206,11 +209,13 @@ impl UnicodeFonts for MiscFonts {
                 println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
                 continue;
             }
-            println!("## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
-                     self,
-                     idx,
-                     font.char() as u32,
-                     font.to_string());
+            println!(
+                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
+                self,
+                idx,
+                font.char() as u32,
+                font.to_string()
+            );
             println!();
             println!("```text");
             for x in &font.byte_array() {

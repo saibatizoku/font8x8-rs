@@ -19,5 +19,4 @@ fn main() {
 }
 
 #[cfg(not(feature = "default"))]
-fn main() {
-}
+fn main() {}

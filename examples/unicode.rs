@@ -2,7 +2,7 @@
 extern crate font8x8;
 
 #[cfg(feature = "default")]
-use font8x8::{GREEK_FONTS, UnicodeFonts};
+use font8x8::{UnicodeFonts, GREEK_FONTS};
 
 // This example will print to the screen the same glyph
 // if it is found by its `char` within GREEK_FONTS.
@@ -22,5 +22,4 @@ fn main() {
 }
 
 #[cfg(not(feature = "default"))]
-fn main() {
-}
+fn main() {}

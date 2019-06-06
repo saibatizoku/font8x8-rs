@@ -1,36 +1,39 @@
 //! Special characters with private unicode points.
 use super::{
-    legacy::SGA_LEGACY, unicode::{FontUnicode, UnicodeFonts},
+    legacy::SGA_LEGACY,
+    unicode::{FontUnicode, UnicodeFonts},
 };
 use core::fmt;
 
 /// A constant `[FontUnicode; 26]`, for special SGA fonts (`U+E543` - `U+E55A`).
-pub const SGA_UNICODE: [FontUnicode; 26] = [FontUnicode('\u{E541}', SGA_LEGACY[0]),
-                                            FontUnicode('\u{E542}', SGA_LEGACY[1]),
-                                            FontUnicode('\u{E543}', SGA_LEGACY[2]),
-                                            FontUnicode('\u{E544}', SGA_LEGACY[3]),
-                                            FontUnicode('\u{E545}', SGA_LEGACY[4]),
-                                            FontUnicode('\u{E546}', SGA_LEGACY[5]),
-                                            FontUnicode('\u{E547}', SGA_LEGACY[6]),
-                                            FontUnicode('\u{E548}', SGA_LEGACY[7]),
-                                            FontUnicode('\u{E549}', SGA_LEGACY[8]),
-                                            FontUnicode('\u{E54A}', SGA_LEGACY[9]),
-                                            FontUnicode('\u{E54B}', SGA_LEGACY[10]),
-                                            FontUnicode('\u{E54C}', SGA_LEGACY[11]),
-                                            FontUnicode('\u{E54D}', SGA_LEGACY[12]),
-                                            FontUnicode('\u{E54E}', SGA_LEGACY[13]),
-                                            FontUnicode('\u{E54F}', SGA_LEGACY[14]),
-                                            FontUnicode('\u{E550}', SGA_LEGACY[15]),
-                                            FontUnicode('\u{E551}', SGA_LEGACY[16]),
-                                            FontUnicode('\u{E552}', SGA_LEGACY[17]),
-                                            FontUnicode('\u{E553}', SGA_LEGACY[18]),
-                                            FontUnicode('\u{E554}', SGA_LEGACY[19]),
-                                            FontUnicode('\u{E555}', SGA_LEGACY[20]),
-                                            FontUnicode('\u{E556}', SGA_LEGACY[21]),
-                                            FontUnicode('\u{E557}', SGA_LEGACY[22]),
-                                            FontUnicode('\u{E558}', SGA_LEGACY[23]),
-                                            FontUnicode('\u{E559}', SGA_LEGACY[24]),
-                                            FontUnicode('\u{E55A}', SGA_LEGACY[25])];
+pub const SGA_UNICODE: [FontUnicode; 26] = [
+    FontUnicode('\u{E541}', SGA_LEGACY[0]),
+    FontUnicode('\u{E542}', SGA_LEGACY[1]),
+    FontUnicode('\u{E543}', SGA_LEGACY[2]),
+    FontUnicode('\u{E544}', SGA_LEGACY[3]),
+    FontUnicode('\u{E545}', SGA_LEGACY[4]),
+    FontUnicode('\u{E546}', SGA_LEGACY[5]),
+    FontUnicode('\u{E547}', SGA_LEGACY[6]),
+    FontUnicode('\u{E548}', SGA_LEGACY[7]),
+    FontUnicode('\u{E549}', SGA_LEGACY[8]),
+    FontUnicode('\u{E54A}', SGA_LEGACY[9]),
+    FontUnicode('\u{E54B}', SGA_LEGACY[10]),
+    FontUnicode('\u{E54C}', SGA_LEGACY[11]),
+    FontUnicode('\u{E54D}', SGA_LEGACY[12]),
+    FontUnicode('\u{E54E}', SGA_LEGACY[13]),
+    FontUnicode('\u{E54F}', SGA_LEGACY[14]),
+    FontUnicode('\u{E550}', SGA_LEGACY[15]),
+    FontUnicode('\u{E551}', SGA_LEGACY[16]),
+    FontUnicode('\u{E552}', SGA_LEGACY[17]),
+    FontUnicode('\u{E553}', SGA_LEGACY[18]),
+    FontUnicode('\u{E554}', SGA_LEGACY[19]),
+    FontUnicode('\u{E555}', SGA_LEGACY[20]),
+    FontUnicode('\u{E556}', SGA_LEGACY[21]),
+    FontUnicode('\u{E557}', SGA_LEGACY[22]),
+    FontUnicode('\u{E558}', SGA_LEGACY[23]),
+    FontUnicode('\u{E559}', SGA_LEGACY[24]),
+    FontUnicode('\u{E55A}', SGA_LEGACY[25]),
+];
 
 /// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the `UnicodeFonts` trait.
 ///
@@ -390,7 +393,8 @@ impl fmt::Debug for SgaFonts {
 
 impl PartialEq for SgaFonts {
     fn eq(&self, other: &SgaFonts) -> bool {
-        self.0.iter()
+        self.0
+            .iter()
             .zip(other.0.iter())
             .fold(true, |eq, (a, b)| eq && a == b)
     }
@@ -446,10 +450,12 @@ fn print_set(idx: usize, font: &FontUnicode) {
         println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
         return;
     }
-    println!("## `[{:?}]`: `0x{:04X}` `{:?}`",
-             idx,
-             font.char() as u32,
-             font.to_string());
+    println!(
+        "## `[{:?}]`: `0x{:04X}` `{:?}`",
+        idx,
+        font.char() as u32,
+        font.to_string()
+    );
     println!();
     println!("```text");
     for x in &font.byte_array() {
