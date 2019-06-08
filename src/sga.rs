@@ -488,33 +488,6 @@ impl UnicodeFonts for SgaFonts {
     }
 }
 
-#[cfg(feature = "std")]
-fn print_set(idx: usize, font: &FontUnicode) {
-    if font.is_whitespace() {
-        println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-        return;
-    }
-    println!(
-        "## `[{:?}]`: `0x{:04X}` `{:?}`",
-        idx,
-        font.char() as u32,
-        font.to_string()
-    );
-    println!();
-    println!("```text");
-    for x in &font.byte_array() {
-        for bit in 0..8 {
-            match *x & 1 << bit {
-                0 => print!("░"),
-                _ => print!("█"),
-            }
-        }
-        println!();
-    }
-    println!("```");
-    println!();
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
