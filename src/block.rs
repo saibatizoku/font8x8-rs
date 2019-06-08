@@ -40,7 +40,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 
 /// A convenient constant for Block Element fonts (`U+2580` - `U+259F`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `BLOCK_UNICODE[0]`: `U+2580` `"▀"`
+/// ## `BLOCK_UNICODE[0]: U+2580`
+/// `"▀"`
 ///
 /// ```text
 /// ████████
@@ -53,7 +54,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[1]`: `U+2581` `"▁"`
+/// ## `BLOCK_UNICODE[1]: U+2581`
+/// `"▁"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -66,7 +68,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[2]`: `U+2582` `"▂"`
+/// ## `BLOCK_UNICODE[2]: U+2582`
+/// `"▂"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -79,7 +82,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[3]`: `U+2583` `"▃"`
+/// ## `BLOCK_UNICODE[3]: U+2583`
+/// `"▃"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -92,7 +96,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[4]`: `U+2584` `"▄"`
+/// ## `BLOCK_UNICODE[4]: U+2584`
+/// `"▄"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -105,7 +110,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[5]`: `U+2585` `"▅"`
+/// ## `BLOCK_UNICODE[5]: U+2585`
+/// `"▅"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -118,7 +124,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[6]`: `U+2586` `"▆"`
+/// ## `BLOCK_UNICODE[6]: U+2586`
+/// `"▆"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -131,7 +138,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[7]`: `U+2587` `"▇"`
+/// ## `BLOCK_UNICODE[7]: U+2587`
+/// `"▇"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -144,7 +152,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[8]`: `U+2588` `"█"`
+/// ## `BLOCK_UNICODE[8]: U+2588`
+/// `"█"`
 ///
 /// ```text
 /// ████████
@@ -157,7 +166,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[9]`: `U+2589` `"▉"`
+/// ## `BLOCK_UNICODE[9]: U+2589`
+/// `"▉"`
 ///
 /// ```text
 /// ███████░
@@ -170,7 +180,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ███████░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[10]`: `U+258A` `"▊"`
+/// ## `BLOCK_UNICODE[10]: U+258A`
+/// `"▊"`
 ///
 /// ```text
 /// ██████░░
@@ -183,7 +194,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ██████░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[11]`: `U+258B` `"▋"`
+/// ## `BLOCK_UNICODE[11]: U+258B`
+/// `"▋"`
 ///
 /// ```text
 /// █████░░░
@@ -196,7 +208,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// █████░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[12]`: `U+258C` `"▌"`
+/// ## `BLOCK_UNICODE[12]: U+258C`
+/// `"▌"`
 ///
 /// ```text
 /// ████░░░░
@@ -209,7 +222,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[13]`: `U+258D` `"▍"`
+/// ## `BLOCK_UNICODE[13]: U+258D`
+/// `"▍"`
 ///
 /// ```text
 /// ███░░░░░
@@ -222,7 +236,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ███░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[14]`: `U+258E` `"▎"`
+/// ## `BLOCK_UNICODE[14]: U+258E`
+/// `"▎"`
 ///
 /// ```text
 /// ██░░░░░░
@@ -235,7 +250,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ██░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[15]`: `U+258F` `"▏"`
+/// ## `BLOCK_UNICODE[15]: U+258F`
+/// `"▏"`
 ///
 /// ```text
 /// █░░░░░░░
@@ -248,7 +264,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// █░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[16]`: `U+2590` `"▐"`
+/// ## `BLOCK_UNICODE[16]: U+2590`
+/// `"▐"`
 ///
 /// ```text
 /// ░░░░████
@@ -261,7 +278,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[17]`: `U+2591` `"░"`
+/// ## `BLOCK_UNICODE[17]: U+2591`
+/// `"░"`
 ///
 /// ```text
 /// █░█░█░█░
@@ -274,7 +292,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[18]`: `U+2592` `"▒"`
+/// ## `BLOCK_UNICODE[18]: U+2592`
+/// `"▒"`
 ///
 /// ```text
 /// █░█░█░█░
@@ -287,7 +306,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░█░█░█░█
 /// ```
 ///
-/// ## `BLOCK_UNICODE[19]`: `U+2593` `"▓"`
+/// ## `BLOCK_UNICODE[19]: U+2593`
+/// `"▓"`
 ///
 /// ```text
 /// ████████
@@ -300,7 +320,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// █░█░█░█░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[20]`: `U+2594` `"▔"`
+/// ## `BLOCK_UNICODE[20]: U+2594`
+/// `"▔"`
 ///
 /// ```text
 /// ████████
@@ -313,7 +334,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[21]`: `U+2595` `"▕"`
+/// ## `BLOCK_UNICODE[21]: U+2595`
+/// `"▕"`
 ///
 /// ```text
 /// ░░░░░░░█
@@ -326,7 +348,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░█
 /// ```
 ///
-/// ## `BLOCK_UNICODE[22]`: `U+2596` `"▖"`
+/// ## `BLOCK_UNICODE[22]: U+2596`
+/// `"▖"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -339,7 +362,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[23]`: `U+2597` `"▗"`
+/// ## `BLOCK_UNICODE[23]: U+2597`
+/// `"▗"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -352,7 +376,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[24]`: `U+2598` `"▘"`
+/// ## `BLOCK_UNICODE[24]: U+2598`
+/// `"▘"`
 ///
 /// ```text
 /// ████░░░░
@@ -365,7 +390,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[25]`: `U+2599` `"▙"`
+/// ## `BLOCK_UNICODE[25]: U+2599`
+/// `"▙"`
 ///
 /// ```text
 /// ████░░░░
@@ -378,7 +404,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[26]`: `U+259A` `"▚"`
+/// ## `BLOCK_UNICODE[26]: U+259A`
+/// `"▚"`
 ///
 /// ```text
 /// ████░░░░
@@ -391,7 +418,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[27]`: `U+259B` `"▛"`
+/// ## `BLOCK_UNICODE[27]: U+259B`
+/// `"▛"`
 ///
 /// ```text
 /// ████████
@@ -404,7 +432,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[28]`: `U+259C` `"▜"`
+/// ## `BLOCK_UNICODE[28]: U+259C`
+/// `"▜"`
 ///
 /// ```text
 /// ████████
@@ -417,7 +446,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░████
 /// ```
 ///
-/// ## `BLOCK_UNICODE[29]`: `U+259D` `"▝"`
+/// ## `BLOCK_UNICODE[29]: U+259D`
+/// `"▝"`
 ///
 /// ```text
 /// ░░░░████
@@ -430,7 +460,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[30]`: `U+259E` `"▞"`
+/// ## `BLOCK_UNICODE[30]: U+259E`
+/// `"▞"`
 ///
 /// ```text
 /// ░░░░████
@@ -443,7 +474,8 @@ pub const BLOCK_UNICODE: [FontUnicode; 32] = [
 /// ████░░░░
 /// ```
 ///
-/// ## `BLOCK_UNICODE[31]`: `U+259F` `"▟"`
+/// ## `BLOCK_UNICODE[31]: U+259F`
+/// `"▟"`
 ///
 /// ```text
 /// ░░░░████
@@ -512,30 +544,26 @@ impl UnicodeFonts for BlockFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-                continue;
-            }
-            println!(
-                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
-            println!();
-            println!("```text");
-            for x in &font.byte_array() {
-                for bit in 0..8 {
-                    match *x & 1 << bit {
-                        0 => print!("░"),
-                        _ => print!("█"),
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
                     }
+                    println!();
                 }
+                println!("```");
                 println!();
             }
-            println!("```");
-            println!();
         }
     }
 

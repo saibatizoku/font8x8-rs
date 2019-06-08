@@ -20,7 +20,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// A convenient constant for Miscellanous fonts (`U+20A7`, `U+0192`, `U+00AA`, `U+00BA`,
 /// `U+2310`, `U+2264`, `U+2265`, `U+0060`, `U+1EF2`, and `U+1EF3`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `MISC_UNICODE[0]`: `0x20A7` `"₧"`
+/// ## `MISC_UNICODE[0]: U+20A7`
+/// `"₧"`
 ///
 /// ```text
 /// █████░░░
@@ -33,7 +34,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ██░░░███
 /// ```
 ///
-/// ## `MISC_UNICODE[1]`: `0x0192` `"ƒ"`
+/// ## `MISC_UNICODE[1]: U+0192`
+/// `"ƒ"`
 ///
 /// ```text
 /// ░░░░███░
@@ -46,7 +48,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░███░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[2]`: `0x00AA` `"ª"`
+/// ## `MISC_UNICODE[2]: U+00AA`
+/// `"ª"`
 ///
 /// ```text
 /// ░░████░░
@@ -59,7 +62,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[3]`: `0x00BA` `"º"`
+/// ## `MISC_UNICODE[3]: U+00BA`
+/// `"º"`
 ///
 /// ```text
 /// ░░███░░░
@@ -72,7 +76,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[4]`: `0x2310` `"⌐"`
+/// ## `MISC_UNICODE[4]: U+2310`
+/// `"⌐"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -85,7 +90,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[5]`: `0x2264` `"≤"`
+/// ## `MISC_UNICODE[5]: U+2264`
+/// `"≤"`
 ///
 /// ```text
 /// ░░░░██░░
@@ -98,7 +104,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[6]`: `0x2265` `"≥"`
+/// ## `MISC_UNICODE[6]: U+2265`
+/// `"≥"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -111,7 +118,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[7]`: `0x0060` `"`"`
+/// ## `MISC_UNICODE[7]: U+0060`
+/// `"`"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -124,7 +132,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[8]`: `0x1EF2` `"Ỳ"`
+/// ## `MISC_UNICODE[8]: U+1EF2`
+/// `"Ỳ"`
 ///
 /// ```text
 /// ░███░░░░
@@ -137,7 +146,8 @@ pub const MISC_UNICODE: [FontUnicode; 10] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `MISC_UNICODE[9]`: `0x1EF3` `"ỳ"`
+/// ## `MISC_UNICODE[9]: U+1EF3`
+/// `"ỳ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -205,30 +215,26 @@ impl UnicodeFonts for MiscFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-                continue;
-            }
-            println!(
-                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
-            println!();
-            println!("```text");
-            for x in &font.byte_array() {
-                for bit in 0..8 {
-                    match *x & 1 << bit {
-                        0 => print!("░"),
-                        _ => print!("█"),
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
                     }
+                    println!();
                 }
+                println!("```");
                 println!();
             }
-            println!("```");
-            println!();
         }
     }
 

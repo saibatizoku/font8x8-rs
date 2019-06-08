@@ -137,40 +137,41 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 
 /// A convenient constant for Basic Latin fonts (`U+0000` - `U+007F`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `BASIC_UNICODE[0]`: `U+0000` " "
-/// ## `BASIC_UNICODE[1]`: `U+0001` " "
-/// ## `BASIC_UNICODE[2]`: `U+0002` " "
-/// ## `BASIC_UNICODE[3]`: `U+0003` " "
-/// ## `BASIC_UNICODE[4]`: `U+0004` " "
-/// ## `BASIC_UNICODE[5]`: `U+0005` " "
-/// ## `BASIC_UNICODE[6]`: `U+0006` " "
-/// ## `BASIC_UNICODE[7]`: `U+0007` " "
-/// ## `BASIC_UNICODE[8]`: `U+0008` " "
-/// ## `BASIC_UNICODE[9]`: `U+0009` " "
-/// ## `BASIC_UNICODE[10]`: `U+000A` " "
-/// ## `BASIC_UNICODE[11]`: `U+000B` " "
-/// ## `BASIC_UNICODE[12]`: `U+000C` " "
-/// ## `BASIC_UNICODE[13]`: `U+000D` " "
-/// ## `BASIC_UNICODE[14]`: `U+000E` " "
-/// ## `BASIC_UNICODE[15]`: `U+000F` " "
-/// ## `BASIC_UNICODE[16]`: `U+0010` " "
-/// ## `BASIC_UNICODE[17]`: `U+0011` " "
-/// ## `BASIC_UNICODE[18]`: `U+0012` " "
-/// ## `BASIC_UNICODE[19]`: `U+0013` " "
-/// ## `BASIC_UNICODE[20]`: `U+0014` " "
-/// ## `BASIC_UNICODE[21]`: `U+0015` " "
-/// ## `BASIC_UNICODE[22]`: `U+0016` " "
-/// ## `BASIC_UNICODE[23]`: `U+0017` " "
-/// ## `BASIC_UNICODE[24]`: `U+0018` " "
-/// ## `BASIC_UNICODE[25]`: `U+0019` " "
-/// ## `BASIC_UNICODE[26]`: `U+001A` " "
-/// ## `BASIC_UNICODE[27]`: `U+001B` " "
-/// ## `BASIC_UNICODE[28]`: `U+001C` " "
-/// ## `BASIC_UNICODE[29]`: `U+001D` " "
-/// ## `BASIC_UNICODE[30]`: `U+001E` " "
-/// ## `BASIC_UNICODE[31]`: `U+001F` " "
-/// ## `BASIC_UNICODE[32]`: `U+0020` " "
-/// ## `BASIC_UNICODE[33]`: `U+0021` `"!"`
+/// ## `BASIC_UNICODE[0]: U+0000` `WHITESPACE`
+/// ## `BASIC_UNICODE[1]: U+0001` `WHITESPACE`
+/// ## `BASIC_UNICODE[2]: U+0002` `WHITESPACE`
+/// ## `BASIC_UNICODE[3]: U+0003` `WHITESPACE`
+/// ## `BASIC_UNICODE[4]: U+0004` `WHITESPACE`
+/// ## `BASIC_UNICODE[5]: U+0005` `WHITESPACE`
+/// ## `BASIC_UNICODE[6]: U+0006` `WHITESPACE`
+/// ## `BASIC_UNICODE[7]: U+0007` `WHITESPACE`
+/// ## `BASIC_UNICODE[8]: U+0008` `WHITESPACE`
+/// ## `BASIC_UNICODE[9]: U+0009` `WHITESPACE`
+/// ## `BASIC_UNICODE[10]: U+000A` `WHITESPACE`
+/// ## `BASIC_UNICODE[11]: U+000B` `WHITESPACE`
+/// ## `BASIC_UNICODE[12]: U+000C` `WHITESPACE`
+/// ## `BASIC_UNICODE[13]: U+000D` `WHITESPACE`
+/// ## `BASIC_UNICODE[14]: U+000E` `WHITESPACE`
+/// ## `BASIC_UNICODE[15]: U+000F` `WHITESPACE`
+/// ## `BASIC_UNICODE[16]: U+0010` `WHITESPACE`
+/// ## `BASIC_UNICODE[17]: U+0011` `WHITESPACE`
+/// ## `BASIC_UNICODE[18]: U+0012` `WHITESPACE`
+/// ## `BASIC_UNICODE[19]: U+0013` `WHITESPACE`
+/// ## `BASIC_UNICODE[20]: U+0014` `WHITESPACE`
+/// ## `BASIC_UNICODE[21]: U+0015` `WHITESPACE`
+/// ## `BASIC_UNICODE[22]: U+0016` `WHITESPACE`
+/// ## `BASIC_UNICODE[23]: U+0017` `WHITESPACE`
+/// ## `BASIC_UNICODE[24]: U+0018` `WHITESPACE`
+/// ## `BASIC_UNICODE[25]: U+0019` `WHITESPACE`
+/// ## `BASIC_UNICODE[26]: U+001A` `WHITESPACE`
+/// ## `BASIC_UNICODE[27]: U+001B` `WHITESPACE`
+/// ## `BASIC_UNICODE[28]: U+001C` `WHITESPACE`
+/// ## `BASIC_UNICODE[29]: U+001D` `WHITESPACE`
+/// ## `BASIC_UNICODE[30]: U+001E` `WHITESPACE`
+/// ## `BASIC_UNICODE[31]: U+001F` `WHITESPACE`
+/// ## `BASIC_UNICODE[32]: U+0020` `WHITESPACE`
+/// ## `BASIC_UNICODE[33]: U+0021`
+/// `"!"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -183,7 +184,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[34]`: `U+0022` `"\""`
+/// ## `BASIC_UNICODE[34]: U+0022`
+/// `"\"`
 ///
 /// ```text
 /// ░██░██░░
@@ -196,7 +198,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[35]`: `U+0023` `"#"`
+/// ## `BASIC_UNICODE[35]: U+0023`
+/// `"#"`
 ///
 /// ```text
 /// ░██░██░░
@@ -209,7 +212,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[36]`: `U+0024` `"$"`
+/// ## `BASIC_UNICODE[36]: U+0024`
+/// `"$"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -222,7 +226,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[37]`: `U+0025` `"%"`
+/// ## `BASIC_UNICODE[37]: U+0025`
+/// `"%"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -235,7 +240,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[38]`: `U+0026` `"&"`
+/// ## `BASIC_UNICODE[38]: U+0026`
+/// `"&"`
 ///
 /// ```text
 /// ░░███░░░
@@ -248,7 +254,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[39]`: `U+0027` `"\'"`
+/// ## `BASIC_UNICODE[39]: U+0027`
+/// `"'"`
 ///
 /// ```text
 /// ░██░░░░░
@@ -261,7 +268,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[40]`: `U+0028` `"("`
+/// ## `BASIC_UNICODE[40]: U+0028`
+/// `"("`
 ///
 /// ```text
 /// ░░░██░░░
@@ -274,7 +282,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[41]`: `U+0029` `")"`
+/// ## `BASIC_UNICODE[41]: U+0029`
+/// `")"`
 ///
 /// ```text
 /// ░██░░░░░
@@ -287,7 +296,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[42]`: `U+002A` `"*"`
+/// ## `BASIC_UNICODE[42]: U+002A`
+/// `"*"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -300,7 +310,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[43]`: `U+002B` `"+"`
+/// ## `BASIC_UNICODE[43]: U+002B`
+/// `"+"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -313,7 +324,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[44]`: `U+002C` `","`
+/// ## `BASIC_UNICODE[44]: U+002C`
+/// `","`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -326,7 +338,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░██░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[45]`: `U+002D` `"-"`
+/// ## `BASIC_UNICODE[45]: U+002D`
+/// `"-"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -339,7 +352,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[46]`: `U+002E` `"."`
+/// ## `BASIC_UNICODE[46]: U+002E`
+/// `"."`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -352,7 +366,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[47]`: `U+002F` `"/"`
+/// ## `BASIC_UNICODE[47]: U+002F`
+/// `"/"`
 ///
 /// ```text
 /// ░░░░░██░
@@ -365,7 +380,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[48]`: `U+0030` `"0"`
+/// ## `BASIC_UNICODE[48]: U+0030`
+/// `"0"`
 ///
 /// ```text
 /// ░█████░░
@@ -378,7 +394,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[49]`: `U+0031` `"1"`
+/// ## `BASIC_UNICODE[49]: U+0031`
+/// `"1"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -391,7 +408,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[50]`: `U+0032` `"2"`
+/// ## `BASIC_UNICODE[50]: U+0032`
+/// `"2"`
 ///
 /// ```text
 /// ░████░░░
@@ -404,7 +422,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[51]`: `U+0033` `"3"`
+/// ## `BASIC_UNICODE[51]: U+0033`
+/// `"3"`
 ///
 /// ```text
 /// ░████░░░
@@ -417,7 +436,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[52]`: `U+0034` `"4"`
+/// ## `BASIC_UNICODE[52]: U+0034`
+/// `"4"`
 ///
 /// ```text
 /// ░░░███░░
@@ -430,7 +450,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[53]`: `U+0035` `"5"`
+/// ## `BASIC_UNICODE[53]: U+0035`
+/// `"5"`
 ///
 /// ```text
 /// ██████░░
@@ -443,7 +464,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[54]`: `U+0036` `"6"`
+/// ## `BASIC_UNICODE[54]: U+0036`
+/// `"6"`
 ///
 /// ```text
 /// ░░███░░░
@@ -456,7 +478,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[55]`: `U+0037` `"7"`
+/// ## `BASIC_UNICODE[55]: U+0037`
+/// `"7"`
 ///
 /// ```text
 /// ██████░░
@@ -469,7 +492,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[56]`: `U+0038` `"8"`
+/// ## `BASIC_UNICODE[56]: U+0038`
+/// `"8"`
 ///
 /// ```text
 /// ░████░░░
@@ -482,7 +506,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[57]`: `U+0039` `"9"`
+/// ## `BASIC_UNICODE[57]: U+0039`
+/// `"9"`
 ///
 /// ```text
 /// ░████░░░
@@ -495,7 +520,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[58]`: `U+003A` `":"`
+/// ## `BASIC_UNICODE[58]: U+003A`
+/// `":"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -508,7 +534,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[59]`: `U+003B` `";"`
+/// ## `BASIC_UNICODE[59]: U+003B`
+/// `";"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -521,7 +548,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░██░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[60]`: `U+003C` `"<"`
+/// ## `BASIC_UNICODE[60]: U+003C`
+/// `"<"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -534,7 +562,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[61]`: `U+003D` `"="`
+/// ## `BASIC_UNICODE[61]: U+003D`
+/// `"="`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -547,7 +576,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[62]`: `U+003E` `">"`
+/// ## `BASIC_UNICODE[62]: U+003E`
+/// `">"`
 ///
 /// ```text
 /// ░██░░░░░
@@ -560,7 +590,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[63]`: `U+003F` `"?"`
+/// ## `BASIC_UNICODE[63]: U+003F`
+/// `"?"`
 ///
 /// ```text
 /// ░████░░░
@@ -573,7 +604,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[64]`: `U+0040` `"@"`
+/// ## `BASIC_UNICODE[64]: U+0040`
+/// `"@"`
 ///
 /// ```text
 /// ░█████░░
@@ -586,7 +618,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[65]`: `U+0041` `"A"`
+/// ## `BASIC_UNICODE[65]: U+0041`
+/// `"A"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -599,7 +632,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[66]`: `U+0042` `"B"`
+/// ## `BASIC_UNICODE[66]: U+0042`
+/// `"B"`
 ///
 /// ```text
 /// ██████░░
@@ -612,7 +646,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[67]`: `U+0043` `"C"`
+/// ## `BASIC_UNICODE[67]: U+0043`
+/// `"C"`
 ///
 /// ```text
 /// ░░████░░
@@ -625,7 +660,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[68]`: `U+0044` `"D"`
+/// ## `BASIC_UNICODE[68]: U+0044`
+/// `"D"`
 ///
 /// ```text
 /// █████░░░
@@ -638,7 +674,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[69]`: `U+0045` `"E"`
+/// ## `BASIC_UNICODE[69]: U+0045`
+/// `"E"`
 ///
 /// ```text
 /// ███████░
@@ -651,7 +688,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[70]`: `U+0046` `"F"`
+/// ## `BASIC_UNICODE[70]: U+0046`
+/// `"F"`
 ///
 /// ```text
 /// ███████░
@@ -664,7 +702,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[71]`: `U+0047` `"G"`
+/// ## `BASIC_UNICODE[71]: U+0047`
+/// `"G"`
 ///
 /// ```text
 /// ░░████░░
@@ -677,7 +716,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[72]`: `U+0048` `"H"`
+/// ## `BASIC_UNICODE[72]: U+0048`
+/// `"H"`
 ///
 /// ```text
 /// ██░░██░░
@@ -690,7 +730,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[73]`: `U+0049` `"I"`
+/// ## `BASIC_UNICODE[73]: U+0049`
+/// `"I"`
 ///
 /// ```text
 /// ░████░░░
@@ -703,7 +744,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[74]`: `U+004A` `"J"`
+/// ## `BASIC_UNICODE[74]: U+004A`
+/// `"J"`
 ///
 /// ```text
 /// ░░░████░
@@ -716,7 +758,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[75]`: `U+004B` `"K"`
+/// ## `BASIC_UNICODE[75]: U+004B`
+/// `"K"`
 ///
 /// ```text
 /// ███░░██░
@@ -729,7 +772,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[76]`: `U+004C` `"L"`
+/// ## `BASIC_UNICODE[76]: U+004C`
+/// `"L"`
 ///
 /// ```text
 /// ████░░░░
@@ -742,7 +786,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[77]`: `U+004D` `"M"`
+/// ## `BASIC_UNICODE[77]: U+004D`
+/// `"M"`
 ///
 /// ```text
 /// ██░░░██░
@@ -755,7 +800,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[78]`: `U+004E` `"N"`
+/// ## `BASIC_UNICODE[78]: U+004E`
+/// `"N"`
 ///
 /// ```text
 /// ██░░░██░
@@ -768,7 +814,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[79]`: `U+004F` `"O"`
+/// ## `BASIC_UNICODE[79]: U+004F`
+/// `"O"`
 ///
 /// ```text
 /// ░░███░░░
@@ -781,7 +828,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[80]`: `U+0050` `"P"`
+/// ## `BASIC_UNICODE[80]: U+0050`
+/// `"P"`
 ///
 /// ```text
 /// ██████░░
@@ -794,7 +842,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[81]`: `U+0051` `"Q"`
+/// ## `BASIC_UNICODE[81]: U+0051`
+/// `"Q"`
 ///
 /// ```text
 /// ░████░░░
@@ -807,7 +856,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[82]`: `U+0052` `"R"`
+/// ## `BASIC_UNICODE[82]: U+0052`
+/// `"R"`
 ///
 /// ```text
 /// ██████░░
@@ -820,7 +870,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[83]`: `U+0053` `"S"`
+/// ## `BASIC_UNICODE[83]: U+0053`
+/// `"S"`
 ///
 /// ```text
 /// ░████░░░
@@ -833,7 +884,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[84]`: `U+0054` `"T"`
+/// ## `BASIC_UNICODE[84]: U+0054`
+/// `"T"`
 ///
 /// ```text
 /// ██████░░
@@ -846,7 +898,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[85]`: `U+0055` `"U"`
+/// ## `BASIC_UNICODE[85]: U+0055`
+/// `"U"`
 ///
 /// ```text
 /// ██░░██░░
@@ -859,7 +912,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[86]`: `U+0056` `"V"`
+/// ## `BASIC_UNICODE[86]: U+0056`
+/// `"V"`
 ///
 /// ```text
 /// ██░░██░░
@@ -872,7 +926,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[87]`: `U+0057` `"W"`
+/// ## `BASIC_UNICODE[87]: U+0057`
+/// `"W"`
 ///
 /// ```text
 /// ██░░░██░
@@ -885,7 +940,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[88]`: `U+0058` `"X"`
+/// ## `BASIC_UNICODE[88]: U+0058`
+/// `"X"`
 ///
 /// ```text
 /// ██░░░██░
@@ -898,7 +954,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[89]`: `U+0059` `"Y"`
+/// ## `BASIC_UNICODE[89]: U+0059`
+/// `"Y"`
 ///
 /// ```text
 /// ██░░██░░
@@ -911,7 +968,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[90]`: `U+005A` `"Z"`
+/// ## `BASIC_UNICODE[90]: U+005A`
+/// `"Z"`
 ///
 /// ```text
 /// ███████░
@@ -924,7 +982,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[91]`: `U+005B` `"["`
+/// ## `BASIC_UNICODE[91]: U+005B`
+/// `"["`
 ///
 /// ```text
 /// ░████░░░
@@ -937,7 +996,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[92]`: `U+005C` `"\\"`
+/// ## `BASIC_UNICODE[92]: U+005C`
+/// `"\"`
 ///
 /// ```text
 /// ██░░░░░░
@@ -950,7 +1010,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[93]`: `U+005D` `"]"`
+/// ## `BASIC_UNICODE[93]: U+005D`
+/// `"]"`
 ///
 /// ```text
 /// ░████░░░
@@ -963,7 +1024,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[94]`: `U+005E` `"^"`
+/// ## `BASIC_UNICODE[94]: U+005E`
+/// `"^"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -976,7 +1038,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[95]`: `U+005F` `"_"`
+/// ## `BASIC_UNICODE[95]: U+005F`
+/// `"_"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -989,7 +1052,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ████████
 /// ```
 ///
-/// ## `BASIC_UNICODE[96]`: `U+0060` `"`"`
+/// ## `BASIC_UNICODE[96]: U+0060`
+/// <pre>"`"</pre>
 ///
 /// ```text
 /// ░░██░░░░
@@ -1002,7 +1066,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[97]`: `U+0061` `"a"`
+/// ## `BASIC_UNICODE[97]: U+0061`
+/// `"a"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1015,7 +1080,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[98]`: `U+0062` `"b"`
+/// ## `BASIC_UNICODE[98]: U+0062`
+/// `"b"`
 ///
 /// ```text
 /// ███░░░░░
@@ -1028,7 +1094,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[99]`: `U+0063` `"c"`
+/// ## `BASIC_UNICODE[99]: U+0063`
+/// `"c"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1041,7 +1108,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[100]`: `U+0064` `"d"`
+/// ## `BASIC_UNICODE[100]: U+0064`
+/// `"d"`
 ///
 /// ```text
 /// ░░░███░░
@@ -1054,7 +1122,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[101]`: `U+0065` `"e"`
+/// ## `BASIC_UNICODE[101]: U+0065`
+/// `"e"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1067,7 +1136,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[102]`: `U+0066` `"f"`
+/// ## `BASIC_UNICODE[102]: U+0066`
+/// `"f"`
 ///
 /// ```text
 /// ░░███░░░
@@ -1080,7 +1150,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[103]`: `U+0067` `"g"`
+/// ## `BASIC_UNICODE[103]: U+0067`
+/// `"g"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1093,7 +1164,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// █████░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[104]`: `U+0068` `"h"`
+/// ## `BASIC_UNICODE[104]: U+0068`
+/// `"h"`
 ///
 /// ```text
 /// ███░░░░░
@@ -1106,7 +1178,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[105]`: `U+0069` `"i"`
+/// ## `BASIC_UNICODE[105]: U+0069`
+/// `"i"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -1119,7 +1192,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[106]`: `U+006A` `"j"`
+/// ## `BASIC_UNICODE[106]: U+006A`
+/// `"j"`
 ///
 /// ```text
 /// ░░░░██░░
@@ -1132,7 +1206,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░████░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[107]`: `U+006B` `"k"`
+/// ## `BASIC_UNICODE[107]: U+006B`
+/// `"k"`
 ///
 /// ```text
 /// ███░░░░░
@@ -1145,7 +1220,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[108]`: `U+006C` `"l"`
+/// ## `BASIC_UNICODE[108]: U+006C`
+/// `"l"`
 ///
 /// ```text
 /// ░███░░░░
@@ -1158,7 +1234,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[109]`: `U+006D` `"m"`
+/// ## `BASIC_UNICODE[109]: U+006D`
+/// `"m"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1171,7 +1248,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[110]`: `U+006E` `"n"`
+/// ## `BASIC_UNICODE[110]: U+006E`
+/// `"n"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1184,7 +1262,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[111]`: `U+006F` `"o"`
+/// ## `BASIC_UNICODE[111]: U+006F`
+/// `"o"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1197,7 +1276,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[112]`: `U+0070` `"p"`
+/// ## `BASIC_UNICODE[112]: U+0070`
+/// `"p"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1210,7 +1290,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ████░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[113]`: `U+0071` `"q"`
+/// ## `BASIC_UNICODE[113]: U+0071`
+/// `"q"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1223,7 +1304,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░████░
 /// ```
 ///
-/// ## `BASIC_UNICODE[114]`: `U+0072` `"r"`
+/// ## `BASIC_UNICODE[114]: U+0072`
+/// `"r"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1236,7 +1318,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[115]`: `U+0073` `"s"`
+/// ## `BASIC_UNICODE[115]: U+0073`
+/// `"s"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1249,7 +1332,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[116]`: `U+0074` `"t"`
+/// ## `BASIC_UNICODE[116]: U+0074`
+/// `"t"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -1262,7 +1346,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[117]`: `U+0075` `"u"`
+/// ## `BASIC_UNICODE[117]: U+0075`
+/// `"u"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1275,7 +1360,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[118]`: `U+0076` `"v"`
+/// ## `BASIC_UNICODE[118]: U+0076`
+/// `"v"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1288,7 +1374,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[119]`: `U+0077` `"w"`
+/// ## `BASIC_UNICODE[119]: U+0077`
+/// `"w"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1301,7 +1388,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[120]`: `U+0078` `"x"`
+/// ## `BASIC_UNICODE[120]: U+0078`
+/// `"x"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1314,7 +1402,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[121]`: `U+0079` `"y"`
+/// ## `BASIC_UNICODE[121]: U+0079`
+/// `"y"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1327,7 +1416,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// █████░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[122]`: `U+007A` `"z"`
+/// ## `BASIC_UNICODE[122]: U+007A`
+/// `"z"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1340,7 +1430,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[123]`: `U+007B` `"{"`
+/// ## `BASIC_UNICODE[123]: U+007B`
+/// `"{"`
 ///
 /// ```text
 /// ░░░███░░
@@ -1353,7 +1444,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[124]`: `U+007C` `"|"`
+/// ## `BASIC_UNICODE[124]: U+007C`
+/// `"|"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -1366,7 +1458,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[125]`: `U+007D` `"}"`
+/// ## `BASIC_UNICODE[125]: U+007D`
+/// `"}"`
 ///
 /// ```text
 /// ███░░░░░
@@ -1379,7 +1472,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `BASIC_UNICODE[126]`: `U+007E` `"~"`
+/// ## `BASIC_UNICODE[126]: U+007E`
+/// `"~"`
 ///
 /// ```text
 /// ░███░██░
@@ -1391,6 +1485,8 @@ pub const BASIC_UNICODE: [FontUnicode; 128] = [
 /// ░░░░░░░░
 /// ░░░░░░░░
 /// ```
+///
+/// ## `BASIC_UNICODE[127]: U+007F` `WHITESPACE`
 pub const BASIC_FONTS: BasicFonts = BasicFonts(BASIC_UNICODE);
 
 /// Strong-typed collection wrapper for [BASIC_UNICODE](./constant.BASIC_UNICODE.html).
@@ -1448,30 +1544,26 @@ impl UnicodeFonts for BasicFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-                continue;
-            }
-            println!(
-                "## `{:?}[{:?}]`: `U+{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
-            println!();
-            println!("```text");
-            for x in &font.byte_array() {
-                for bit in 0..8 {
-                    match *x & 1 << bit {
-                        0 => print!("░"),
-                        _ => print!("█"),
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
                     }
+                    println!();
                 }
+                println!("```");
                 println!();
             }
-            println!("```");
-            println!();
         }
     }
 

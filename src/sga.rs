@@ -37,7 +37,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 
 /// A convenient constant for special SGA fonts (`U+E541` - `U+E55A`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `SGA_UNICODE[0]`: `0xE541` `"\u{e541}"`
+/// ## `SGA_UNICODE[0]: U+E541`
+/// `"\u{e541}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -50,7 +51,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[1]`: `0xE542` `"\u{e542}"`
+/// ## `SGA_UNICODE[1]: U+E542`
+/// `"\u{e542}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -63,7 +65,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[2]`: `0xE543` `"\u{e543}"`
+/// ## `SGA_UNICODE[2]: U+E543`
+/// `"\u{e543}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -76,7 +79,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[3]`: `0xE544` `"\u{e544}"`
+/// ## `SGA_UNICODE[3]: U+E544`
+/// `"\u{e544}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -89,7 +93,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[4]`: `0xE545` `"\u{e545}"`
+/// ## `SGA_UNICODE[4]: U+E545`
+/// `"\u{e545}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -102,7 +107,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[5]`: `0xE546` `"\u{e546}"`
+/// ## `SGA_UNICODE[5]: U+E546`
+/// `"\u{e546}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -115,7 +121,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[6]`: `0xE547` `"\u{e547}"`
+/// ## `SGA_UNICODE[6]: U+E547`
+/// `"\u{e547}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -128,7 +135,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[7]`: `0xE548` `"\u{e548}"`
+/// ## `SGA_UNICODE[7]: U+E548`
+/// `"\u{e548}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -141,7 +149,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[8]`: `0xE549` `"\u{e549}"`
+/// ## `SGA_UNICODE[8]: U+E549`
+/// `"\u{e549}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -154,7 +163,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[9]`: `0xE54A` `"\u{e54a}"`
+/// ## `SGA_UNICODE[9]: U+E54A`
+/// `"\u{e54a}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -167,7 +177,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[10]`: `0xE54B` `"\u{e54b}"`
+/// ## `SGA_UNICODE[10]: U+E54B`
+/// `"\u{e54b}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -180,7 +191,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[11]`: `0xE54C` `"\u{e54c}"`
+/// ## `SGA_UNICODE[11]: U+E54C`
+/// `"\u{e54c}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -193,7 +205,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[12]`: `0xE54D` `"\u{e54d}"`
+/// ## `SGA_UNICODE[12]: U+E54D`
+/// `"\u{e54d}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -206,7 +219,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[13]`: `0xE54E` `"\u{e54e}"`
+/// ## `SGA_UNICODE[13]: U+E54E`
+/// `"\u{e54e}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -219,7 +233,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[14]`: `0xE54F` `"\u{e54f}"`
+/// ## `SGA_UNICODE[14]: U+E54F`
+/// `"\u{e54f}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -232,7 +247,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[15]`: `0xE550` `"\u{e550}"`
+/// ## `SGA_UNICODE[15]: U+E550`
+/// `"\u{e550}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -245,7 +261,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[16]`: `0xE551` `"\u{e551}"`
+/// ## `SGA_UNICODE[16]: U+E551`
+/// `"\u{e551}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -258,7 +275,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[17]`: `0xE552` `"\u{e552}"`
+/// ## `SGA_UNICODE[17]: U+E552`
+/// `"\u{e552}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -271,7 +289,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[18]`: `0xE553` `"\u{e553}"`
+/// ## `SGA_UNICODE[18]: U+E553`
+/// `"\u{e553}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -284,7 +303,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[19]`: `0xE554` `"\u{e554}"`
+/// ## `SGA_UNICODE[19]: U+E554`
+/// `"\u{e554}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -297,7 +317,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[20]`: `0xE555` `"\u{e555}"`
+/// ## `SGA_UNICODE[20]: U+E555`
+/// `"\u{e555}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -310,7 +331,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[21]`: `0xE556` `"\u{e556}"`
+/// ## `SGA_UNICODE[21]: U+E556`
+/// `"\u{e556}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -323,7 +345,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[22]`: `0xE557` `"\u{e557}"`
+/// ## `SGA_UNICODE[22]: U+E557`
+/// `"\u{e557}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -336,7 +359,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[23]`: `0xE558` `"\u{e558}"`
+/// ## `SGA_UNICODE[23]: U+E558`
+/// `"\u{e558}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -349,7 +373,8 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[24]`: `0xE559` `"\u{e559}"`
+/// ## `SGA_UNICODE[24]: U+E559`
+/// `"\u{e559}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -362,9 +387,10 @@ pub const SGA_UNICODE: [FontUnicode; 26] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `SGA_UNICODE[25]`: `0xE55A` `"\u{e55a}"`
+/// ## `SGA_UNICODE[25]: U+E55A`
+/// `"\u{e55a}"`
 ///
-/// ```markdown
+/// ```text
 /// ░░░░░░░░
 /// ░░░░░░░░
 /// ░░░██░░░
@@ -430,7 +456,26 @@ impl UnicodeFonts for SgaFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
-            print_set(idx, &font);
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
+            if font.is_whitespace() {
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
+                    }
+                    println!();
+                }
+                println!("```");
+                println!();
+            }
         }
     }
 

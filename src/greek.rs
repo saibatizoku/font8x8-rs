@@ -66,7 +66,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 
 /// A convenient constant for Greek fonts (`U+0390` - `U+03C9`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `GREEK_UNICODE[0]`: `0x0390` `"ΐ"`
+/// ## `GREEK_UNICODE[0]: U+0390`
+/// `"ΐ"`
 ///
 /// ```text
 /// █░██░█░░
@@ -79,7 +80,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[1]`: `0x0391` `"Α"`
+/// ## `GREEK_UNICODE[1]: U+0391`
+/// `"Α"`
 ///
 /// ```text
 /// ░░██░░░░
@@ -92,7 +94,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[2]`: `0x0392` `"Β"`
+/// ## `GREEK_UNICODE[2]: U+0392`
+/// `"Β"`
 ///
 /// ```text
 /// ██████░░
@@ -105,7 +108,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[3]`: `0x0393` `"Γ"`
+/// ## `GREEK_UNICODE[3]: U+0393`
+/// `"Γ"`
 ///
 /// ```text
 /// ██████░░
@@ -118,7 +122,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[4]`: `0x0394` `"Δ"`
+/// ## `GREEK_UNICODE[4]: U+0394`
+/// `"Δ"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -131,7 +136,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[5]`: `0x0395` `"Ε"`
+/// ## `GREEK_UNICODE[5]: U+0395`
+/// `"Ε"`
 ///
 /// ```text
 /// ███████░
@@ -144,7 +150,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[6]`: `0x0396` `"Ζ"`
+/// ## `GREEK_UNICODE[6]: U+0396`
+/// `"Ζ"`
 ///
 /// ```text
 /// ███████░
@@ -157,7 +164,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[7]`: `0x0397` `"Η"`
+/// ## `GREEK_UNICODE[7]: U+0397`
+/// `"Η"`
 ///
 /// ```text
 /// ██░░██░░
@@ -170,7 +178,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[8]`: `0x0398` `"Θ"`
+/// ## `GREEK_UNICODE[8]: U+0398`
+/// `"Θ"`
 ///
 /// ```text
 /// ░░███░░░
@@ -183,7 +192,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[9]`: `0x0399` `"Ι"`
+/// ## `GREEK_UNICODE[9]: U+0399`
+/// `"Ι"`
 ///
 /// ```text
 /// ░████░░░
@@ -196,7 +206,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[10]`: `0x039A` `"Κ"`
+/// ## `GREEK_UNICODE[10]: U+039A`
+/// `"Κ"`
 ///
 /// ```text
 /// ███░░██░
@@ -209,7 +220,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[11]`: `0x039B` `"Λ"`
+/// ## `GREEK_UNICODE[11]: U+039B`
+/// `"Λ"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -222,7 +234,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[12]`: `0x039C` `"Μ"`
+/// ## `GREEK_UNICODE[12]: U+039C`
+/// `"Μ"`
 ///
 /// ```text
 /// ██░░░██░
@@ -235,7 +248,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[13]`: `0x039D` `"Ν"`
+/// ## `GREEK_UNICODE[13]: U+039D`
+/// `"Ν"`
 ///
 /// ```text
 /// ██░░░██░
@@ -248,7 +262,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[14]`: `0x039E` `"Ξ"`
+/// ## `GREEK_UNICODE[14]: U+039E`
+/// `"Ξ"`
 ///
 /// ```text
 /// ███████░
@@ -261,7 +276,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[15]`: `0x039F` `"Ο"`
+/// ## `GREEK_UNICODE[15]: U+039F`
+/// `"Ο"`
 ///
 /// ```text
 /// ░░███░░░
@@ -274,7 +290,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[16]`: `0x03A0` `"Π"`
+/// ## `GREEK_UNICODE[16]: U+03A0`
+/// `"Π"`
 ///
 /// ```text
 /// ███████░
@@ -287,7 +304,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[17]`: `0x03A1` `"Ρ"`
+/// ## `GREEK_UNICODE[17]: U+03A1`
+/// `"Ρ"`
 ///
 /// ```text
 /// ██████░░
@@ -300,7 +318,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[18]`: `0x03A2` `"\u{3a2}"`
+/// ## `GREEK_UNICODE[18]: U+03A2`
+/// `"\u{3a2}"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -313,7 +332,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░█░
 /// ```
 ///
-/// ## `GREEK_UNICODE[19]`: `0x03A3` `"Σ"`
+/// ## `GREEK_UNICODE[19]: U+03A3`
+/// `"Σ"`
 ///
 /// ```text
 /// ███████░
@@ -326,7 +346,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[20]`: `0x03A4` `"Τ"`
+/// ## `GREEK_UNICODE[20]: U+03A4`
+/// `"Τ"`
 ///
 /// ```text
 /// ██████░░
@@ -339,7 +360,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[21]`: `0x03A5` `"Υ"`
+/// ## `GREEK_UNICODE[21]: U+03A5`
+/// `"Υ"`
 ///
 /// ```text
 /// ██░░██░░
@@ -352,7 +374,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[22]`: `0x03A6` `"Φ"`
+/// ## `GREEK_UNICODE[22]: U+03A6`
+/// `"Φ"`
 ///
 /// ```text
 /// ░░░██░░░
@@ -365,7 +388,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[23]`: `0x03A7` `"Χ"`
+/// ## `GREEK_UNICODE[23]: U+03A7`
+/// `"Χ"`
 ///
 /// ```text
 /// ██░░░██░
@@ -378,7 +402,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[24]`: `0x03A8` `"Ψ"`
+/// ## `GREEK_UNICODE[24]: U+03A8`
+/// `"Ψ"`
 ///
 /// ```text
 /// ██░██░██
@@ -391,7 +416,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[25]`: `0x03A9` `"Ω"`
+/// ## `GREEK_UNICODE[25]: U+03A9`
+/// `"Ω"`
 ///
 /// ```text
 /// ░█████░░
@@ -404,7 +430,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[26]`: `0x0399` `"Ι"`
+/// ## `GREEK_UNICODE[26]: U+0399`
+/// `"Ι"`
 ///
 /// ```text
 /// ██░░██░░
@@ -417,7 +444,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[27]`: `0x03A5` `"Υ"`
+/// ## `GREEK_UNICODE[27]: U+03A5`
+/// `"Υ"`
 ///
 /// ```text
 /// ██░░██░░
@@ -430,7 +458,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[28]`: `0x03AC` `"ά"`
+/// ## `GREEK_UNICODE[28]: U+03AC`
+/// `"ά"`
 ///
 /// ```text
 /// ░░░░███░
@@ -443,7 +472,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[29]`: `0x03AD` `"έ"`
+/// ## `GREEK_UNICODE[29]: U+03AD`
+/// `"έ"`
 ///
 /// ```text
 /// ░░░███░░
@@ -456,7 +486,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[30]`: `0x03AE` `"ή"`
+/// ## `GREEK_UNICODE[30]: U+03AE`
+/// `"ή"`
 ///
 /// ```text
 /// ░░░███░░
@@ -469,7 +500,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░██░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[31]`: `0x03AF` `"ί"`
+/// ## `GREEK_UNICODE[31]: U+03AF`
+/// `"ί"`
 ///
 /// ```text
 /// ░░░███░░
@@ -482,7 +514,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[32]`: `0x03B0` `"ΰ"`
+/// ## `GREEK_UNICODE[32]: U+03B0`
+/// `"ΰ"`
 ///
 /// ```text
 /// █░██░█░░
@@ -495,7 +528,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[33]`: `0x03B1` `"α"`
+/// ## `GREEK_UNICODE[33]: U+03B1`
+/// `"α"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -508,7 +542,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[34]`: `0x03B2` `"β"`
+/// ## `GREEK_UNICODE[34]: U+03B2`
+/// `"β"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -521,7 +556,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ██░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[35]`: `0x03B3` `"γ"`
+/// ## `GREEK_UNICODE[35]: U+03B3`
+/// `"γ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -534,7 +570,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[36]`: `0x03B4` `"δ"`
+/// ## `GREEK_UNICODE[36]: U+03B4`
+/// `"δ"`
 ///
 /// ```text
 /// ░░░███░░
@@ -547,7 +584,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[37]`: `0x03B5` `"ε"`
+/// ## `GREEK_UNICODE[37]: U+03B5`
+/// `"ε"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -560,7 +598,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[38]`: `0x03B6` `"ζ"`
+/// ## `GREEK_UNICODE[38]: U+03B6`
+/// `"ζ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -573,7 +612,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░███░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[39]`: `0x03B7` `"η"`
+/// ## `GREEK_UNICODE[39]: U+03B7`
+/// `"η"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -586,7 +626,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░██░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[40]`: `0x03B8` `"θ"`
+/// ## `GREEK_UNICODE[40]: U+03B8`
+/// `"θ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -599,7 +640,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[41]`: `0x03B9` `"ι"`
+/// ## `GREEK_UNICODE[41]: U+03B9`
+/// `"ι"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -612,7 +654,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[42]`: `0x03BA` `"κ"`
+/// ## `GREEK_UNICODE[42]: U+03BA`
+/// `"κ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -625,7 +668,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[43]`: `0x03BB` `"λ"`
+/// ## `GREEK_UNICODE[43]: U+03BB`
+/// `"λ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -638,7 +682,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[44]`: `0x03BC` `"μ"`
+/// ## `GREEK_UNICODE[44]: U+03BC`
+/// `"μ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -651,7 +696,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ██░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[45]`: `0x03BD` `"ν"`
+/// ## `GREEK_UNICODE[45]: U+03BD`
+/// `"ν"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -664,7 +710,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[46]`: `0x03BE` `"ξ"`
+/// ## `GREEK_UNICODE[46]: U+03BE`
+/// `"ξ"`
 ///
 /// ```text
 /// ░████░░░
@@ -677,7 +724,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░███░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[47]`: `0x03BF` `"ο"`
+/// ## `GREEK_UNICODE[47]: U+03BF`
+/// `"ο"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -690,7 +738,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[48]`: `0x03C0` `"π"`
+/// ## `GREEK_UNICODE[48]: U+03C0`
+/// `"π"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -703,7 +752,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[49]`: `0x03C1` `"ρ"`
+/// ## `GREEK_UNICODE[49]: U+03C1`
+/// `"ρ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -716,7 +766,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░██░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[50]`: `0x03C2` `"ς"`
+/// ## `GREEK_UNICODE[50]: U+03C2`
+/// `"ς"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -729,7 +780,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░███░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[51]`: `0x03C3` `"σ"`
+/// ## `GREEK_UNICODE[51]: U+03C3`
+/// `"σ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -742,7 +794,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[52]`: `0x03C4` `"τ"`
+/// ## `GREEK_UNICODE[52]: U+03C4`
+/// `"τ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -755,7 +808,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[53]`: `0x03C5` `"υ"`
+/// ## `GREEK_UNICODE[53]: U+03C5`
+/// `"υ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -768,7 +822,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[54]`: `0x03C6` `"φ"`
+/// ## `GREEK_UNICODE[54]: U+03C6`
+/// `"φ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -781,7 +836,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[55]`: `0x03C7` `"χ"`
+/// ## `GREEK_UNICODE[55]: U+03C7`
+/// `"χ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -794,7 +850,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[56]`: `0x03C8` `"ψ"`
+/// ## `GREEK_UNICODE[56]: U+03C8`
+/// `"ψ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -807,7 +864,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[57]`: `0x03C9` `"ω"`
+/// ## `GREEK_UNICODE[57]: U+03C9`
+/// `"ω"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -875,30 +933,26 @@ impl UnicodeFonts for GreekFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-                continue;
-            }
-            println!(
-                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
-            println!();
-            println!("```text");
-            for x in &font.byte_array() {
-                for bit in 0..8 {
-                    match *x & 1 << bit {
-                        0 => print!("░"),
-                        _ => print!("█"),
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
                     }
+                    println!();
                 }
+                println!("```");
                 println!();
             }
-            println!("```");
-            println!();
         }
     }
 

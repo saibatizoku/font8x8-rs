@@ -104,7 +104,9 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 
 /// A convenient constant for Hiragana fonts (`U+3040` - `U+309F`), that implements the `UnicodeFonts` trait.
 ///
-/// ## `HIRAGANA_UNICODE[1]`: `0x3041` `"ぁ"`
+/// ## `HIRAGANA_UNICODE[0]: U+3040` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[1]: U+3041`
+/// `"ぁ"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -117,7 +119,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[2]`: `0x3042` `"あ"`
+/// ## `HIRAGANA_UNICODE[2]: U+3042`
+/// `"あ"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -130,7 +133,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[3]`: `0x3043` `"ぃ"`
+/// ## `HIRAGANA_UNICODE[3]: U+3043`
+/// `"ぃ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -143,7 +147,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[4]`: `0x3044` `"い"`
+/// ## `HIRAGANA_UNICODE[4]: U+3044`
+/// `"い"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -156,7 +161,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[5]`: `0x3045` `"ぅ"`
+/// ## `HIRAGANA_UNICODE[5]: U+3045`
+/// `"ぅ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -169,7 +175,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[6]`: `0x3046` `"う"`
+/// ## `HIRAGANA_UNICODE[6]: U+3046`
+/// `"う"`
 ///
 /// ```text
 /// ░░████░░
@@ -182,7 +189,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[7]`: `0x3047` `"ぇ"`
+/// ## `HIRAGANA_UNICODE[7]: U+3047`
+/// `"ぇ"`
 ///
 /// ```text
 /// ░░███░░░
@@ -195,7 +203,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[8]`: `0x3048` `"え"`
+/// ## `HIRAGANA_UNICODE[8]: U+3048`
+/// `"え"`
 ///
 /// ```text
 /// ░░███░░░
@@ -208,7 +217,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[9]`: `0x3049` `"ぉ"`
+/// ## `HIRAGANA_UNICODE[9]: U+3049`
+/// `"ぉ"`
 ///
 /// ```text
 /// ░░█░░█░░
@@ -221,7 +231,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[10]`: `0x304A` `"お"`
+/// ## `HIRAGANA_UNICODE[10]: U+304A`
+/// `"お"`
 ///
 /// ```text
 /// ░░█░░█░░
@@ -234,7 +245,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[11]`: `0x304B` `"か"`
+/// ## `HIRAGANA_UNICODE[11]: U+304B`
+/// `"か"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -247,7 +259,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[12]`: `0x304C` `"が"`
+/// ## `HIRAGANA_UNICODE[12]: U+304C`
+/// `"が"`
 ///
 /// ```text
 /// ░░█░░░█░
@@ -260,7 +273,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[13]`: `0x304D` `"き"`
+/// ## `HIRAGANA_UNICODE[13]: U+304D`
+/// `"き"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -273,7 +287,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[14]`: `0x304E` `"ぎ"`
+/// ## `HIRAGANA_UNICODE[14]: U+304E`
+/// `"ぎ"`
 ///
 /// ```text
 /// ░░█░░░█░
@@ -286,7 +301,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[15]`: `0x304F` `"く"`
+/// ## `HIRAGANA_UNICODE[15]: U+304F`
+/// `"く"`
 ///
 /// ```text
 /// ░░░░█░░░
@@ -299,7 +315,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[16]`: `0x3050` `"ぐ"`
+/// ## `HIRAGANA_UNICODE[16]: U+3050`
+/// `"ぐ"`
 ///
 /// ```text
 /// ░░░█░█░░
@@ -312,7 +329,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[17]`: `0x3051` `"け"`
+/// ## `HIRAGANA_UNICODE[17]: U+3051`
+/// `"け"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -325,7 +343,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[18]`: `0x3052` `"げ"`
+/// ## `HIRAGANA_UNICODE[18]: U+3052`
+/// `"げ"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -338,7 +357,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[19]`: `0x3053` `"こ"`
+/// ## `HIRAGANA_UNICODE[19]: U+3053`
+/// `"こ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -351,7 +371,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[20]`: `0x3054` `"ご"`
+/// ## `HIRAGANA_UNICODE[20]: U+3054`
+/// `"ご"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -364,7 +385,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[21]`: `0x3055` `"さ"`
+/// ## `HIRAGANA_UNICODE[21]: U+3055`
+/// `"さ"`
 ///
 /// ```text
 /// ░░░░█░░░
@@ -377,7 +399,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[22]`: `0x3056` `"ざ"`
+/// ## `HIRAGANA_UNICODE[22]: U+3056`
+/// `"ざ"`
 ///
 /// ```text
 /// ░░█░░█░░
@@ -390,7 +413,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[23]`: `0x3057` `"し"`
+/// ## `HIRAGANA_UNICODE[23]: U+3057`
+/// `"し"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -403,7 +427,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[24]`: `0x3058` `"じ"`
+/// ## `HIRAGANA_UNICODE[24]: U+3058`
+/// `"じ"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -416,7 +441,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[25]`: `0x3059` `"す"`
+/// ## `HIRAGANA_UNICODE[25]: U+3059`
+/// `"す"`
 ///
 /// ```text
 /// ░░░░█░░░
@@ -429,7 +455,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[26]`: `0x305A` `"ず"`
+/// ## `HIRAGANA_UNICODE[26]: U+305A`
+/// `"ず"`
 ///
 /// ```text
 /// ░░█░░░█░
@@ -442,7 +469,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[27]`: `0x305B` `"せ"`
+/// ## `HIRAGANA_UNICODE[27]: U+305B`
+/// `"せ"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -455,7 +483,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[28]`: `0x305C` `"ぜ"`
+/// ## `HIRAGANA_UNICODE[28]: U+305C`
+/// `"ぜ"`
 ///
 /// ```text
 /// ░░░░░░░█
@@ -468,7 +497,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[29]`: `0x305D` `"そ"`
+/// ## `HIRAGANA_UNICODE[29]: U+305D`
+/// `"そ"`
 ///
 /// ```text
 /// ░████░░░
@@ -481,7 +511,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[30]`: `0x305E` `"ぞ"`
+/// ## `HIRAGANA_UNICODE[30]: U+305E`
+/// `"ぞ"`
 ///
 /// ```text
 /// ████░░█░
@@ -494,7 +525,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[31]`: `0x305F` `"た"`
+/// ## `HIRAGANA_UNICODE[31]: U+305F`
+/// `"た"`
 ///
 /// ```text
 /// ░█░░░░░░
@@ -507,7 +539,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[32]`: `0x3060` `"だ"`
+/// ## `HIRAGANA_UNICODE[32]: U+3060`
+/// `"だ"`
 ///
 /// ```text
 /// ░█░░░░█░
@@ -520,7 +553,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[33]`: `0x3061` `"ち"`
+/// ## `HIRAGANA_UNICODE[33]: U+3061`
+/// `"ち"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -533,7 +567,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[34]`: `0x3062` `"ぢ"`
+/// ## `HIRAGANA_UNICODE[34]: U+3062`
+/// `"ぢ"`
 ///
 /// ```text
 /// ░░█░░░█░
@@ -546,7 +581,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[35]`: `0x3063` `"っ"`
+/// ## `HIRAGANA_UNICODE[35]: U+3063`
+/// `"っ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -559,7 +595,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[36]`: `0x3064` `"つ"`
+/// ## `HIRAGANA_UNICODE[36]: U+3064`
+/// `"つ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -572,7 +609,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[37]`: `0x3065` `"づ"`
+/// ## `HIRAGANA_UNICODE[37]: U+3065`
+/// `"づ"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -585,7 +623,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[38]`: `0x3066` `"て"`
+/// ## `HIRAGANA_UNICODE[38]: U+3066`
+/// `"て"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -598,7 +637,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[39]`: `0x3067` `"で"`
+/// ## `HIRAGANA_UNICODE[39]: U+3067`
+/// `"で"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -611,7 +651,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[40]`: `0x3068` `"と"`
+/// ## `HIRAGANA_UNICODE[40]: U+3068`
+/// `"と"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -624,7 +665,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[41]`: `0x3069` `"ど"`
+/// ## `HIRAGANA_UNICODE[41]: U+3069`
+/// `"ど"`
 ///
 /// ```text
 /// ░░█░░░█░
@@ -637,7 +679,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[42]`: `0x306A` `"な"`
+/// ## `HIRAGANA_UNICODE[42]: U+306A`
+/// `"な"`
 ///
 /// ```text
 /// ░█░░██░░
@@ -650,7 +693,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[43]`: `0x306B` `"に"`
+/// ## `HIRAGANA_UNICODE[43]: U+306B`
+/// `"に"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -663,7 +707,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[44]`: `0x306C` `"ぬ"`
+/// ## `HIRAGANA_UNICODE[44]: U+306C`
+/// `"ぬ"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -676,7 +721,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[45]`: `0x306D` `"ね"`
+/// ## `HIRAGANA_UNICODE[45]: U+306D`
+/// `"ね"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -689,7 +735,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[46]`: `0x306E` `"の"`
+/// ## `HIRAGANA_UNICODE[46]: U+306E`
+/// `"の"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -702,7 +749,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[47]`: `0x306F` `"は"`
+/// ## `HIRAGANA_UNICODE[47]: U+306F`
+/// `"は"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -715,7 +763,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[48]`: `0x3070` `"ば"`
+/// ## `HIRAGANA_UNICODE[48]: U+3070`
+/// `"ば"`
 ///
 /// ```text
 /// ░░░░░░░█
@@ -728,7 +777,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[49]`: `0x3071` `"ぱ"`
+/// ## `HIRAGANA_UNICODE[49]: U+3071`
+/// `"ぱ"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -741,7 +791,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[50]`: `0x3072` `"ひ"`
+/// ## `HIRAGANA_UNICODE[50]: U+3072`
+/// `"ひ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -754,7 +805,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[51]`: `0x3073` `"び"`
+/// ## `HIRAGANA_UNICODE[51]: U+3073`
+/// `"び"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -767,7 +819,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[52]`: `0x3074` `"ぴ"`
+/// ## `HIRAGANA_UNICODE[52]: U+3074`
+/// `"ぴ"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -780,7 +833,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[53]`: `0x3075` `"ふ"`
+/// ## `HIRAGANA_UNICODE[53]: U+3075`
+/// `"ふ"`
 ///
 /// ```text
 /// ░░███░░░
@@ -793,7 +847,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[54]`: `0x3076` `"ぶ"`
+/// ## `HIRAGANA_UNICODE[54]: U+3076`
+/// `"ぶ"`
 ///
 /// ```text
 /// ░░██░░█░
@@ -806,7 +861,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[55]`: `0x3077` `"ぷ"`
+/// ## `HIRAGANA_UNICODE[55]: U+3077`
+/// `"ぷ"`
 ///
 /// ```text
 /// ░░██░░█░
@@ -819,7 +875,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[56]`: `0x3078` `"へ"`
+/// ## `HIRAGANA_UNICODE[56]: U+3078`
+/// `"へ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -832,7 +889,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[57]`: `0x3079` `"べ"`
+/// ## `HIRAGANA_UNICODE[57]: U+3079`
+/// `"べ"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -845,7 +903,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[58]`: `0x307A` `"ぺ"`
+/// ## `HIRAGANA_UNICODE[58]: U+307A`
+/// `"ぺ"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -858,7 +917,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[59]`: `0x307B` `"ほ"`
+/// ## `HIRAGANA_UNICODE[59]: U+307B`
+/// `"ほ"`
 ///
 /// ```text
 /// █░█████░
@@ -871,7 +931,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[60]`: `0x307C` `"ぼ"`
+/// ## `HIRAGANA_UNICODE[60]: U+307C`
+/// `"ぼ"`
 ///
 /// ```text
 /// █░███░░█
@@ -884,7 +945,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[61]`: `0x307D` `"ぽ"`
+/// ## `HIRAGANA_UNICODE[61]: U+307D`
+/// `"ぽ"`
 ///
 /// ```text
 /// █░███░█░
@@ -897,7 +959,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[62]`: `0x307E` `"ま"`
+/// ## `HIRAGANA_UNICODE[62]: U+307E`
+/// `"ま"`
 ///
 /// ```text
 /// ░██████░
@@ -910,7 +973,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[63]`: `0x307F` `"み"`
+/// ## `HIRAGANA_UNICODE[63]: U+307F`
+/// `"み"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -923,7 +987,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[64]`: `0x3080` `"む"`
+/// ## `HIRAGANA_UNICODE[64]: U+3080`
+/// `"む"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -936,7 +1001,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[65]`: `0x3081` `"め"`
+/// ## `HIRAGANA_UNICODE[65]: U+3081`
+/// `"め"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -949,7 +1015,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[66]`: `0x3082` `"も"`
+/// ## `HIRAGANA_UNICODE[66]: U+3082`
+/// `"も"`
 ///
 /// ```text
 /// ░█░░░░░░
@@ -962,7 +1029,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[67]`: `0x3083` `"ゃ"`
+/// ## `HIRAGANA_UNICODE[67]: U+3083`
+/// `"ゃ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -975,7 +1043,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[68]`: `0x3084` `"や"`
+/// ## `HIRAGANA_UNICODE[68]: U+3084`
+/// `"や"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -988,7 +1057,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[69]`: `0x3085` `"ゅ"`
+/// ## `HIRAGANA_UNICODE[69]: U+3085`
+/// `"ゅ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1001,7 +1071,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[70]`: `0x3086` `"ゆ"`
+/// ## `HIRAGANA_UNICODE[70]: U+3086`
+/// `"ゆ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1014,7 +1085,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[71]`: `0x3087` `"ょ"`
+/// ## `HIRAGANA_UNICODE[71]: U+3087`
+/// `"ょ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1027,7 +1099,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[72]`: `0x3088` `"よ"`
+/// ## `HIRAGANA_UNICODE[72]: U+3088`
+/// `"よ"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -1040,7 +1113,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[73]`: `0x3089` `"ら"`
+/// ## `HIRAGANA_UNICODE[73]: U+3089`
+/// `"ら"`
 ///
 /// ```text
 /// ░████░░░
@@ -1053,7 +1127,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[74]`: `0x308A` `"り"`
+/// ## `HIRAGANA_UNICODE[74]: U+308A`
+/// `"り"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1066,7 +1141,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[75]`: `0x308B` `"る"`
+/// ## `HIRAGANA_UNICODE[75]: U+308B`
+/// `"る"`
 ///
 /// ```text
 /// █████░░░
@@ -1079,7 +1155,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[76]`: `0x308C` `"れ"`
+/// ## `HIRAGANA_UNICODE[76]: U+308C`
+/// `"れ"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -1092,7 +1169,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[77]`: `0x308D` `"ろ"`
+/// ## `HIRAGANA_UNICODE[77]: U+308D`
+/// `"ろ"`
 ///
 /// ```text
 /// ██████░░
@@ -1105,7 +1183,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[78]`: `0x308E` `"ゎ"`
+/// ## `HIRAGANA_UNICODE[78]: U+308E`
+/// `"ゎ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1118,7 +1197,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[79]`: `0x308F` `"わ"`
+/// ## `HIRAGANA_UNICODE[79]: U+308F`
+/// `"わ"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -1131,7 +1211,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[80]`: `0x3090` `"ゐ"`
+/// ## `HIRAGANA_UNICODE[80]: U+3090`
+/// `"ゐ"`
 ///
 /// ```text
 /// ░███░░░░
@@ -1144,7 +1225,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[81]`: `0x3091` `"ゑ"`
+/// ## `HIRAGANA_UNICODE[81]: U+3091`
+/// `"ゑ"`
 ///
 /// ```text
 /// ░██░░░░░
@@ -1157,7 +1239,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[82]`: `0x3092` `"を"`
+/// ## `HIRAGANA_UNICODE[82]: U+3092`
+/// `"を"`
 ///
 /// ```text
 /// ░░█░░░░░
@@ -1170,7 +1253,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[83]`: `0x3093` `"ん"`
+/// ## `HIRAGANA_UNICODE[83]: U+3093`
+/// `"ん"`
 ///
 /// ```text
 /// ░░░█░░░░
@@ -1183,7 +1267,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[84]`: `0x3094` `"ゔ"`
+/// ## `HIRAGANA_UNICODE[84]: U+3094`
+/// `"ゔ"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -1196,13 +1281,14 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ##  85: 0x3095 " "
-/// ##  86: 0x3096 " "
-/// ##  87: 0x3097 " "
-/// ##  88: 0x3098 " "
-/// ##  89: 0x3099 " "
-/// ##  90: 0x309A " "
-/// ## `HIRAGANA_UNICODE[91]`: `0x309B` `"゛"`
+/// ## `HIRAGANA_UNICODE[85]: U+3095` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[86]: U+3096` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[87]: U+3097` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[88]: U+3098` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[89]: U+3099` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[90]: U+309A` `WHITESPACE`
+/// ## `HIRAGANA_UNICODE[91]: U+309B`
+/// `"゛"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -1215,7 +1301,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[92]`: `0x309C` `"゜"`
+/// ## `HIRAGANA_UNICODE[92]: U+309C`
+/// `"゜"`
 ///
 /// ```text
 /// ░░░░░░█░
@@ -1228,7 +1315,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[93]`: `0x309D` `"ゝ"`
+/// ## `HIRAGANA_UNICODE[93]: U+309D`
+/// `"ゝ"`
 ///
 /// ```text
 /// ░░░░░░░░
@@ -1241,7 +1329,8 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `HIRAGANA_UNICODE[94]`: `0x309E` `"ゞ"`
+/// ## `HIRAGANA_UNICODE[94]: U+309E`
+/// `"ゞ"`
 ///
 /// ```text
 /// ░░░░░█░░
@@ -1254,7 +1343,7 @@ pub const HIRAGANA_UNICODE: [FontUnicode; 96] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ##  95: 0x309F " "
+/// ## `HIRAGANA_UNICODE[95]: U+309F` `WHITESPACE`
 pub const HIRAGANA_FONTS: HiraganaFonts = HiraganaFonts(HIRAGANA_UNICODE);
 
 /// Strong-typed collection wrapper for [HIRAGANA_UNICODE](./constant.HIRAGANA_UNICODE.html).
@@ -1311,30 +1400,26 @@ impl UnicodeFonts for HiraganaFonts {
         println!();
         println!("# `{:?}`", self);
         for (idx, font) in self.0.iter().enumerate() {
+            print!("## `{:?}[{:?}]: U+{:04X}`", self, idx, font.char() as u32,);
             if font.is_whitespace() {
-                println!("## {:3?}: 0x{:04X} \" \"", idx, font.char() as u32);
-                continue;
-            }
-            println!(
-                "## `{:?}[{:?}]`: `0x{:04X}` `{:?}`",
-                self,
-                idx,
-                font.char() as u32,
-                font.to_string()
-            );
-            println!();
-            println!("```text");
-            for x in &font.byte_array() {
-                for bit in 0..8 {
-                    match *x & 1 << bit {
-                        0 => print!("░"),
-                        _ => print!("█"),
+                println!(" `WHITESPACE`");
+            } else {
+                println!();
+                println!("`{:?}`", font.to_string());
+                println!();
+                println!("```text");
+                for x in &font.byte_array() {
+                    for bit in 0..8 {
+                        match *x & 1 << bit {
+                            0 => print!("░"),
+                            _ => print!("█"),
+                        }
                     }
+                    println!();
                 }
+                println!("```");
                 println!();
             }
-            println!("```");
-            println!();
         }
     }
 
