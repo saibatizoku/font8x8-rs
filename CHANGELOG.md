@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [v0.2.5] - 2019-06-07
+### Changed
+* Made `::print_set` implementations friendlier with pulldown;
+* Address with https://github.com/rust-lang/rust/issues/61478
+* Standard documentation for font symbols for al sets.
+
 ## [v0.2.4] - 2018-07-31
 ### Added
 * Add CHANGELOG.md to the crate (this document).
