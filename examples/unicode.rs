@@ -8,7 +8,9 @@ use font8x8::{UnicodeFonts, GREEK_FONTS};
 // if it is found by its `char` within GREEK_FONTS.
 #[cfg(feature = "default")]
 fn main() {
-    if let Some(glyph) = GREEK_FONTS.get('ΐ') {
+    let unicode = '\u{03A9}';
+    println!("This should be displayed below: {:?}", unicode);
+    if let Some(glyph) = GREEK_FONTS.get(unicode) {
         for x in &glyph {
             for bit in 0..8 {
                 match *x & 1 << bit {
