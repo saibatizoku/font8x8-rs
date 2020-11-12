@@ -44,28 +44,28 @@ mod sga;
 pub mod unicode;
 
 #[cfg(feature = "unicode")]
-pub use self::basic::BASIC_FONTS;
+pub use self::basic::{BASIC_FONTS, BASIC_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::latin::LATIN_FONTS;
+pub use self::latin::{LATIN_FONTS, LATIN_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::greek::GREEK_FONTS;
+pub use self::greek::{GREEK_FONTS, GREEK_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::block::BLOCK_FONTS;
+pub use self::block::{BLOCK_FONTS, BLOCK_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::box_chars::BOX_FONTS;
+pub use self::box_chars::{BOX_FONTS, BOX_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::hiragana::HIRAGANA_FONTS;
+pub use self::hiragana::{HIRAGANA_FONTS, HIRAGANA_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::misc::MISC_FONTS;
+pub use self::misc::{MISC_FONTS, MISC_UNICODE};
 
 #[cfg(feature = "unicode")]
-pub use self::sga::SGA_FONTS;
+pub use self::sga::{SGA_FONTS, SGA_UNICODE};
 
 #[cfg(all(feature = "unicode", feature = "std"))]
 pub use self::unicode::FromUtf16Error;
