@@ -30,8 +30,8 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
     FontUnicode('\u{03A7}', GREEK_LEGACY[23]),
     FontUnicode('\u{03A8}', GREEK_LEGACY[24]),
     FontUnicode('\u{03A9}', GREEK_LEGACY[25]),
-    FontUnicode('\u{0399}', GREEK_LEGACY[26]),
-    FontUnicode('\u{03A5}', GREEK_LEGACY[27]),
+    FontUnicode('\u{03AA}', GREEK_LEGACY[26]),
+    FontUnicode('\u{03AB}', GREEK_LEGACY[27]),
     FontUnicode('\u{03AC}', GREEK_LEGACY[28]),
     FontUnicode('\u{03AD}', GREEK_LEGACY[29]),
     FontUnicode('\u{03AE}', GREEK_LEGACY[30]),
@@ -430,7 +430,7 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[26]: U+0399`
+/// ## `GREEK_UNICODE[26]: U+03AA`
 /// `"Ι"`
 ///
 /// ```text
@@ -444,7 +444,7 @@ pub const GREEK_UNICODE: [FontUnicode; 58] = [
 /// ░░░░░░░░
 /// ```
 ///
-/// ## `GREEK_UNICODE[27]: U+03A5`
+/// ## `GREEK_UNICODE[27]: U+03AB`
 /// `"Υ"`
 ///
 /// ```text

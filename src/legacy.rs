@@ -558,8 +558,8 @@ pub const LATIN_LEGACY: [[u8; 8]; 96] = [
 /// * `U+03A7` (Chi)
 /// * `U+03A8` (Psi)
 /// * `U+03A9` (Omega)
-/// * `U+0399` (Iota with diaeresis)
-/// * `U+03A5` (Upsilon with diaeresis)
+/// * `U+03AA` (Iota with diaeresis)  # original C-header file specified this as U+0399
+/// * `U+03AB` (Upsilon with diaeresis)  # original C-header file specified this as U+03A5
 /// * `U+03AC` (alpha aigu)
 /// * `U+03AD` (epsilon aigu)
 /// * `U+03AE` (eta aigu)
