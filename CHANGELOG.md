@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+### Changed
+* Fix issue #33, kind thanks to @Wallacoloo. Binary searches are performed on sorted
+  FontUnicode arrays.
+* `examples/unicode.rs` now prints a friendly message with the character that should
+  be rendered.
+* Make unicode constants public.
+
 ## [v0.2.5] - 2019-06-07
 ### Changed
 * Made `::print_set` implementations friendlier with pulldown;
