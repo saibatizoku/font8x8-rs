@@ -6,12 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [v0.2.6] - 2020-11-15
+### Added
+* Test all unicode constants to check that they are sorted by unicode chars as key.
+
 ### Changed
 * Fix issue #33, kind thanks to @Wallacoloo. Binary searches are performed on sorted
   FontUnicode arrays.
 * `examples/unicode.rs` now prints a friendly message with the character that should
   be rendered.
 * Make unicode constants public.
+* Sort all unicode constants by unicode chars as key.
+* Updated legacy documentation with correct unicode chars.
 
 ## [v0.2.5] - 2019-06-07
 ### Changed
