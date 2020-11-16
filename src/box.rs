@@ -75,10 +75,10 @@ pub const BOX_UNICODE: [FontUnicode; 128] = [
     FontUnicode('\u{2544}', BOX_LEGACY[68]),
     FontUnicode('\u{2545}', BOX_LEGACY[69]),
     FontUnicode('\u{2546}', BOX_LEGACY[70]),
-    FontUnicode('\u{2547}', BOX_LEGACY[71]),
-    FontUnicode('\u{254B}', BOX_LEGACY[72]),
-    FontUnicode('\u{254A}', BOX_LEGACY[73]),
+    FontUnicode('\u{2547}', BOX_LEGACY[72]),
+    FontUnicode('\u{2548}', BOX_LEGACY[71]),
     FontUnicode('\u{2549}', BOX_LEGACY[74]),
+    FontUnicode('\u{254A}', BOX_LEGACY[73]),
     FontUnicode('\u{254B}', BOX_LEGACY[75]),
     FontUnicode('\u{254C}', BOX_LEGACY[76]),
     FontUnicode('\u{254D}', BOX_LEGACY[77]),
@@ -1130,24 +1130,10 @@ pub const BOX_UNICODE: [FontUnicode; 128] = [
 /// ░░░██░░░
 /// ```
 ///
-/// ## `BOX_UNICODE[71]: U+2547`
+/// ## `BOX_UNICODE[72]: U+2547`
 /// `"╇"`
 ///
 /// ```text
-/// ░░░█░░░░
-/// ░░░█░░░░
-/// ░░░█░░░░
-/// ████████
-/// ████████
-/// ░░░██░░░
-/// ░░░██░░░
-/// ░░░██░░░
-/// ```
-///
-/// ## `BOX_UNICODE[72]: U+254B`
-/// `"╋"`
-///
-/// ```text
 /// ░░░██░░░
 /// ░░░██░░░
 /// ░░░██░░░
@@ -1158,14 +1144,14 @@ pub const BOX_UNICODE: [FontUnicode; 128] = [
 /// ░░░█░░░░
 /// ```
 ///
-/// ## `BOX_UNICODE[73]: U+254A`
-/// `"╊"`
+/// ## `BOX_UNICODE[71]: U+2548`
+/// `"╈"`
 ///
 /// ```text
-/// ░░░██░░░
-/// ░░░██░░░
-/// ░░░██░░░
-/// ░░░█████
+/// ░░░█░░░░
+/// ░░░█░░░░
+/// ░░░█░░░░
+/// ████████
 /// ████████
 /// ░░░██░░░
 /// ░░░██░░░
@@ -1180,6 +1166,20 @@ pub const BOX_UNICODE: [FontUnicode; 128] = [
 /// ░░░██░░░
 /// ░░░██░░░
 /// █████░░░
+/// ████████
+/// ░░░██░░░
+/// ░░░██░░░
+/// ░░░██░░░
+/// ```
+///
+/// ## `BOX_UNICODE[73]: U+254A`
+/// `"╊"`
+///
+/// ```text
+/// ░░░██░░░
+/// ░░░██░░░
+/// ░░░██░░░
+/// ░░░█████
 /// ████████
 /// ░░░██░░░
 /// ░░░██░░░

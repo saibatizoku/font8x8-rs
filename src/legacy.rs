@@ -1074,10 +1074,10 @@ pub const HIRAGANA_LEGACY: [[u8; 8]; 96] = [
 /// * `U+2544` (up H, right H, left L, down L)
 /// * `U+2545` (up L, right L, left H, down H)
 /// * `U+2546` (up L, right H, left L, down H)
-/// * `U+2547` (up L, right H, left H, down H)
-/// * `U+254B` (up H, right H, left H, down L)
-/// * `U+254A` (up H, right H, left L, down H)
-/// * `U+2549` (up H, right L, left H, down H)
+/// * `U+2548` (up L, right H, left H, down H)  # original C-header file specified this as U+2547
+/// * `U+2547` (up H, right H, left H, down L)  # original C-header file specified this as U+254B
+/// * `U+2549` (up H, right H, left L, down H)  # original C-header file specified this as U+254A
+/// * `U+254A` (up H, right L, left H, down H)  # original C-header file specified this as U+2549
 /// * `U+254B` (up H, right H, left H, down H)
 /// * `U+254C` (thin horizontal broken)
 /// * `U+254D` (thick horizontal broken)
