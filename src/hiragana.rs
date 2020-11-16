@@ -1437,6 +1437,16 @@ mod tests {
     use super::*;
 
     #[test]
+    fn hiragana_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = HIRAGANA_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            println!("{} {:?}", idx, key.char());
+            assert_eq!(HIRAGANA_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn hiragana_set_implements_default_trait_with_method_new() {
         let hiragana_set: HiraganaFonts = Default::default();
         assert_eq!(hiragana_set, HiraganaFonts::new());

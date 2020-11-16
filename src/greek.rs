@@ -970,6 +970,16 @@ mod tests {
     use super::*;
 
     #[test]
+    fn greek_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = GREEK_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            println!("{} {:?}", idx, key.char());
+            assert_eq!(GREEK_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn greek_set_implements_default_trait_with_method_new() {
         let greek_set: GreekFonts = Default::default();
         assert_eq!(greek_set, GreekFonts::new());

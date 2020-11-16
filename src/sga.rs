@@ -493,6 +493,16 @@ mod tests {
     use super::*;
 
     #[test]
+    fn sga_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = SGA_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            println!("{} {:04X}", idx, key.char() as u32);
+            assert_eq!(SGA_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn sga_set_implements_default_trait_with_method_new() {
         let sga_set: SgaFonts = Default::default();
         assert_eq!(sga_set, SgaFonts::new());

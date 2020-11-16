@@ -252,6 +252,16 @@ mod tests {
     use super::*;
 
     #[test]
+    fn misc_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = MISC_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            println!("{} {:04X}", idx, key.char() as u32);
+            assert_eq!(MISC_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn misc_set_implements_default_trait_with_method_new() {
         let misc_set: MiscFonts = Default::default();
         assert_eq!(misc_set, MiscFonts::new());

@@ -2020,6 +2020,16 @@ mod tests {
     use super::*;
 
     #[test]
+    fn box_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = BOX_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            println!("{} {:04X}", idx, key.char() as u32);
+            assert_eq!(BOX_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn box_set_implements_default_trait_with_method_new() {
         let box_set: BoxFonts = Default::default();
         assert_eq!(box_set, BoxFonts::new());

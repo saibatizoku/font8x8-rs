@@ -1581,6 +1581,15 @@ mod tests {
     use super::*;
 
     #[test]
+    fn basic_fonts_inner_array_is_sorted_by_unicode_key() {
+        let mut sorted = BASIC_UNICODE;
+        sorted.sort_by_key(|f| f.char());
+        for (idx, key) in sorted.iter().enumerate() {
+            assert_eq!(BASIC_UNICODE[idx].char(), key.char());
+        }
+    }
+
+    #[test]
     fn basic_set_implements_default_trait_with_method_new() {
         let basic_set: BasicFonts = Default::default();
         assert_eq!(basic_set, BasicFonts::new());
