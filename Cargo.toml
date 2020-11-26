@@ -1,6 +1,6 @@
 [package]
 name = "font8x8"
-version = "0.2.6"
+version = "0.2.7"
 authors = [
 	"Joaquin Rosales <casabenita7@gmail.com>",
 	"Philipp Oppermann <dev@phil-opp.com>",

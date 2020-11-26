@@ -256,7 +256,6 @@ mod tests {
         let mut sorted = MISC_UNICODE;
         sorted.sort_by_key(|f| f.char());
         for (idx, key) in sorted.iter().enumerate() {
-            println!("{} {:04X}", idx, key.char() as u32);
             assert_eq!(MISC_UNICODE[idx].char(), key.char());
         }
     }

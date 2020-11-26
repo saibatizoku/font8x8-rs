@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [v0.2.7] - 2020-11-26
+### Changed
+* Removed println! statements in tests. This fixes broken tests when running `cargo test --verbose --all --no-default-features --features unicode`.
+
 ## [v0.2.6] - 2020-11-15
 ### Added
 * Test all unicode constants to check that they are sorted by unicode chars as key.
